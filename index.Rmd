@@ -1,0 +1,18 @@
+--- 
+title: "Introduction to Biomedical Data Science"
+author: "Stephen Turner & VP Nagraj"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: bioconnector/workshops
+description: "This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data."
+---
+
+# Preface
+
+In this textbook, the authors aim to introduce the R statistical computing environment and packages for manipulating and visualizing high-dimensional data, covers strategies for reproducible research, and culminates with analysis of data from a real RNA-seq experiment using R and Bioconductor packages.
+

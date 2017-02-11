@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Biomedical Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Biomedical Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data." />
+  <meta name="github-repo" content="bioconnector/workshops" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Biomedical Data Science" />
+  
+  <meta name="twitter:description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data." />
+  
+
+<meta name="author" content="Stephen Turner &amp; VP Nagraj">
+
+
+<meta name="date" content="2017-02-11">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="data-visualization-with-ggplot2.html">
+<link rel="next" href="essential-statistics.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Biomedical Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="chapter" data-level="2" data-path="r-basics.html"><a href="r-basics.html"><i class="fa fa-check"></i><b>2</b> R Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="r-basics.html"><a href="r-basics.html#rstudio"><i class="fa fa-check"></i><b>2.1</b> RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="r-basics.html"><a href="r-basics.html#basic-operations"><i class="fa fa-check"></i><b>2.2</b> Basic operations</a></li>
+<li class="chapter" data-level="2.3" data-path="r-basics.html"><a href="r-basics.html#functions"><i class="fa fa-check"></i><b>2.3</b> Functions</a></li>
+<li class="chapter" data-level="2.4" data-path="r-basics.html"><a href="r-basics.html#data-frames"><i class="fa fa-check"></i><b>2.4</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-frames-1.html"><a href="data-frames-1.html"><i class="fa fa-check"></i><b>3</b> Data Frames</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-frames-1.html"><a href="data-frames-1.html#our-data"><i class="fa fa-check"></i><b>3.1</b> Our data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-frames-1.html"><a href="data-frames-1.html#reading-in-data"><i class="fa fa-check"></i><b>3.2</b> Reading in data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data-frames-1.html"><a href="data-frames-1.html#dplyr-and-readr"><i class="fa fa-check"></i><b>3.2.1</b> dplyr and readr</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-frames-1.html"><a href="data-frames-1.html#read_csv"><i class="fa fa-check"></i><b>3.2.2</b> <code>read_csv()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-frames-1.html"><a href="data-frames-1.html#inspecting-data.frame-objects"><i class="fa fa-check"></i><b>3.3</b> Inspecting data.frame objects</a></li>
+<li class="chapter" data-level="3.4" data-path="data-frames-1.html"><a href="data-frames-1.html#accessing-variables-subsetting-data-frames"><i class="fa fa-check"></i><b>3.4</b> Accessing variables &amp; subsetting data frames</a></li>
+<li class="chapter" data-level="3.5" data-path="data-frames-1.html"><a href="data-frames-1.html#bonus-preview-to-advanced-manipulation"><i class="fa fa-check"></i><b>3.5</b> BONUS: Preview to advanced manipulation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html"><i class="fa fa-check"></i><b>4</b> Data Manipulation with <code>dplyr</code></a><ul>
+<li class="chapter" data-level="4.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#review"><i class="fa fa-check"></i><b>4.1</b> Review</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#our-data-1"><i class="fa fa-check"></i><b>4.1.1</b> Our data</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#reading-in-data-1"><i class="fa fa-check"></i><b>4.1.2</b> Reading in data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#the-dplyr-package"><i class="fa fa-check"></i><b>4.2</b> The dplyr package</a></li>
+<li class="chapter" data-level="4.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#dplyr-verbs"><i class="fa fa-check"></i><b>4.3</b> dplyr verbs</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#filter"><i class="fa fa-check"></i><b>4.3.1</b> filter()</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#select"><i class="fa fa-check"></i><b>4.3.2</b> select()</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#mutate"><i class="fa fa-check"></i><b>4.3.3</b> mutate()</a></li>
+<li class="chapter" data-level="4.3.4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#arrange"><i class="fa fa-check"></i><b>4.3.4</b> arrange()</a></li>
+<li class="chapter" data-level="4.3.5" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#summarize"><i class="fa fa-check"></i><b>4.3.5</b> summarize()</a></li>
+<li class="chapter" data-level="4.3.6" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#group_by"><i class="fa fa-check"></i><b>4.3.6</b> group_by()</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#the-pipe"><i class="fa fa-check"></i><b>4.4</b> The pipe: <strong>%&gt;%</strong></a><ul>
+<li class="chapter" data-level="4.4.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#how-works"><i class="fa fa-check"></i><b>4.4.1</b> How %&gt;% works</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#nesting-versus"><i class="fa fa-check"></i><b>4.4.2</b> Nesting versus %&gt;%</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#piping-exercises"><i class="fa fa-check"></i><b>4.4.3</b> Piping exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#homework"><i class="fa fa-check"></i><b>4.5</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidy Data and <code>tidyr</code></a><ul>
+<li class="chapter" data-level="5.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#review-1"><i class="fa fa-check"></i><b>5.1</b> Review</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#prior-classes"><i class="fa fa-check"></i><b>5.1.1</b> Prior classes</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#data-needed"><i class="fa fa-check"></i><b>5.1.2</b> Data needed</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#tidy-data"><i class="fa fa-check"></i><b>5.2</b> Tidy data</a></li>
+<li class="chapter" data-level="5.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#the-tidyr-package"><i class="fa fa-check"></i><b>5.3</b> The <strong>tidyr</strong> package</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#gather"><i class="fa fa-check"></i><b>5.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="5.3.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#separate"><i class="fa fa-check"></i><b>5.3.2</b> <code>separate()</code></a></li>
+<li class="chapter" data-level="5.3.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#it-all-together"><i class="fa fa-check"></i><b>5.3.3</b> <code>%&gt;%</code> it all together</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#tidy-the-yeast-data"><i class="fa fa-check"></i><b>5.4</b> Tidy the yeast data</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#separate-the-name"><i class="fa fa-check"></i><b>5.4.1</b> <code>separate()</code> the <code>NAME</code></a></li>
+<li class="chapter" data-level="5.4.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#gather-the-data"><i class="fa fa-check"></i><b>5.4.2</b> <code>gather()</code> the data</a></li>
+<li class="chapter" data-level="5.4.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#inner_join-to-go"><i class="fa fa-check"></i><b>5.4.3</b> <code>inner_join()</code> to GO</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Data Visualization with <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="6.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#review-2"><i class="fa fa-check"></i><b>6.1</b> Review</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#gapminder-data"><i class="fa fa-check"></i><b>6.1.1</b> Gapminder data</a></li>
+<li class="chapter" data-level="6.1.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#dplyr-review"><i class="fa fa-check"></i><b>6.1.2</b> dplyr review</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#about-ggplot2"><i class="fa fa-check"></i><b>6.2</b> About ggplot2</a></li>
+<li class="chapter" data-level="6.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-continuous-x"><i class="fa fa-check"></i><b>6.3</b> Plotting bivariate data: continuous Y by continuous X</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#adding-layers"><i class="fa fa-check"></i><b>6.3.1</b> Adding layers</a></li>
+<li class="chapter" data-level="6.3.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#faceting"><i class="fa fa-check"></i><b>6.3.2</b> Faceting</a></li>
+<li class="chapter" data-level="6.3.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#saving-plots"><i class="fa fa-check"></i><b>6.3.3</b> Saving plots</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-categorical-x"><i class="fa fa-check"></i><b>6.4</b> Plotting bivariate data: continuous Y by categorical X</a></li>
+<li class="chapter" data-level="6.5" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-univariate-continuous-data"><i class="fa fa-check"></i><b>6.5</b> Plotting univariate continuous data</a></li>
+<li class="chapter" data-level="6.6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#publication-ready-plots-themes"><i class="fa fa-check"></i><b>6.6</b> Publication-ready plots &amp; themes</a></li>
+<li class="chapter" data-level="6.7" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#homework-1"><i class="fa fa-check"></i><b>6.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>7</b> Reproducible Research</a><ul>
+<li class="chapter" data-level="7.1" data-path="reproducible-research.html"><a href="reproducible-research.html#before-class"><i class="fa fa-check"></i><b>7.1</b> Before class</a></li>
+<li class="chapter" data-level="7.2" data-path="reproducible-research.html"><a href="reproducible-research.html#who-cares-about-reproducible-research"><i class="fa fa-check"></i><b>7.2</b> Who cares about reproducible research?</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="reproducible-research.html"><a href="reproducible-research.html#reproducibility-is-hard"><i class="fa fa-check"></i><b>7.2.1</b> Reproducibility is hard!</a></li>
+<li class="chapter" data-level="7.2.2" data-path="reproducible-research.html"><a href="reproducible-research.html#whats-in-it-for-you"><i class="fa fa-check"></i><b>7.2.2</b> What’s in it for <em>you?</em></a></li>
+<li class="chapter" data-level="7.2.3" data-path="reproducible-research.html"><a href="reproducible-research.html#some-recommendations-for-reproducible-research"><i class="fa fa-check"></i><b>7.2.3</b> Some recommendations for reproducible research</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="reproducible-research.html"><a href="reproducible-research.html#rmarkdown"><i class="fa fa-check"></i><b>7.3</b> RMarkdown</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="reproducible-research.html"><a href="reproducible-research.html#markdown"><i class="fa fa-check"></i><b>7.3.1</b> Markdown</a></li>
+<li class="chapter" data-level="7.3.2" data-path="reproducible-research.html"><a href="reproducible-research.html#rmarkdown-workflow"><i class="fa fa-check"></i><b>7.3.2</b> RMarkdown workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="reproducible-research.html"><a href="reproducible-research.html#authoring-rmarkdown-documents"><i class="fa fa-check"></i><b>7.4</b> Authoring RMarkdown documents</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="reproducible-research.html"><a href="reproducible-research.html#from-scratch"><i class="fa fa-check"></i><b>7.4.1</b> From scratch</a></li>
+<li class="chapter" data-level="7.4.2" data-path="reproducible-research.html"><a href="reproducible-research.html#from-a-template-with-yaml-metadata"><i class="fa fa-check"></i><b>7.4.2</b> From a template with YAML metadata</a></li>
+<li class="chapter" data-level="7.4.3" data-path="reproducible-research.html"><a href="reproducible-research.html#chunk-options"><i class="fa fa-check"></i><b>7.4.3</b> Chunk options</a></li>
+<li class="chapter" data-level="7.4.4" data-path="reproducible-research.html"><a href="reproducible-research.html#tables"><i class="fa fa-check"></i><b>7.4.4</b> Tables</a></li>
+<li class="chapter" data-level="7.4.5" data-path="reproducible-research.html"><a href="reproducible-research.html#changing-output-formats"><i class="fa fa-check"></i><b>7.4.5</b> Changing output formats</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="reproducible-research.html"><a href="reproducible-research.html#distributing-analyses-rpubs"><i class="fa fa-check"></i><b>7.5</b> Distributing Analyses: Rpubs</a></li>
+<li class="chapter" data-level="7.6" data-path="reproducible-research.html"><a href="reproducible-research.html#further-resources"><i class="fa fa-check"></i><b>7.6</b> Further resources</a></li>
+<li class="chapter" data-level="7.7" data-path="reproducible-research.html"><a href="reproducible-research.html#homework-2"><i class="fa fa-check"></i><b>7.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="essential-statistics.html"><a href="essential-statistics.html"><i class="fa fa-check"></i><b>8</b> Essential Statistics</a><ul>
+<li class="chapter" data-level="8.1" data-path="essential-statistics.html"><a href="essential-statistics.html#our-data-nhanes"><i class="fa fa-check"></i><b>8.1</b> Our data: NHANES</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="essential-statistics.html"><a href="essential-statistics.html#about-nhanes"><i class="fa fa-check"></i><b>8.1.1</b> About NHANES</a></li>
+<li class="chapter" data-level="8.1.2" data-path="essential-statistics.html"><a href="essential-statistics.html#import-inspect"><i class="fa fa-check"></i><b>8.1.2</b> Import &amp; inspect</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="essential-statistics.html"><a href="essential-statistics.html#descriptive-statistics"><i class="fa fa-check"></i><b>8.2</b> Descriptive statistics</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="essential-statistics.html"><a href="essential-statistics.html#missing-data"><i class="fa fa-check"></i><b>8.2.1</b> Missing data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="essential-statistics.html"><a href="essential-statistics.html#eda"><i class="fa fa-check"></i><b>8.2.2</b> EDA</a></li>
+<li class="chapter" data-level="8.2.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-1"><i class="fa fa-check"></i><b>8.2.3</b> Exercise set 1</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="essential-statistics.html"><a href="essential-statistics.html#continuous-variables"><i class="fa fa-check"></i><b>8.3</b> Continuous variables</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="essential-statistics.html"><a href="essential-statistics.html#t-tests"><i class="fa fa-check"></i><b>8.3.1</b> T-tests</a></li>
+<li class="chapter" data-level="8.3.2" data-path="essential-statistics.html"><a href="essential-statistics.html#wilcoxon-test"><i class="fa fa-check"></i><b>8.3.2</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="8.3.3" data-path="essential-statistics.html"><a href="essential-statistics.html#linear-models"><i class="fa fa-check"></i><b>8.3.3</b> Linear models</a></li>
+<li class="chapter" data-level="8.3.4" data-path="essential-statistics.html"><a href="essential-statistics.html#anova"><i class="fa fa-check"></i><b>8.3.4</b> ANOVA</a></li>
+<li class="chapter" data-level="8.3.5" data-path="essential-statistics.html"><a href="essential-statistics.html#linear-regression"><i class="fa fa-check"></i><b>8.3.5</b> Linear regression</a></li>
+<li class="chapter" data-level="8.3.6" data-path="essential-statistics.html"><a href="essential-statistics.html#multiple-regression"><i class="fa fa-check"></i><b>8.3.6</b> Multiple regression</a></li>
+<li class="chapter" data-level="8.3.7" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-2"><i class="fa fa-check"></i><b>8.3.7</b> Exercise set 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="essential-statistics.html"><a href="essential-statistics.html#discrete-variables"><i class="fa fa-check"></i><b>8.4</b> Discrete variables</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="essential-statistics.html"><a href="essential-statistics.html#contingency-tables"><i class="fa fa-check"></i><b>8.4.1</b> Contingency tables</a></li>
+<li class="chapter" data-level="8.4.2" data-path="essential-statistics.html"><a href="essential-statistics.html#logistic-regression"><i class="fa fa-check"></i><b>8.4.2</b> Logistic regression</a></li>
+<li class="chapter" data-level="8.4.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-3"><i class="fa fa-check"></i><b>8.4.3</b> Exercise set 3</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="essential-statistics.html"><a href="essential-statistics.html#power-sample-size"><i class="fa fa-check"></i><b>8.5</b> Power &amp; sample size</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="essential-statistics.html"><a href="essential-statistics.html#t-test-powern"><i class="fa fa-check"></i><b>8.5.1</b> T-test power/N</a></li>
+<li class="chapter" data-level="8.5.2" data-path="essential-statistics.html"><a href="essential-statistics.html#proportions-powern"><i class="fa fa-check"></i><b>8.5.2</b> Proportions power/N</a></li>
+<li class="chapter" data-level="8.5.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-4"><i class="fa fa-check"></i><b>8.5.3</b> Exercise set 4</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="essential-statistics.html"><a href="essential-statistics.html#tidying-models"><i class="fa fa-check"></i><b>8.6</b> Tidying models</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="surival-analysis.html"><a href="surival-analysis.html"><i class="fa fa-check"></i><b>9</b> Surival Analysis</a><ul>
+<li class="chapter" data-level="9.1" data-path="surival-analysis.html"><a href="surival-analysis.html#background"><i class="fa fa-check"></i><b>9.1</b> Background</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="surival-analysis.html"><a href="surival-analysis.html#definitions"><i class="fa fa-check"></i><b>9.1.1</b> Definitions</a></li>
+<li class="chapter" data-level="9.1.2" data-path="surival-analysis.html"><a href="surival-analysis.html#cox-ph-model"><i class="fa fa-check"></i><b>9.1.2</b> Cox PH Model</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="surival-analysis.html"><a href="surival-analysis.html#survival-analysis-in-r"><i class="fa fa-check"></i><b>9.2</b> Survival analysis in R</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="surival-analysis.html"><a href="surival-analysis.html#getting-started"><i class="fa fa-check"></i><b>9.2.1</b> Getting started</a></li>
+<li class="chapter" data-level="9.2.2" data-path="surival-analysis.html"><a href="surival-analysis.html#survival-curves"><i class="fa fa-check"></i><b>9.2.2</b> Survival Curves</a></li>
+<li class="chapter" data-level="9.2.3" data-path="surival-analysis.html"><a href="surival-analysis.html#kaplan-meier-plots"><i class="fa fa-check"></i><b>9.2.3</b> Kaplan-Meier Plots</a></li>
+<li class="chapter" data-level="9.2.4" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-1-1"><i class="fa fa-check"></i><b>9.2.4</b> Exercise set 1</a></li>
+<li class="chapter" data-level="9.2.5" data-path="surival-analysis.html"><a href="surival-analysis.html#cox-regression"><i class="fa fa-check"></i><b>9.2.5</b> Cox Regression</a></li>
+<li class="chapter" data-level="9.2.6" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-2-1"><i class="fa fa-check"></i><b>9.2.6</b> Exercise set 2</a></li>
+<li class="chapter" data-level="9.2.7" data-path="surival-analysis.html"><a href="surival-analysis.html#categorizing-for-km-plots"><i class="fa fa-check"></i><b>9.2.7</b> Categorizing for KM plots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="surival-analysis.html"><a href="surival-analysis.html#tcga"><i class="fa fa-check"></i><b>9.3</b> TCGA</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="surival-analysis.html"><a href="surival-analysis.html#rtcga"><i class="fa fa-check"></i><b>9.3.1</b> RTCGA</a></li>
+<li class="chapter" data-level="9.3.2" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-3-1"><i class="fa fa-check"></i><b>9.3.2</b> Exercise set 3</a></li>
+<li class="chapter" data-level="9.3.3" data-path="surival-analysis.html"><a href="surival-analysis.html#other-tcga-resources"><i class="fa fa-check"></i><b>9.3.3</b> Other TCGA Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html"><i class="fa fa-check"></i><b>10</b> RNA-Seq Analysis</a><ul>
+<li class="chapter" data-level="10.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#review-3"><i class="fa fa-check"></i><b>10.1</b> Review</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#prerequsite-skills"><i class="fa fa-check"></i><b>10.1.1</b> Prerequsite skills</a></li>
+<li class="chapter" data-level="10.1.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-needed-1"><i class="fa fa-check"></i><b>10.1.2</b> Data needed</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#background-1"><i class="fa fa-check"></i><b>10.2</b> Background</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#the-biology"><i class="fa fa-check"></i><b>10.2.1</b> The biology</a></li>
+<li class="chapter" data-level="10.2.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-pre-processing"><i class="fa fa-check"></i><b>10.2.2</b> Data pre-processing</a></li>
+<li class="chapter" data-level="10.2.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-structure"><i class="fa fa-check"></i><b>10.2.3</b> Data structure</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#import-data"><i class="fa fa-check"></i><b>10.3</b> Import data</a></li>
+<li class="chapter" data-level="10.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#poor-mans-dge"><i class="fa fa-check"></i><b>10.4</b> Poor man’s DGE</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-1"><i class="fa fa-check"></i><b>10.4.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="10.4.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-2"><i class="fa fa-check"></i><b>10.4.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="10.4.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-3"><i class="fa fa-check"></i><b>10.4.3</b> Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq2-analysis"><i class="fa fa-check"></i><b>10.5</b> DESeq2 analysis</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq2-package"><i class="fa fa-check"></i><b>10.5.1</b> DESeq2 package</a></li>
+<li class="chapter" data-level="10.5.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#importing-data"><i class="fa fa-check"></i><b>10.5.2</b> Importing data</a></li>
+<li class="chapter" data-level="10.5.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq-pipeline"><i class="fa fa-check"></i><b>10.5.3</b> DESeq pipeline</a></li>
+<li class="chapter" data-level="10.5.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#getting-results"><i class="fa fa-check"></i><b>10.5.4</b> Getting results</a></li>
+<li class="chapter" data-level="10.5.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-4"><i class="fa fa-check"></i><b>10.5.5</b> Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-visualization"><i class="fa fa-check"></i><b>10.6</b> Data Visualization</a><ul>
+<li class="chapter" data-level="10.6.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#plotting-counts"><i class="fa fa-check"></i><b>10.6.1</b> Plotting counts</a></li>
+<li class="chapter" data-level="10.6.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#ma-volcano-plots"><i class="fa fa-check"></i><b>10.6.2</b> MA &amp; Volcano plots</a></li>
+<li class="chapter" data-level="10.6.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-5"><i class="fa fa-check"></i><b>10.6.3</b> Exercise 5</a></li>
+<li class="chapter" data-level="10.6.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#transformation"><i class="fa fa-check"></i><b>10.6.4</b> Transformation</a></li>
+<li class="chapter" data-level="10.6.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#pca"><i class="fa fa-check"></i><b>10.6.5</b> PCA</a></li>
+<li class="chapter" data-level="10.6.6" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#bonus-heatmaps"><i class="fa fa-check"></i><b>10.6.6</b> Bonus: Heatmaps</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#record-sessioninfo"><i class="fa fa-check"></i><b>10.7</b> Record <code>sessionInfo()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Biomedical Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="reproducible-research" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Reproducible Research</h1>
+<p>Contemporary life science is plagued by reproducibility issues. This workshop covers some of the barriers to reproducible research and how to start to address some of those problems during the data management and analysis phases of the research life cycle. In this workshop we will cover using R and dynamic document generation with RMarkdown and RStudio to weave together reporting text with executable R code to automatically generate reports in the form of PDF, Word, or HTML documents.</p>
+<p>This lesson assumes a <a href="r-basics.html">basic familiarity with R</a>, <a href="r-dataframes.html">data frames</a>, <a href="r-dplyr-yeast.html">manipulating data with dplyr and <code>%&gt;%</code></a>, and <a href="r-viz-gapminder.html">plotting with ggplot2</a>. It also assumes that you’ve successfully installed all packages on the <a href="setup.html">R setup page</a>, including the <a href="setup.html#rmarkdown">additional steps</a> needed specifically for this class.</p>
+<div id="before-class" class="section level2">
+<h2><span class="header-section-number">7.1</span> Before class</h2>
+<p>Prior to class, spend a few minutes to learn a little bit about <em>Markdown</em>. All you really need to know is that Markdown is a lightweight markup language that lets you create styled text (like <strong>bold</strong>, <em>italics</em>, <a href="http://bioconnector.org/markdown">links</a>, etc.) using a very lightweight plain-text syntax: <code>(like **bold**, _italics_, [links](http://bioconnector.org/markdown), etc.)</code>. The resulting text file can be <em>rendered</em> into many downstream formats, like PDF (for printing) or HTML (websites).</p>
+<ol style="list-style-type: decimal">
+<li><em>(30 seconds)</em> Read the summary paragraph on the <a href="https://en.wikipedia.org/wiki/Markdown">Wikipedia page</a>.</li>
+<li><em>(5-10 minutes)</em> Run through this in-browser markdown tutorial: <a href="http://markdowntutorial.com/" class="uri">http://markdowntutorial.com/</a>.</li>
+<li><em>(5-10 minutes)</em> Go to <a href="http://dillinger.io/" class="uri">http://dillinger.io/</a>, an in-browser Markdown editor, and play around. Write a simple markdown document, and export it to HTML and/or PDF.</li>
+<li><em>(5-10 minutes)</em> Take a look at the Markdown/Rmarkdown reference for this course: <a href="http://bioconnector.org/markdown" class="uri">http://bioconnector.org/markdown</a>. Scroll through the Markdown reference, which you’ve already seen by this point, then click the RMarkdown link at the top and skim through this.</li>
+<li><em>(0 seconds)</em> No need to look now, but don’t forget that the course <a href="help.html">help page</a> has some <a href="help.html#markdown__rmarkdown_resources">useful resources on Markdown+RMarkdown</a>.</li>
+</ol>
+</div>
+<div id="who-cares-about-reproducible-research" class="section level2">
+<h2><span class="header-section-number">7.2</span> Who cares about reproducible research?</h2>
+<p>Science is plagued by reproducibility problems. Especially genomics!</p>
+<ul>
+<li>Scientists in the United States spend <a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002165">$28 billion</a> each year on basic biomedical research that cannot be repeated successfully.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></li>
+<li>A reproducibility study in psychology found that only <a href="http://www.nature.com/news/first-results-from-psychology-s-largest-reproducibility-test-1.17433">39 of 100 studies could be reproduced</a>.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></li>
+<li>The Journal <em>Nature</em> on the <a href="http://www.nature.com/news/reproducibility-1.17552">issue of reproducibility</a>:<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>
+<ul>
+<li>“<em>Nature</em> and the Nature research journals will introduce editorial measures to address the problem by improving the consistency and quality of reporting in life-sciences articles… <strong>we will give more space to methods sections. We will examine statistics more closely and encourage authors to be transparent, for example by including their raw data.</strong>”<br />
+</li>
+<li><em>Nature</em> also released a <a href="http://www.nature.com/authors/policies/checklist.pdf">checklist</a>, unfortunately with <em>wimpy</em> computational check <em>(see #18)</em>.</li>
+</ul></li>
+<li>On microarray reproducibility:<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>
+<ul>
+<li>18 Nat. Genet. microarray experiments</li>
+<li>Less than 50% reproducible</li>
+<li>Problems:
+<ul>
+<li>Missing data (38%)</li>
+<li>Missing software/hardware details (50%)</li>
+<li>Missing method/processing details (66%)</li>
+</ul></li>
+</ul></li>
+<li>NGS: run-of-the-mill variant calling (align, process, call variants):<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>
+<ul>
+<li>299 articles published in 2011 citing the 1000 Genomes project pilot publication</li>
+<li>Only 19 were NGS studies with similar design</li>
+<li>Only 10 used tools recommended by 1000G.</li>
+<li>Only 4 used full 1000G workflow (realignment &amp; quality score recalibration).</li>
+</ul></li>
+</ul>
+<p>Consider this figure:</p>
+<div class="figure">
+<img src="img/gm-lifeexp-vs-gdp.png" />
+
+</div>
+<p>How do we reproduce it? What do we need?</p>
+<ul>
+<li>The data.
+<ul>
+<li>Data points themselves.</li>
+<li>Other metadata.</li>
+</ul></li>
+<li>The code.
+<ul>
+<li>Should be readable.</li>
+<li>Comments in the code / well-documented so a normal person can figure out how it runs.</li>
+<li>How were the trend lines drawn?</li>
+<li>What version of software / packages were used?</li>
+</ul></li>
+</ul>
+<p>This kind of information is rarely available in scientific publications, but it’s now extraordinarly easy to put this kind of information on the web.</p>
+<p>Could I replicate Figure 1 from your last publication? If not, what would <em>you and your co-authors</em> need to provide or do so I could replicate Figure 1 from your last publication?</p>
+<p><strong>As scientists we should aim for <em>robust</em> and <em>reproducible</em> research</strong></p>
+<ul>
+<li>“<strong>Robust research</strong> is about doing small things that stack the deck in your favor to prevent mistakes.”<br />
+<em>—Vince Buffalo, author of Bioinformatics Data Skills (2015)</em>.</li>
+<li><strong>Reproducible research</strong> can be repeated by other researchers with the same results.</li>
+</ul>
+<div id="reproducibility-is-hard" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Reproducibility is hard!</h3>
+<ol style="list-style-type: decimal">
+<li>Genomics data is too large and high dimensional to easily inspect or visualize. Workflows involve multiple steps and it’s hard to inspect every step.</li>
+<li>Unlike in the wet lab, we don’t always know what to expect of our genomics data analysis.</li>
+<li>It can be hard to distinguish <em>good</em> from <em>bad</em> results.</li>
+<li>Scientific code is usually only run once to generate results for a publication, and is more likely to contain silent bugs. (code that may produces unknowingly incorrect output rather than stopping with an error message).</li>
+</ol>
+</div>
+<div id="whats-in-it-for-you" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> What’s in it for <em>you?</em></h3>
+<p>Yeah, it takes a lot of effort to be robust and reproducible. However, <em>it will make your life (and science) easier!</em></p>
+<ul>
+<li>Most likely, you will have to re-run your analysis more than once.<br />
+</li>
+<li>In the future, you or a collaborator may have to re-visit part of the project.</li>
+<li>Your most likely collaborator is your future self, and your past self doesn’t answer emails.</li>
+<li>You can make modularized parts of the project into re-useable tools for the future.<br />
+</li>
+<li>Reproducibility makes you easier to work and collaborate with.</li>
+</ul>
+</div>
+<div id="some-recommendations-for-reproducible-research" class="section level3">
+<h3><span class="header-section-number">7.2.3</span> Some recommendations for reproducible research</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Write code for humans, write data for computers.</strong>
+<ul>
+<li>Code should be broken down into small chunks that may be re-used.<br />
+</li>
+<li>Make names/variables consistent, distinctive and meaningful.<br />
+</li>
+<li>Adopt a <a href="http://adv-r.had.co.nz/Style.html">style</a> be consistent.<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a></li>
+<li>Write concise and clear comments.</li>
+</ul></li>
+<li><strong>Make incremental changes.</strong> Work in small steps with frequent feedback. Use version control. See <a href="http://swcarpentry.github.io/git-novice/" class="uri">http://swcarpentry.github.io/git-novice/</a> for resources on version control.</li>
+<li><strong>Make assertions and be loud, in code and in your methods.</strong> Add tests in your code to make sure it’s doing what you expect. See <a href="http://software-carpentry.org/v4/test/" class="uri">http://software-carpentry.org/v4/test/</a> for resources on testing code.</li>
+<li><strong>Use existing libraries (packages) whenever possible.</strong> Don’t reinvent the wheel. Use functions that have already been developed and tested by others.</li>
+<li><strong>Prevent catastrophe and help reproducibility by making your data <em>read-only</em>.</strong> Rather than modifying your original data directly, always use a workflow that reads in data, processes/modifies, then writes out intermediate and final files as necessary.</li>
+<li><strong>Encapsulate the full project into one directory that is supported with version control.</strong> See: Noble, William Stafford. “A quick guide to organizing computational biology projects.” <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424"><em>PLoS Comput Biol</em> 5.7 (2009): e1000424</a>.</li>
+<li><strong>Release your code and data.</strong> Simple. Without your code and data, your research is not reproducible.
+<ul>
+<li>GitHub (<a href="https://github.com/" class="uri">https://github.com/</a>) is a great place for storing, distributing, collaborating, and version-controlling code.</li>
+<li>RPubs (<a href="http://rpubs.com/" class="uri">http://rpubs.com/</a>) allows you to share dynamic documents you write in RStudio online.</li>
+<li>Figshare (<a href="http://figshare.com/" class="uri">http://figshare.com/</a>) and Zenodo (<a href="https://zenodo.org/" class="uri">https://zenodo.org/</a>) allow you to upload any kind of research output, publishable or not, free and unlimited. Instantly get permanently available, citable DOI for your research output.</li>
+<li><em>“Data/code is available upon request”</em> or <em>“Data/code is available at the lab’s website”</em> are completely unacceptable in the 21st century.</li>
+</ul></li>
+<li><strong>Write code that uses relative paths.</strong>
+<ul>
+<li>Don’t use hard-coded absolute paths (i.e. <code>/Users/stephen/Data/seq-data.csv</code> or <code>C:\Stephen\Documents\Data\Project1\data.txt</code>).</li>
+<li>Put the data in the project directory and reference it <em>relative</em> to where the code is, e.g., <code>data/gapminder.csv</code>, etc.<br />
+</li>
+</ul></li>
+<li><strong>Always set your seed.</strong> If you’re doing anything that involves random/monte-carlo approaches, always use <code>set.seed()</code>.</li>
+<li><strong>Document everything and use code as documentation.</strong>
+<ul>
+<li>Document why you do something, not mechanics.</li>
+<li>Document your methods and workflows.</li>
+<li>Document the origin of all data in your project directory.</li>
+<li>Document <strong>when</strong> and <strong>how</strong> you downloaded the data.</li>
+<li>Record <strong>data</strong> version info.</li>
+<li>Record <strong>software</strong> version info with <code>session_info()</code>.</li>
+<li>Use dynamic documentation to make your life easier.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="rmarkdown" class="section level2">
+<h2><span class="header-section-number">7.3</span> RMarkdown</h2>
+<p>RMarkdown is a variant of Markdown that lets you embed R code chunks that execute when you compile the document. What, what? Markdown? Compile? What’s all this about?</p>
+<div id="markdown" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Markdown</h3>
+<p>Ever heard of HTML? It’s what drives the internet. HTML is a <em>markup language</em> - that’s what the <em>ML</em> stands for. The terminology evolved from “marking up” paper manuscripts by editors, where the editor would instruct an author or typesetter how to render the resulting text. Markup languages let you annotate <strong>text</strong> that you want to display with instructions about how to display it.</p>
+<p>I emphasize <strong>text</strong> because this is fundamentally different than word processing. When you use MS Word, for example, you’re creating a special proprietary binary file (the .docx) file that shows you how a document looks. By contrast, writing in a markup language like HTML or Markdown, you’re writing plain old text, using a text editor. The toolchain used to render the markup text into what you see on a display or in a PDF has always been and will always bee free and open.</p>
+<p>You can learn Markdown in about 5 minutes. Visit <strong><a href="http://bioconnector.org/markdown">bioconnector.org/markdown</a></strong> for a quick-start reference and links to other resources. Let’s open up a web-based Markdown editor like <a href="http://dillinger.io/" class="uri">http://dillinger.io/</a> or use a desktop Markdown editor like <a href="http://markdownpad.com/">MarkdownPad</a> (Windows) or <a href="http://macdown.uranusjr.com/">MacDown</a> (Mac).</p>
+</div>
+<div id="rmarkdown-workflow" class="section level3">
+<h3><span class="header-section-number">7.3.2</span> RMarkdown workflow</h3>
+<p>RMarkdown is an enhanced version of Markdown that lets you embed R code into the document. When the document is compiled/rendered, the R code is executed by R, the output is then automatically rendered as Markdown with the rest of the document. The Markdown is then further processed to final output formats like HTML, PDF, DOCX, etc.</p>
+<div class="figure">
+<img src="img/rmarkdown-workflow.png" />
+
+</div>
+<p>Visit <strong><a href="http://bioconnector.org/markdown/#!rmarkdown.md">bioconnector.org/markdown</a></strong> for a quick reference on RMarkdown.</p>
+</div>
+</div>
+<div id="authoring-rmarkdown-documents" class="section level2">
+<h2><span class="header-section-number">7.4</span> Authoring RMarkdown documents</h2>
+<div id="from-scratch" class="section level3">
+<h3><span class="header-section-number">7.4.1</span> From scratch</h3>
+<p>First, open RStudio. Create a new project. Quit RStudio, then launch RStudio using the project file (.Rproj) you just created.</p>
+<p>Next, download the gapminder data from <a href="http://bioconnector.org/data/gapminder.csv">bioconnector.org/data</a>. Put this file in your R project directory. Maybe put it in a subdirectory called “data.” Importantly, now your code and data will live in the same place.</p>
+<p>Let’s create a bare-bones RMarkdown document that compiles to HTML. In RStudio, select <strong>File</strong>, <strong>New File</strong>, <strong>R Markdown…</strong>. Don’t worry about the title and author fields. When the new document launches, select everything then delete it. Let’s author an RMarkdown file from scratch. Save it as <code>fromscratch.Rmd</code>.</p>
+<p>Hit the <strong>Knit HTML</strong> button in the editor window. You should see the rendered document pop up.</p>
+<p>So let’s break that down to see exactly what happened there. Recall the <a href="http://bioconnector.org/markdown/#!rmarkdown.md#How_does_it_work?">RMarkdown Workflow</a> shown above. You start with an RMarkdown document (Rmd). When you hit the Knit HTML button, The <strong>knitr</strong> R package parses through your source document and executes all the R code chunks defined by the R code chunk blocks. The source code itself and the results are then turned back into regular markdown, inserted into an intermediate markdown file (.md), and finally rendered into HTML by <a href="http://pandoc.org/">Pandoc</a>.</p>
+<p>Try this. Instead of using the button, load the knitr package and just knit the document to markdown format. Run this in the console.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(knitr)
+<span class="kw">knit</span>(<span class="st">&quot;fromscratch.Rmd&quot;</span>)</code></pre></div>
+<p>Now, open up that regular markdown file and take a look.</p>
+<!-- indented code, what would be in markdown, starts here -->
+<pre><code># Introduction
+
+This is my first RMarkdown document!
+
+# Let&#39;s embed some R code
+
+Let&#39;s load the **Gapminder** data from &lt;http://bioconnector.org&gt;:
+
+
+```r
+library(dplyr)
+library(readr)
+gm &lt;- read_csv(&quot;data/gapminder.csv&quot;)
+head(gm)
+```
+
+```
+##       country continent year lifeExp      pop gdpPercap
+## 1 Afghanistan      Asia 1952  28.801  8425333  779.4453
+## 2 Afghanistan      Asia 1957  30.332  9240934  820.8530
+## 3 Afghanistan      Asia 1962  31.997 10267083  853.1007
+## 4 Afghanistan      Asia 1967  34.020 11537966  836.1971
+## 5 Afghanistan      Asia 1972  36.088 13079460  739.9811
+## 6 Afghanistan      Asia 1977  38.438 14880372  786.1134
+```
+
+The mean life expectancy is 59.4744394 years.
+
+The years surveyed in this data include: 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, 2002, 2007.</code></pre>
+<!-- end markdown -->
+</div>
+<div id="from-a-template-with-yaml-metadata" class="section level3">
+<h3><span class="header-section-number">7.4.2</span> From a template with YAML metadata</h3>
+<p>Go ahead and start a new R Markdown document. Fill in some title and author information.</p>
+<p>This is going to put a YAML header in the file that looks something like this:</p>
+<pre><code>---
+title: &quot;Gapminder Analysis&quot;
+author: &quot;Stephen Turner&quot;
+date: &quot;January 1, 2016&quot;
+output: html_document
+---</code></pre>
+<p>The stuff between the three <code>---</code>s is metadata. You can read more about what kind of metadata can be included in the <a href="http://rmarkdown.rstudio.com/">RMarkdown documentation</a>. Try clicking the little wrench icon and setting some options, like including a table of contents and figure captions. Notice how the metadata front matter changes.</p>
+<pre><code>---
+title: &quot;Gapminder analysis&quot;
+author: &quot;Stephen Turner&quot;
+date: &quot;January 1, 2016&quot;
+output: 
+  html_document: 
+    fig_caption: yes
+    toc: yes
+---</code></pre>
+<p>Now, delete everything in that document below the metadata header and paste in what we had written before (above). Save this document under a different name (<code>rmdwithmeta.Rmd</code> for example). You’ll now see that your HTML document takes the metadata and makes a nicely formatted title.</p>
+<p>Let’s add a plot in there. Open up a new R chunk with this:</p>
+<p>Using RStudio you can fiddle around with different ways to make the graphic and keep the one you want. Maybe it looks like this:</p>
+</div>
+<div id="chunk-options" class="section level3">
+<h3><span class="header-section-number">7.4.3</span> Chunk options</h3>
+<p>You can modify the behavior of an R chunk with <a href="http://yihui.name/knitr/options/">options</a>. Options are passed in after a comma on the fence, as shown below.</p>
+<p>Some commonly used options include:</p>
+<ul>
+<li><code>echo</code>: (<code>TRUE</code> by default) whether to include R source code in the output file.</li>
+<li><code>results</code> takes several possible values:
+<ul>
+<li><code>markup</code> (the default) takes the result of the R evaluation and turns it into markdown that is rendered as usual.</li>
+<li><code>hide</code> will hide results.</li>
+<li><code>hold</code> will hold all the output pieces and push them to the end of a chunk. Useful if you’re running commands that result in lots of little pieces of output in the same chunk.</li>
+<li><code>asis</code> writes the raw results from R directly into the document. Only really useful for tables.</li>
+</ul></li>
+<li><code>include</code>: (<code>TRUE</code> by default) if this is set to <code>FALSE</code> the R code is still evaluated, but neither the code nor the results are returned in the output document.</li>
+<li><code>fig.width</code>, <code>fig.height</code>: used to control the size of graphics in the output.</li>
+</ul>
+<p>Try modifying your first R chunk to use different values for <code>echo</code>, <code>results</code>, and <code>include</code>.</p>
+<p>See the full list of options here: <a href="http://yihui.name/knitr/options/" class="uri">http://yihui.name/knitr/options/</a>. There are lots!</p>
+<p>A special note about <strong>caching</strong>: The <code>cache=</code> option is automatically set to <code>FALSE</code>. That is, every time you render the Rmd, all the R code is run again from scratch. If you use <code>cache=TRUE</code>, for this chunk, knitr will save the results of the evaluation into a directory that you specify. When you re-render the document, knitr will first check if there are previously cached results under the cache directory before really evaluating the chunk; if cached results exist and this code chunk has not been changed since last run (use MD5 sum to verify), the cached results will be (lazy-) loaded, otherwise new cache will be built; if a cached chunk depends on other chunks (see the <code>dependson</code> option) and any one of these chunks has changed, this chunk must be forcibly updated (old cache will be purged). <strong>See <a href="http://yihui.name/knitr/demo/cache/">the documentation for caching</a>.</strong></p>
+</div>
+<div id="tables" class="section level3">
+<h3><span class="header-section-number">7.4.4</span> Tables</h3>
+<p>Read about printing tables at <a href="http://bioconnector.org/markdown/#!rmarkdown.md#Printing_tables_nicely">bioconnector.org/markdown</a>.</p>
+<p>The <a href="http://yihui.name/knitr/">knitr</a> package that runs the RMarkdown document in the background also has a function called <code>kable</code> that helps with printing tables nicely. It’s only useful when you set <code>echo=FALSE</code> and <code>results='asis'</code>. Try this.</p>
+<p>Versus this:</p>
+</div>
+<div id="changing-output-formats" class="section level3">
+<h3><span class="header-section-number">7.4.5</span> Changing output formats</h3>
+<p>Now try this. If you were successfully able to get a LaTeX distribution installed, you can render this document as a PDF instead of HTML. Try changing the line in the metadata from <code>html_document</code> to <code>pdf_document</code>. Notice how the <em>Knit HTML</em> button in RStudio now changes to <em>Knit PDF</em>. Try it. If you didn’t get a LaTeX engine installed this won’t work. Go back to the setup instructions after class to give this a try.</p>
+</div>
+</div>
+<div id="distributing-analyses-rpubs" class="section level2">
+<h2><span class="header-section-number">7.5</span> Distributing Analyses: Rpubs</h2>
+<p><a href="http://rpubs.com/">RPubs.com</a> is a free service from RStudio that allows you to seamlessly publish the results of your R analyses online. Sign up for an account at <a href="http://rpubs.com/">RPubs.com</a>, then sign in on your browser.</p>
+<p>Make sure your RMarkdown metadata is set to render to HTML rather than PDF. Render the document. Now notice the little <strong>Publish</strong> button in the HTML viewer pane. Click this. Sign in when asked, and give your document a name (usually the same name as the title of your Rmd).</p>
+<p>Here are a few examples of documents I’ve published:</p>
+<ul>
+<li><a href="http://rpubs.com/turnersd/daily_show_guests" class="uri">http://rpubs.com/turnersd/daily_show_guests</a>: Analysis of every guest who’s ever been on <em>The Daily Show with Jon Stewart</em>.</li>
+<li><a href="http://rpubs.com/turnersd/twoaxes" class="uri">http://rpubs.com/turnersd/twoaxes</a>: How to plot two different tracks of data with one axis on the left and one axis on the right.</li>
+<li><a href="http://rpubs.com/turnersd/anscombe" class="uri">http://rpubs.com/turnersd/anscombe</a>: Analysis of <em>Anscombe’s Quartet</em> data.</li>
+</ul>
+<p><strong>Note how RPubs doesn’t share your code!</strong> RPubs is a great way to share your analysis but doesn’t let you share the source code. This is a huge barrier to reproducibility. There are plenty of ways to do this. One way is to go to <a href="https://gist.github.com">gist.github.com</a> and upload your code as a text file, then link back to the gist in your republished RPubs document.</p>
+</div>
+<div id="further-resources" class="section level2">
+<h2><span class="header-section-number">7.6</span> Further resources</h2>
+<p>See <a href="help.html#markdown-rmarkdown-resources">the (R)markdown section on this course’s help page</a> for links to getting more help with reproducible research, Markdown, and RMarkdown.</p>
+</div>
+<div id="homework-2" class="section level2">
+<h2><span class="header-section-number">7.7</span> Homework</h2>
+<p>Looking for more practice? <a href="r-rmarkdown-homework.html">Try this homework assignment</a>.</p>
+<hr />
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Freedman, et al. “The economics of reproducibility in preclinical research.” <em>PLoS Biol</em> 13.6 (2015): e1002165.<a href="reproducible-research.html#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="http://www.nature.com/news/first-results-from-psychology-s-largest-reproducibility-test-1.17433" class="uri">http://www.nature.com/news/first-results-from-psychology-s-largest-reproducibility-test-1.17433</a><a href="reproducible-research.html#fnref2">↩</a></p></li>
+<li id="fn3"><p><a href="http://www.nature.com/news/reproducibility-1.17552" class="uri">http://www.nature.com/news/reproducibility-1.17552</a><a href="reproducible-research.html#fnref3">↩</a></p></li>
+<li id="fn4"><p>Ioannidis, John PA, et al. “Repeatability of published microarray gene expression analyses.” <em>Nature genetics</em> 41.2 (2009): 149-155.<a href="reproducible-research.html#fnref4">↩</a></p></li>
+<li id="fn5"><p>Nekrutenko, Anton, and James Taylor. “Next-generation sequencing data interpretation: enhancing reproducibility and accessibility.” <em>Nature Reviews Genetics</em> 13.9 (2012): 667-672.<a href="reproducible-research.html#fnref5">↩</a></p></li>
+<li id="fn6"><p><a href="http://adv-r.had.co.nz/Style.html" class="uri">http://adv-r.had.co.nz/Style.html</a><a href="reproducible-research.html#fnref6">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-visualization-with-ggplot2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="essential-statistics.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-rep-res.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

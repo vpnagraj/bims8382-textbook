@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Biomedical Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Biomedical Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data." />
+  <meta name="github-repo" content="bioconnector/workshops" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Biomedical Data Science" />
+  
+  <meta name="twitter:description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data." />
+  
+
+<meta name="author" content="Stephen Turner &amp; VP Nagraj">
+
+
+<meta name="date" content="2017-02-11">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="r-basics.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Biomedical Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="chapter" data-level="2" data-path="r-basics.html"><a href="r-basics.html"><i class="fa fa-check"></i><b>2</b> R Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="r-basics.html"><a href="r-basics.html#rstudio"><i class="fa fa-check"></i><b>2.1</b> RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="r-basics.html"><a href="r-basics.html#basic-operations"><i class="fa fa-check"></i><b>2.2</b> Basic operations</a></li>
+<li class="chapter" data-level="2.3" data-path="r-basics.html"><a href="r-basics.html#functions"><i class="fa fa-check"></i><b>2.3</b> Functions</a></li>
+<li class="chapter" data-level="2.4" data-path="r-basics.html"><a href="r-basics.html#data-frames"><i class="fa fa-check"></i><b>2.4</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-frames-1.html"><a href="data-frames-1.html"><i class="fa fa-check"></i><b>3</b> Data Frames</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-frames-1.html"><a href="data-frames-1.html#our-data"><i class="fa fa-check"></i><b>3.1</b> Our data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-frames-1.html"><a href="data-frames-1.html#reading-in-data"><i class="fa fa-check"></i><b>3.2</b> Reading in data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data-frames-1.html"><a href="data-frames-1.html#dplyr-and-readr"><i class="fa fa-check"></i><b>3.2.1</b> dplyr and readr</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-frames-1.html"><a href="data-frames-1.html#read_csv"><i class="fa fa-check"></i><b>3.2.2</b> <code>read_csv()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-frames-1.html"><a href="data-frames-1.html#inspecting-data.frame-objects"><i class="fa fa-check"></i><b>3.3</b> Inspecting data.frame objects</a></li>
+<li class="chapter" data-level="3.4" data-path="data-frames-1.html"><a href="data-frames-1.html#accessing-variables-subsetting-data-frames"><i class="fa fa-check"></i><b>3.4</b> Accessing variables &amp; subsetting data frames</a></li>
+<li class="chapter" data-level="3.5" data-path="data-frames-1.html"><a href="data-frames-1.html#bonus-preview-to-advanced-manipulation"><i class="fa fa-check"></i><b>3.5</b> BONUS: Preview to advanced manipulation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html"><i class="fa fa-check"></i><b>4</b> Data Manipulation with <code>dplyr</code></a><ul>
+<li class="chapter" data-level="4.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#review"><i class="fa fa-check"></i><b>4.1</b> Review</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#our-data-1"><i class="fa fa-check"></i><b>4.1.1</b> Our data</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#reading-in-data-1"><i class="fa fa-check"></i><b>4.1.2</b> Reading in data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#the-dplyr-package"><i class="fa fa-check"></i><b>4.2</b> The dplyr package</a></li>
+<li class="chapter" data-level="4.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#dplyr-verbs"><i class="fa fa-check"></i><b>4.3</b> dplyr verbs</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#filter"><i class="fa fa-check"></i><b>4.3.1</b> filter()</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#select"><i class="fa fa-check"></i><b>4.3.2</b> select()</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#mutate"><i class="fa fa-check"></i><b>4.3.3</b> mutate()</a></li>
+<li class="chapter" data-level="4.3.4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#arrange"><i class="fa fa-check"></i><b>4.3.4</b> arrange()</a></li>
+<li class="chapter" data-level="4.3.5" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#summarize"><i class="fa fa-check"></i><b>4.3.5</b> summarize()</a></li>
+<li class="chapter" data-level="4.3.6" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#group_by"><i class="fa fa-check"></i><b>4.3.6</b> group_by()</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#the-pipe"><i class="fa fa-check"></i><b>4.4</b> The pipe: <strong>%&gt;%</strong></a><ul>
+<li class="chapter" data-level="4.4.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#how-works"><i class="fa fa-check"></i><b>4.4.1</b> How %&gt;% works</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#nesting-versus"><i class="fa fa-check"></i><b>4.4.2</b> Nesting versus %&gt;%</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#piping-exercises"><i class="fa fa-check"></i><b>4.4.3</b> Piping exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#homework"><i class="fa fa-check"></i><b>4.5</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidy Data and <code>tidyr</code></a><ul>
+<li class="chapter" data-level="5.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#review-1"><i class="fa fa-check"></i><b>5.1</b> Review</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#prior-classes"><i class="fa fa-check"></i><b>5.1.1</b> Prior classes</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#data-needed"><i class="fa fa-check"></i><b>5.1.2</b> Data needed</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#tidy-data"><i class="fa fa-check"></i><b>5.2</b> Tidy data</a></li>
+<li class="chapter" data-level="5.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#the-tidyr-package"><i class="fa fa-check"></i><b>5.3</b> The <strong>tidyr</strong> package</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#gather"><i class="fa fa-check"></i><b>5.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="5.3.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#separate"><i class="fa fa-check"></i><b>5.3.2</b> <code>separate()</code></a></li>
+<li class="chapter" data-level="5.3.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#it-all-together"><i class="fa fa-check"></i><b>5.3.3</b> <code>%&gt;%</code> it all together</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#tidy-the-yeast-data"><i class="fa fa-check"></i><b>5.4</b> Tidy the yeast data</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#separate-the-name"><i class="fa fa-check"></i><b>5.4.1</b> <code>separate()</code> the <code>NAME</code></a></li>
+<li class="chapter" data-level="5.4.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#gather-the-data"><i class="fa fa-check"></i><b>5.4.2</b> <code>gather()</code> the data</a></li>
+<li class="chapter" data-level="5.4.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#inner_join-to-go"><i class="fa fa-check"></i><b>5.4.3</b> <code>inner_join()</code> to GO</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Data Visualization with <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="6.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#review-2"><i class="fa fa-check"></i><b>6.1</b> Review</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#gapminder-data"><i class="fa fa-check"></i><b>6.1.1</b> Gapminder data</a></li>
+<li class="chapter" data-level="6.1.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#dplyr-review"><i class="fa fa-check"></i><b>6.1.2</b> dplyr review</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#about-ggplot2"><i class="fa fa-check"></i><b>6.2</b> About ggplot2</a></li>
+<li class="chapter" data-level="6.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-continuous-x"><i class="fa fa-check"></i><b>6.3</b> Plotting bivariate data: continuous Y by continuous X</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#adding-layers"><i class="fa fa-check"></i><b>6.3.1</b> Adding layers</a></li>
+<li class="chapter" data-level="6.3.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#faceting"><i class="fa fa-check"></i><b>6.3.2</b> Faceting</a></li>
+<li class="chapter" data-level="6.3.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#saving-plots"><i class="fa fa-check"></i><b>6.3.3</b> Saving plots</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-categorical-x"><i class="fa fa-check"></i><b>6.4</b> Plotting bivariate data: continuous Y by categorical X</a></li>
+<li class="chapter" data-level="6.5" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-univariate-continuous-data"><i class="fa fa-check"></i><b>6.5</b> Plotting univariate continuous data</a></li>
+<li class="chapter" data-level="6.6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#publication-ready-plots-themes"><i class="fa fa-check"></i><b>6.6</b> Publication-ready plots &amp; themes</a></li>
+<li class="chapter" data-level="6.7" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#homework-1"><i class="fa fa-check"></i><b>6.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>7</b> Reproducible Research</a><ul>
+<li class="chapter" data-level="7.1" data-path="reproducible-research.html"><a href="reproducible-research.html#before-class"><i class="fa fa-check"></i><b>7.1</b> Before class</a></li>
+<li class="chapter" data-level="7.2" data-path="reproducible-research.html"><a href="reproducible-research.html#who-cares-about-reproducible-research"><i class="fa fa-check"></i><b>7.2</b> Who cares about reproducible research?</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="reproducible-research.html"><a href="reproducible-research.html#reproducibility-is-hard"><i class="fa fa-check"></i><b>7.2.1</b> Reproducibility is hard!</a></li>
+<li class="chapter" data-level="7.2.2" data-path="reproducible-research.html"><a href="reproducible-research.html#whats-in-it-for-you"><i class="fa fa-check"></i><b>7.2.2</b> What’s in it for <em>you?</em></a></li>
+<li class="chapter" data-level="7.2.3" data-path="reproducible-research.html"><a href="reproducible-research.html#some-recommendations-for-reproducible-research"><i class="fa fa-check"></i><b>7.2.3</b> Some recommendations for reproducible research</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="reproducible-research.html"><a href="reproducible-research.html#rmarkdown"><i class="fa fa-check"></i><b>7.3</b> RMarkdown</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="reproducible-research.html"><a href="reproducible-research.html#markdown"><i class="fa fa-check"></i><b>7.3.1</b> Markdown</a></li>
+<li class="chapter" data-level="7.3.2" data-path="reproducible-research.html"><a href="reproducible-research.html#rmarkdown-workflow"><i class="fa fa-check"></i><b>7.3.2</b> RMarkdown workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="reproducible-research.html"><a href="reproducible-research.html#authoring-rmarkdown-documents"><i class="fa fa-check"></i><b>7.4</b> Authoring RMarkdown documents</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="reproducible-research.html"><a href="reproducible-research.html#from-scratch"><i class="fa fa-check"></i><b>7.4.1</b> From scratch</a></li>
+<li class="chapter" data-level="7.4.2" data-path="reproducible-research.html"><a href="reproducible-research.html#from-a-template-with-yaml-metadata"><i class="fa fa-check"></i><b>7.4.2</b> From a template with YAML metadata</a></li>
+<li class="chapter" data-level="7.4.3" data-path="reproducible-research.html"><a href="reproducible-research.html#chunk-options"><i class="fa fa-check"></i><b>7.4.3</b> Chunk options</a></li>
+<li class="chapter" data-level="7.4.4" data-path="reproducible-research.html"><a href="reproducible-research.html#tables"><i class="fa fa-check"></i><b>7.4.4</b> Tables</a></li>
+<li class="chapter" data-level="7.4.5" data-path="reproducible-research.html"><a href="reproducible-research.html#changing-output-formats"><i class="fa fa-check"></i><b>7.4.5</b> Changing output formats</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="reproducible-research.html"><a href="reproducible-research.html#distributing-analyses-rpubs"><i class="fa fa-check"></i><b>7.5</b> Distributing Analyses: Rpubs</a></li>
+<li class="chapter" data-level="7.6" data-path="reproducible-research.html"><a href="reproducible-research.html#further-resources"><i class="fa fa-check"></i><b>7.6</b> Further resources</a></li>
+<li class="chapter" data-level="7.7" data-path="reproducible-research.html"><a href="reproducible-research.html#homework-2"><i class="fa fa-check"></i><b>7.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="essential-statistics.html"><a href="essential-statistics.html"><i class="fa fa-check"></i><b>8</b> Essential Statistics</a><ul>
+<li class="chapter" data-level="8.1" data-path="essential-statistics.html"><a href="essential-statistics.html#our-data-nhanes"><i class="fa fa-check"></i><b>8.1</b> Our data: NHANES</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="essential-statistics.html"><a href="essential-statistics.html#about-nhanes"><i class="fa fa-check"></i><b>8.1.1</b> About NHANES</a></li>
+<li class="chapter" data-level="8.1.2" data-path="essential-statistics.html"><a href="essential-statistics.html#import-inspect"><i class="fa fa-check"></i><b>8.1.2</b> Import &amp; inspect</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="essential-statistics.html"><a href="essential-statistics.html#descriptive-statistics"><i class="fa fa-check"></i><b>8.2</b> Descriptive statistics</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="essential-statistics.html"><a href="essential-statistics.html#missing-data"><i class="fa fa-check"></i><b>8.2.1</b> Missing data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="essential-statistics.html"><a href="essential-statistics.html#eda"><i class="fa fa-check"></i><b>8.2.2</b> EDA</a></li>
+<li class="chapter" data-level="8.2.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-1"><i class="fa fa-check"></i><b>8.2.3</b> Exercise set 1</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="essential-statistics.html"><a href="essential-statistics.html#continuous-variables"><i class="fa fa-check"></i><b>8.3</b> Continuous variables</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="essential-statistics.html"><a href="essential-statistics.html#t-tests"><i class="fa fa-check"></i><b>8.3.1</b> T-tests</a></li>
+<li class="chapter" data-level="8.3.2" data-path="essential-statistics.html"><a href="essential-statistics.html#wilcoxon-test"><i class="fa fa-check"></i><b>8.3.2</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="8.3.3" data-path="essential-statistics.html"><a href="essential-statistics.html#linear-models"><i class="fa fa-check"></i><b>8.3.3</b> Linear models</a></li>
+<li class="chapter" data-level="8.3.4" data-path="essential-statistics.html"><a href="essential-statistics.html#anova"><i class="fa fa-check"></i><b>8.3.4</b> ANOVA</a></li>
+<li class="chapter" data-level="8.3.5" data-path="essential-statistics.html"><a href="essential-statistics.html#linear-regression"><i class="fa fa-check"></i><b>8.3.5</b> Linear regression</a></li>
+<li class="chapter" data-level="8.3.6" data-path="essential-statistics.html"><a href="essential-statistics.html#multiple-regression"><i class="fa fa-check"></i><b>8.3.6</b> Multiple regression</a></li>
+<li class="chapter" data-level="8.3.7" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-2"><i class="fa fa-check"></i><b>8.3.7</b> Exercise set 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="essential-statistics.html"><a href="essential-statistics.html#discrete-variables"><i class="fa fa-check"></i><b>8.4</b> Discrete variables</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="essential-statistics.html"><a href="essential-statistics.html#contingency-tables"><i class="fa fa-check"></i><b>8.4.1</b> Contingency tables</a></li>
+<li class="chapter" data-level="8.4.2" data-path="essential-statistics.html"><a href="essential-statistics.html#logistic-regression"><i class="fa fa-check"></i><b>8.4.2</b> Logistic regression</a></li>
+<li class="chapter" data-level="8.4.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-3"><i class="fa fa-check"></i><b>8.4.3</b> Exercise set 3</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="essential-statistics.html"><a href="essential-statistics.html#power-sample-size"><i class="fa fa-check"></i><b>8.5</b> Power &amp; sample size</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="essential-statistics.html"><a href="essential-statistics.html#t-test-powern"><i class="fa fa-check"></i><b>8.5.1</b> T-test power/N</a></li>
+<li class="chapter" data-level="8.5.2" data-path="essential-statistics.html"><a href="essential-statistics.html#proportions-powern"><i class="fa fa-check"></i><b>8.5.2</b> Proportions power/N</a></li>
+<li class="chapter" data-level="8.5.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-4"><i class="fa fa-check"></i><b>8.5.3</b> Exercise set 4</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="essential-statistics.html"><a href="essential-statistics.html#tidying-models"><i class="fa fa-check"></i><b>8.6</b> Tidying models</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="surival-analysis.html"><a href="surival-analysis.html"><i class="fa fa-check"></i><b>9</b> Surival Analysis</a><ul>
+<li class="chapter" data-level="9.1" data-path="surival-analysis.html"><a href="surival-analysis.html#background"><i class="fa fa-check"></i><b>9.1</b> Background</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="surival-analysis.html"><a href="surival-analysis.html#definitions"><i class="fa fa-check"></i><b>9.1.1</b> Definitions</a></li>
+<li class="chapter" data-level="9.1.2" data-path="surival-analysis.html"><a href="surival-analysis.html#cox-ph-model"><i class="fa fa-check"></i><b>9.1.2</b> Cox PH Model</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="surival-analysis.html"><a href="surival-analysis.html#survival-analysis-in-r"><i class="fa fa-check"></i><b>9.2</b> Survival analysis in R</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="surival-analysis.html"><a href="surival-analysis.html#getting-started"><i class="fa fa-check"></i><b>9.2.1</b> Getting started</a></li>
+<li class="chapter" data-level="9.2.2" data-path="surival-analysis.html"><a href="surival-analysis.html#survival-curves"><i class="fa fa-check"></i><b>9.2.2</b> Survival Curves</a></li>
+<li class="chapter" data-level="9.2.3" data-path="surival-analysis.html"><a href="surival-analysis.html#kaplan-meier-plots"><i class="fa fa-check"></i><b>9.2.3</b> Kaplan-Meier Plots</a></li>
+<li class="chapter" data-level="9.2.4" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-1-1"><i class="fa fa-check"></i><b>9.2.4</b> Exercise set 1</a></li>
+<li class="chapter" data-level="9.2.5" data-path="surival-analysis.html"><a href="surival-analysis.html#cox-regression"><i class="fa fa-check"></i><b>9.2.5</b> Cox Regression</a></li>
+<li class="chapter" data-level="9.2.6" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-2-1"><i class="fa fa-check"></i><b>9.2.6</b> Exercise set 2</a></li>
+<li class="chapter" data-level="9.2.7" data-path="surival-analysis.html"><a href="surival-analysis.html#categorizing-for-km-plots"><i class="fa fa-check"></i><b>9.2.7</b> Categorizing for KM plots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="surival-analysis.html"><a href="surival-analysis.html#tcga"><i class="fa fa-check"></i><b>9.3</b> TCGA</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="surival-analysis.html"><a href="surival-analysis.html#rtcga"><i class="fa fa-check"></i><b>9.3.1</b> RTCGA</a></li>
+<li class="chapter" data-level="9.3.2" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-3-1"><i class="fa fa-check"></i><b>9.3.2</b> Exercise set 3</a></li>
+<li class="chapter" data-level="9.3.3" data-path="surival-analysis.html"><a href="surival-analysis.html#other-tcga-resources"><i class="fa fa-check"></i><b>9.3.3</b> Other TCGA Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html"><i class="fa fa-check"></i><b>10</b> RNA-Seq Analysis</a><ul>
+<li class="chapter" data-level="10.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#review-3"><i class="fa fa-check"></i><b>10.1</b> Review</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#prerequsite-skills"><i class="fa fa-check"></i><b>10.1.1</b> Prerequsite skills</a></li>
+<li class="chapter" data-level="10.1.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-needed-1"><i class="fa fa-check"></i><b>10.1.2</b> Data needed</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#background-1"><i class="fa fa-check"></i><b>10.2</b> Background</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#the-biology"><i class="fa fa-check"></i><b>10.2.1</b> The biology</a></li>
+<li class="chapter" data-level="10.2.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-pre-processing"><i class="fa fa-check"></i><b>10.2.2</b> Data pre-processing</a></li>
+<li class="chapter" data-level="10.2.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-structure"><i class="fa fa-check"></i><b>10.2.3</b> Data structure</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#import-data"><i class="fa fa-check"></i><b>10.3</b> Import data</a></li>
+<li class="chapter" data-level="10.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#poor-mans-dge"><i class="fa fa-check"></i><b>10.4</b> Poor man’s DGE</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-1"><i class="fa fa-check"></i><b>10.4.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="10.4.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-2"><i class="fa fa-check"></i><b>10.4.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="10.4.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-3"><i class="fa fa-check"></i><b>10.4.3</b> Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq2-analysis"><i class="fa fa-check"></i><b>10.5</b> DESeq2 analysis</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq2-package"><i class="fa fa-check"></i><b>10.5.1</b> DESeq2 package</a></li>
+<li class="chapter" data-level="10.5.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#importing-data"><i class="fa fa-check"></i><b>10.5.2</b> Importing data</a></li>
+<li class="chapter" data-level="10.5.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq-pipeline"><i class="fa fa-check"></i><b>10.5.3</b> DESeq pipeline</a></li>
+<li class="chapter" data-level="10.5.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#getting-results"><i class="fa fa-check"></i><b>10.5.4</b> Getting results</a></li>
+<li class="chapter" data-level="10.5.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-4"><i class="fa fa-check"></i><b>10.5.5</b> Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-visualization"><i class="fa fa-check"></i><b>10.6</b> Data Visualization</a><ul>
+<li class="chapter" data-level="10.6.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#plotting-counts"><i class="fa fa-check"></i><b>10.6.1</b> Plotting counts</a></li>
+<li class="chapter" data-level="10.6.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#ma-volcano-plots"><i class="fa fa-check"></i><b>10.6.2</b> MA &amp; Volcano plots</a></li>
+<li class="chapter" data-level="10.6.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-5"><i class="fa fa-check"></i><b>10.6.3</b> Exercise 5</a></li>
+<li class="chapter" data-level="10.6.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#transformation"><i class="fa fa-check"></i><b>10.6.4</b> Transformation</a></li>
+<li class="chapter" data-level="10.6.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#pca"><i class="fa fa-check"></i><b>10.6.5</b> PCA</a></li>
+<li class="chapter" data-level="10.6.6" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#bonus-heatmaps"><i class="fa fa-check"></i><b>10.6.6</b> Bonus: Heatmaps</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#record-sessioninfo"><i class="fa fa-check"></i><b>10.7</b> Record <code>sessionInfo()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Biomedical Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Introduction to Biomedical Data Science</h1>
+<h4 class="author"><em>Stephen Turner &amp; VP Nagraj</em></h4>
+<h4 class="date"><em>2017-02-11</em></h4>
+</div>
+<div id="preface" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Preface</h1>
+<p>In this textbook, the authors aim to introduce the R statistical computing environment and packages for manipulating and visualizing high-dimensional data, covers strategies for reproducible research, and culminates with analysis of data from a real RNA-seq experiment using R and Bioconductor packages.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="r-basics.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

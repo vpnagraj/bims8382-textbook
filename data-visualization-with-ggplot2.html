@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Biomedical Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Biomedical Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data." />
+  <meta name="github-repo" content="bioconnector/workshops" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Biomedical Data Science" />
+  
+  <meta name="twitter:description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data." />
+  
+
+<meta name="author" content="Stephen Turner &amp; VP Nagraj">
+
+
+<meta name="date" content="2017-02-11">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="tidy-data-and-tidyr.html">
+<link rel="next" href="reproducible-research.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Biomedical Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="chapter" data-level="2" data-path="r-basics.html"><a href="r-basics.html"><i class="fa fa-check"></i><b>2</b> R Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="r-basics.html"><a href="r-basics.html#rstudio"><i class="fa fa-check"></i><b>2.1</b> RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="r-basics.html"><a href="r-basics.html#basic-operations"><i class="fa fa-check"></i><b>2.2</b> Basic operations</a></li>
+<li class="chapter" data-level="2.3" data-path="r-basics.html"><a href="r-basics.html#functions"><i class="fa fa-check"></i><b>2.3</b> Functions</a></li>
+<li class="chapter" data-level="2.4" data-path="r-basics.html"><a href="r-basics.html#data-frames"><i class="fa fa-check"></i><b>2.4</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-frames-1.html"><a href="data-frames-1.html"><i class="fa fa-check"></i><b>3</b> Data Frames</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-frames-1.html"><a href="data-frames-1.html#our-data"><i class="fa fa-check"></i><b>3.1</b> Our data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-frames-1.html"><a href="data-frames-1.html#reading-in-data"><i class="fa fa-check"></i><b>3.2</b> Reading in data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data-frames-1.html"><a href="data-frames-1.html#dplyr-and-readr"><i class="fa fa-check"></i><b>3.2.1</b> dplyr and readr</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-frames-1.html"><a href="data-frames-1.html#read_csv"><i class="fa fa-check"></i><b>3.2.2</b> <code>read_csv()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-frames-1.html"><a href="data-frames-1.html#inspecting-data.frame-objects"><i class="fa fa-check"></i><b>3.3</b> Inspecting data.frame objects</a></li>
+<li class="chapter" data-level="3.4" data-path="data-frames-1.html"><a href="data-frames-1.html#accessing-variables-subsetting-data-frames"><i class="fa fa-check"></i><b>3.4</b> Accessing variables &amp; subsetting data frames</a></li>
+<li class="chapter" data-level="3.5" data-path="data-frames-1.html"><a href="data-frames-1.html#bonus-preview-to-advanced-manipulation"><i class="fa fa-check"></i><b>3.5</b> BONUS: Preview to advanced manipulation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html"><i class="fa fa-check"></i><b>4</b> Data Manipulation with <code>dplyr</code></a><ul>
+<li class="chapter" data-level="4.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#review"><i class="fa fa-check"></i><b>4.1</b> Review</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#our-data-1"><i class="fa fa-check"></i><b>4.1.1</b> Our data</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#reading-in-data-1"><i class="fa fa-check"></i><b>4.1.2</b> Reading in data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#the-dplyr-package"><i class="fa fa-check"></i><b>4.2</b> The dplyr package</a></li>
+<li class="chapter" data-level="4.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#dplyr-verbs"><i class="fa fa-check"></i><b>4.3</b> dplyr verbs</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#filter"><i class="fa fa-check"></i><b>4.3.1</b> filter()</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#select"><i class="fa fa-check"></i><b>4.3.2</b> select()</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#mutate"><i class="fa fa-check"></i><b>4.3.3</b> mutate()</a></li>
+<li class="chapter" data-level="4.3.4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#arrange"><i class="fa fa-check"></i><b>4.3.4</b> arrange()</a></li>
+<li class="chapter" data-level="4.3.5" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#summarize"><i class="fa fa-check"></i><b>4.3.5</b> summarize()</a></li>
+<li class="chapter" data-level="4.3.6" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#group_by"><i class="fa fa-check"></i><b>4.3.6</b> group_by()</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#the-pipe"><i class="fa fa-check"></i><b>4.4</b> The pipe: <strong>%&gt;%</strong></a><ul>
+<li class="chapter" data-level="4.4.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#how-works"><i class="fa fa-check"></i><b>4.4.1</b> How %&gt;% works</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#nesting-versus"><i class="fa fa-check"></i><b>4.4.2</b> Nesting versus %&gt;%</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#piping-exercises"><i class="fa fa-check"></i><b>4.4.3</b> Piping exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#homework"><i class="fa fa-check"></i><b>4.5</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidy Data and <code>tidyr</code></a><ul>
+<li class="chapter" data-level="5.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#review-1"><i class="fa fa-check"></i><b>5.1</b> Review</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#prior-classes"><i class="fa fa-check"></i><b>5.1.1</b> Prior classes</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#data-needed"><i class="fa fa-check"></i><b>5.1.2</b> Data needed</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#tidy-data"><i class="fa fa-check"></i><b>5.2</b> Tidy data</a></li>
+<li class="chapter" data-level="5.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#the-tidyr-package"><i class="fa fa-check"></i><b>5.3</b> The <strong>tidyr</strong> package</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#gather"><i class="fa fa-check"></i><b>5.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="5.3.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#separate"><i class="fa fa-check"></i><b>5.3.2</b> <code>separate()</code></a></li>
+<li class="chapter" data-level="5.3.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#it-all-together"><i class="fa fa-check"></i><b>5.3.3</b> <code>%&gt;%</code> it all together</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#tidy-the-yeast-data"><i class="fa fa-check"></i><b>5.4</b> Tidy the yeast data</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#separate-the-name"><i class="fa fa-check"></i><b>5.4.1</b> <code>separate()</code> the <code>NAME</code></a></li>
+<li class="chapter" data-level="5.4.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#gather-the-data"><i class="fa fa-check"></i><b>5.4.2</b> <code>gather()</code> the data</a></li>
+<li class="chapter" data-level="5.4.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#inner_join-to-go"><i class="fa fa-check"></i><b>5.4.3</b> <code>inner_join()</code> to GO</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Data Visualization with <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="6.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#review-2"><i class="fa fa-check"></i><b>6.1</b> Review</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#gapminder-data"><i class="fa fa-check"></i><b>6.1.1</b> Gapminder data</a></li>
+<li class="chapter" data-level="6.1.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#dplyr-review"><i class="fa fa-check"></i><b>6.1.2</b> dplyr review</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#about-ggplot2"><i class="fa fa-check"></i><b>6.2</b> About ggplot2</a></li>
+<li class="chapter" data-level="6.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-continuous-x"><i class="fa fa-check"></i><b>6.3</b> Plotting bivariate data: continuous Y by continuous X</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#adding-layers"><i class="fa fa-check"></i><b>6.3.1</b> Adding layers</a></li>
+<li class="chapter" data-level="6.3.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#faceting"><i class="fa fa-check"></i><b>6.3.2</b> Faceting</a></li>
+<li class="chapter" data-level="6.3.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#saving-plots"><i class="fa fa-check"></i><b>6.3.3</b> Saving plots</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-categorical-x"><i class="fa fa-check"></i><b>6.4</b> Plotting bivariate data: continuous Y by categorical X</a></li>
+<li class="chapter" data-level="6.5" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-univariate-continuous-data"><i class="fa fa-check"></i><b>6.5</b> Plotting univariate continuous data</a></li>
+<li class="chapter" data-level="6.6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#publication-ready-plots-themes"><i class="fa fa-check"></i><b>6.6</b> Publication-ready plots &amp; themes</a></li>
+<li class="chapter" data-level="6.7" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#homework-1"><i class="fa fa-check"></i><b>6.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>7</b> Reproducible Research</a><ul>
+<li class="chapter" data-level="7.1" data-path="reproducible-research.html"><a href="reproducible-research.html#before-class"><i class="fa fa-check"></i><b>7.1</b> Before class</a></li>
+<li class="chapter" data-level="7.2" data-path="reproducible-research.html"><a href="reproducible-research.html#who-cares-about-reproducible-research"><i class="fa fa-check"></i><b>7.2</b> Who cares about reproducible research?</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="reproducible-research.html"><a href="reproducible-research.html#reproducibility-is-hard"><i class="fa fa-check"></i><b>7.2.1</b> Reproducibility is hard!</a></li>
+<li class="chapter" data-level="7.2.2" data-path="reproducible-research.html"><a href="reproducible-research.html#whats-in-it-for-you"><i class="fa fa-check"></i><b>7.2.2</b> What’s in it for <em>you?</em></a></li>
+<li class="chapter" data-level="7.2.3" data-path="reproducible-research.html"><a href="reproducible-research.html#some-recommendations-for-reproducible-research"><i class="fa fa-check"></i><b>7.2.3</b> Some recommendations for reproducible research</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="reproducible-research.html"><a href="reproducible-research.html#rmarkdown"><i class="fa fa-check"></i><b>7.3</b> RMarkdown</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="reproducible-research.html"><a href="reproducible-research.html#markdown"><i class="fa fa-check"></i><b>7.3.1</b> Markdown</a></li>
+<li class="chapter" data-level="7.3.2" data-path="reproducible-research.html"><a href="reproducible-research.html#rmarkdown-workflow"><i class="fa fa-check"></i><b>7.3.2</b> RMarkdown workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="reproducible-research.html"><a href="reproducible-research.html#authoring-rmarkdown-documents"><i class="fa fa-check"></i><b>7.4</b> Authoring RMarkdown documents</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="reproducible-research.html"><a href="reproducible-research.html#from-scratch"><i class="fa fa-check"></i><b>7.4.1</b> From scratch</a></li>
+<li class="chapter" data-level="7.4.2" data-path="reproducible-research.html"><a href="reproducible-research.html#from-a-template-with-yaml-metadata"><i class="fa fa-check"></i><b>7.4.2</b> From a template with YAML metadata</a></li>
+<li class="chapter" data-level="7.4.3" data-path="reproducible-research.html"><a href="reproducible-research.html#chunk-options"><i class="fa fa-check"></i><b>7.4.3</b> Chunk options</a></li>
+<li class="chapter" data-level="7.4.4" data-path="reproducible-research.html"><a href="reproducible-research.html#tables"><i class="fa fa-check"></i><b>7.4.4</b> Tables</a></li>
+<li class="chapter" data-level="7.4.5" data-path="reproducible-research.html"><a href="reproducible-research.html#changing-output-formats"><i class="fa fa-check"></i><b>7.4.5</b> Changing output formats</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="reproducible-research.html"><a href="reproducible-research.html#distributing-analyses-rpubs"><i class="fa fa-check"></i><b>7.5</b> Distributing Analyses: Rpubs</a></li>
+<li class="chapter" data-level="7.6" data-path="reproducible-research.html"><a href="reproducible-research.html#further-resources"><i class="fa fa-check"></i><b>7.6</b> Further resources</a></li>
+<li class="chapter" data-level="7.7" data-path="reproducible-research.html"><a href="reproducible-research.html#homework-2"><i class="fa fa-check"></i><b>7.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="essential-statistics.html"><a href="essential-statistics.html"><i class="fa fa-check"></i><b>8</b> Essential Statistics</a><ul>
+<li class="chapter" data-level="8.1" data-path="essential-statistics.html"><a href="essential-statistics.html#our-data-nhanes"><i class="fa fa-check"></i><b>8.1</b> Our data: NHANES</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="essential-statistics.html"><a href="essential-statistics.html#about-nhanes"><i class="fa fa-check"></i><b>8.1.1</b> About NHANES</a></li>
+<li class="chapter" data-level="8.1.2" data-path="essential-statistics.html"><a href="essential-statistics.html#import-inspect"><i class="fa fa-check"></i><b>8.1.2</b> Import &amp; inspect</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="essential-statistics.html"><a href="essential-statistics.html#descriptive-statistics"><i class="fa fa-check"></i><b>8.2</b> Descriptive statistics</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="essential-statistics.html"><a href="essential-statistics.html#missing-data"><i class="fa fa-check"></i><b>8.2.1</b> Missing data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="essential-statistics.html"><a href="essential-statistics.html#eda"><i class="fa fa-check"></i><b>8.2.2</b> EDA</a></li>
+<li class="chapter" data-level="8.2.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-1"><i class="fa fa-check"></i><b>8.2.3</b> Exercise set 1</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="essential-statistics.html"><a href="essential-statistics.html#continuous-variables"><i class="fa fa-check"></i><b>8.3</b> Continuous variables</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="essential-statistics.html"><a href="essential-statistics.html#t-tests"><i class="fa fa-check"></i><b>8.3.1</b> T-tests</a></li>
+<li class="chapter" data-level="8.3.2" data-path="essential-statistics.html"><a href="essential-statistics.html#wilcoxon-test"><i class="fa fa-check"></i><b>8.3.2</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="8.3.3" data-path="essential-statistics.html"><a href="essential-statistics.html#linear-models"><i class="fa fa-check"></i><b>8.3.3</b> Linear models</a></li>
+<li class="chapter" data-level="8.3.4" data-path="essential-statistics.html"><a href="essential-statistics.html#anova"><i class="fa fa-check"></i><b>8.3.4</b> ANOVA</a></li>
+<li class="chapter" data-level="8.3.5" data-path="essential-statistics.html"><a href="essential-statistics.html#linear-regression"><i class="fa fa-check"></i><b>8.3.5</b> Linear regression</a></li>
+<li class="chapter" data-level="8.3.6" data-path="essential-statistics.html"><a href="essential-statistics.html#multiple-regression"><i class="fa fa-check"></i><b>8.3.6</b> Multiple regression</a></li>
+<li class="chapter" data-level="8.3.7" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-2"><i class="fa fa-check"></i><b>8.3.7</b> Exercise set 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="essential-statistics.html"><a href="essential-statistics.html#discrete-variables"><i class="fa fa-check"></i><b>8.4</b> Discrete variables</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="essential-statistics.html"><a href="essential-statistics.html#contingency-tables"><i class="fa fa-check"></i><b>8.4.1</b> Contingency tables</a></li>
+<li class="chapter" data-level="8.4.2" data-path="essential-statistics.html"><a href="essential-statistics.html#logistic-regression"><i class="fa fa-check"></i><b>8.4.2</b> Logistic regression</a></li>
+<li class="chapter" data-level="8.4.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-3"><i class="fa fa-check"></i><b>8.4.3</b> Exercise set 3</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="essential-statistics.html"><a href="essential-statistics.html#power-sample-size"><i class="fa fa-check"></i><b>8.5</b> Power &amp; sample size</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="essential-statistics.html"><a href="essential-statistics.html#t-test-powern"><i class="fa fa-check"></i><b>8.5.1</b> T-test power/N</a></li>
+<li class="chapter" data-level="8.5.2" data-path="essential-statistics.html"><a href="essential-statistics.html#proportions-powern"><i class="fa fa-check"></i><b>8.5.2</b> Proportions power/N</a></li>
+<li class="chapter" data-level="8.5.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-4"><i class="fa fa-check"></i><b>8.5.3</b> Exercise set 4</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="essential-statistics.html"><a href="essential-statistics.html#tidying-models"><i class="fa fa-check"></i><b>8.6</b> Tidying models</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="surival-analysis.html"><a href="surival-analysis.html"><i class="fa fa-check"></i><b>9</b> Surival Analysis</a><ul>
+<li class="chapter" data-level="9.1" data-path="surival-analysis.html"><a href="surival-analysis.html#background"><i class="fa fa-check"></i><b>9.1</b> Background</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="surival-analysis.html"><a href="surival-analysis.html#definitions"><i class="fa fa-check"></i><b>9.1.1</b> Definitions</a></li>
+<li class="chapter" data-level="9.1.2" data-path="surival-analysis.html"><a href="surival-analysis.html#cox-ph-model"><i class="fa fa-check"></i><b>9.1.2</b> Cox PH Model</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="surival-analysis.html"><a href="surival-analysis.html#survival-analysis-in-r"><i class="fa fa-check"></i><b>9.2</b> Survival analysis in R</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="surival-analysis.html"><a href="surival-analysis.html#getting-started"><i class="fa fa-check"></i><b>9.2.1</b> Getting started</a></li>
+<li class="chapter" data-level="9.2.2" data-path="surival-analysis.html"><a href="surival-analysis.html#survival-curves"><i class="fa fa-check"></i><b>9.2.2</b> Survival Curves</a></li>
+<li class="chapter" data-level="9.2.3" data-path="surival-analysis.html"><a href="surival-analysis.html#kaplan-meier-plots"><i class="fa fa-check"></i><b>9.2.3</b> Kaplan-Meier Plots</a></li>
+<li class="chapter" data-level="9.2.4" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-1-1"><i class="fa fa-check"></i><b>9.2.4</b> Exercise set 1</a></li>
+<li class="chapter" data-level="9.2.5" data-path="surival-analysis.html"><a href="surival-analysis.html#cox-regression"><i class="fa fa-check"></i><b>9.2.5</b> Cox Regression</a></li>
+<li class="chapter" data-level="9.2.6" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-2-1"><i class="fa fa-check"></i><b>9.2.6</b> Exercise set 2</a></li>
+<li class="chapter" data-level="9.2.7" data-path="surival-analysis.html"><a href="surival-analysis.html#categorizing-for-km-plots"><i class="fa fa-check"></i><b>9.2.7</b> Categorizing for KM plots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="surival-analysis.html"><a href="surival-analysis.html#tcga"><i class="fa fa-check"></i><b>9.3</b> TCGA</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="surival-analysis.html"><a href="surival-analysis.html#rtcga"><i class="fa fa-check"></i><b>9.3.1</b> RTCGA</a></li>
+<li class="chapter" data-level="9.3.2" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-3-1"><i class="fa fa-check"></i><b>9.3.2</b> Exercise set 3</a></li>
+<li class="chapter" data-level="9.3.3" data-path="surival-analysis.html"><a href="surival-analysis.html#other-tcga-resources"><i class="fa fa-check"></i><b>9.3.3</b> Other TCGA Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html"><i class="fa fa-check"></i><b>10</b> RNA-Seq Analysis</a><ul>
+<li class="chapter" data-level="10.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#review-3"><i class="fa fa-check"></i><b>10.1</b> Review</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#prerequsite-skills"><i class="fa fa-check"></i><b>10.1.1</b> Prerequsite skills</a></li>
+<li class="chapter" data-level="10.1.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-needed-1"><i class="fa fa-check"></i><b>10.1.2</b> Data needed</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#background-1"><i class="fa fa-check"></i><b>10.2</b> Background</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#the-biology"><i class="fa fa-check"></i><b>10.2.1</b> The biology</a></li>
+<li class="chapter" data-level="10.2.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-pre-processing"><i class="fa fa-check"></i><b>10.2.2</b> Data pre-processing</a></li>
+<li class="chapter" data-level="10.2.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-structure"><i class="fa fa-check"></i><b>10.2.3</b> Data structure</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#import-data"><i class="fa fa-check"></i><b>10.3</b> Import data</a></li>
+<li class="chapter" data-level="10.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#poor-mans-dge"><i class="fa fa-check"></i><b>10.4</b> Poor man’s DGE</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-1"><i class="fa fa-check"></i><b>10.4.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="10.4.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-2"><i class="fa fa-check"></i><b>10.4.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="10.4.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-3"><i class="fa fa-check"></i><b>10.4.3</b> Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq2-analysis"><i class="fa fa-check"></i><b>10.5</b> DESeq2 analysis</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq2-package"><i class="fa fa-check"></i><b>10.5.1</b> DESeq2 package</a></li>
+<li class="chapter" data-level="10.5.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#importing-data"><i class="fa fa-check"></i><b>10.5.2</b> Importing data</a></li>
+<li class="chapter" data-level="10.5.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq-pipeline"><i class="fa fa-check"></i><b>10.5.3</b> DESeq pipeline</a></li>
+<li class="chapter" data-level="10.5.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#getting-results"><i class="fa fa-check"></i><b>10.5.4</b> Getting results</a></li>
+<li class="chapter" data-level="10.5.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-4"><i class="fa fa-check"></i><b>10.5.5</b> Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-visualization"><i class="fa fa-check"></i><b>10.6</b> Data Visualization</a><ul>
+<li class="chapter" data-level="10.6.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#plotting-counts"><i class="fa fa-check"></i><b>10.6.1</b> Plotting counts</a></li>
+<li class="chapter" data-level="10.6.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#ma-volcano-plots"><i class="fa fa-check"></i><b>10.6.2</b> MA &amp; Volcano plots</a></li>
+<li class="chapter" data-level="10.6.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-5"><i class="fa fa-check"></i><b>10.6.3</b> Exercise 5</a></li>
+<li class="chapter" data-level="10.6.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#transformation"><i class="fa fa-check"></i><b>10.6.4</b> Transformation</a></li>
+<li class="chapter" data-level="10.6.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#pca"><i class="fa fa-check"></i><b>10.6.5</b> PCA</a></li>
+<li class="chapter" data-level="10.6.6" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#bonus-heatmaps"><i class="fa fa-check"></i><b>10.6.6</b> Bonus: Heatmaps</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#record-sessioninfo"><i class="fa fa-check"></i><b>10.7</b> Record <code>sessionInfo()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Biomedical Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-visualization-with-ggplot2" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Data Visualization with <code>ggplot2</code></h1>
+<p>This section will cover fundamental concepts for creating effective data visualization and will introduce tools and techniques for visualizing large, high-dimensional data using R. We will review fundamental concepts for visually displaying quantitative information, such as using series of small multiples, avoiding “chart-junk,” and maximizing the data-ink ratio. We will cover the grammar of graphics (geoms, aesthetics, stats, and faceting), and using the ggplot2 package to create plots layer-by-layer.</p>
+<p>This lesson assumes a <a href="r-basics.html">basic familiarity with R</a>, <a href="r-dataframes.html">data frames</a>, and <a href="r-dplyr-yeast.html">manipulating data with dplyr and <code>%&gt;%</code></a>.</p>
+<div id="review-2" class="section level2">
+<h2><span class="header-section-number">6.1</span> Review</h2>
+<div id="gapminder-data" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Gapminder data</h3>
+<p>We’re going to work with a different dataset for this section. It’s a <a href="https://github.com/jennybc/gapminder">cleaned-up excerpt</a> from the <a href="http://www.gapminder.org/data/">Gapminder data</a>. Download the <a href="data/gapminder.csv"><strong>gapminder.csv</strong> data by clicking here</a> or using the link above.</p>
+<p>Let’s read in the data to an object called <code>gm</code> and take a look with <code>View</code>. Remember, we need to load both the dplyr and readr packages for efficiently reading in and displaying this data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load packages</span>
+<span class="kw">library</span>(readr)
+<span class="kw">library</span>(dplyr)
+
+<span class="co"># You could read the data directly from the web:</span>
+<span class="co"># gm &lt;- read_csv(&quot;http://bioconnector.org/workshops/data/gapminder.csv&quot;)</span>
+
+<span class="co"># Or better to download the data locally and read the file</span>
+gm &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="dt">file=</span><span class="st">&quot;data/gapminder.csv&quot;</span>)
+
+<span class="co"># Show the first few lines of the data</span>
+gm
+
+
+<span class="co"># Optionally bring up data in a viewer window.</span>
+<span class="co"># View(gm)</span></code></pre></div>
+<p>This particular excerpt has 1704 observations on six variables:</p>
+<ul>
+<li><code>country</code> a categorical variable 142 levels</li>
+<li><code>continent</code>, a categorical variable with 5 levels</li>
+<li><code>year</code>: going from 1952 to 2007 in increments of 5 years</li>
+<li><code>pop</code>: population</li>
+<li><code>gdpPercap</code>: GDP per capita</li>
+<li><code>lifeExp</code>: life expectancy</li>
+</ul>
+</div>
+<div id="dplyr-review" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> dplyr review</h3>
+<p>The dplyr package gives you a handful of useful <strong>verbs</strong> for managing data. On their own they don’t do anything that base R can’t do. Here are some of the <em>single-table</em> verbs we’ll be working with in this lesson (single-table meaning that they only work on a single table – contrast that to <em>two-table</em> verbs used for joining data together). They all take a <code>data.frame</code> or <code>tbl_df</code> as their input for the first argument, and they all return a <code>data.frame</code> or <code>tbl_df</code> as output.</p>
+<ol style="list-style-type: decimal">
+<li><code>filter()</code>: filters <em>rows</em> of the data where some condition is true</li>
+<li><code>select()</code>: selects out particular <em>columns</em> of interest</li>
+<li><code>mutate()</code>: adds new columns or changes values of existing columns</li>
+<li><code>arrange()</code>: arranges a data frame by the value of a column</li>
+<li><code>summarize()</code>: summarizes multiple values to a single value, most useful when combined with…</li>
+<li><code>group_by()</code>: groups a data frame by one or more variable. Most data operations are useful done on groups defined by variables in the the dataset. The <code>group_by</code> function takes an existing data frame and converts it into a grouped data frame where <code>summarize()</code> operations are performed <em>by group</em>.</li>
+</ol>
+<p>Additionally, the <strong><code>%&gt;%</code></strong> operator allows you to “chain” operations together. Rather than nesting functions inside out, the <code>%&gt;%</code> operator allows you to write operations left-to-right, top-to-bottom. Let’s say we wanted to get the average life expectancy and GDP (not GDP per capita) for Asian countries for each year.</p>
+<div class="figure">
+<img src="img/nest_vs_pipe_gm.png" />
+
+</div>
+<p>The <code>%&gt;%</code> would allow us to do this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">gm %&gt;%
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">gdp=</span>gdpPercap*pop) %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(continent==<span class="st">&quot;Asia&quot;</span>) %&gt;%
+<span class="st">  </span><span class="kw">group_by</span>(year) %&gt;%
+<span class="st">  </span><span class="kw">summarize</span>(<span class="kw">mean</span>(lifeExp), <span class="kw">mean</span>(gdp))</code></pre></div>
+<p>Instead of this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarize</span>(
+  <span class="kw">group_by</span>(
+    <span class="kw">filter</span>(
+      <span class="kw">mutate</span>(gm, <span class="dt">gdp=</span>gdpPercap*pop), 
+    continent==<span class="st">&quot;Asia&quot;</span>), 
+  year), 
+<span class="kw">mean</span>(lifeExp), <span class="kw">mean</span>(gdp))</code></pre></div>
+</div>
+</div>
+<div id="about-ggplot2" class="section level2">
+<h2><span class="header-section-number">6.2</span> About ggplot2</h2>
+<p><strong>ggplot2</strong> is a widely used R package that extends R’s visualization capabilities. It takes the hassle out of things like creating legends, mapping other variables to scales like color, or faceting plots into small multiples. We’ll learn about what all these things mean shortly.</p>
+<p><em>Where does the “gg” in ggplot2 come from?</em> The <strong>ggplot2</strong> package provides an R implementation of Leland Wilkinson’s <em>Grammar of Graphics</em> (1999). The <em>Grammar of Graphics</em> allows you to think beyond the garden variety plot types (e.g. scatterplot, barplot) and the consider the components that make up a plot or graphic, such as how data are represented on the plot (as lines, points, etc.), how variables are mapped to coordinates or plotting shape or color, what transformation or statistical summary is required, and so on.</p>
+<p>Specifically, <strong>ggplot2</strong> allows you to build a plot layer-by-layer by specifying:</p>
+<ul>
+<li>a <strong>geom</strong>, which specifies how the data are represented on the plot (points, lines, bars, etc.),</li>
+<li><strong>aesthetics</strong> that map variables in the data to axes on the plot or to plotting size, shape, color, etc.,</li>
+<li>a <strong>stat</strong>, a statistical transformation or summary of the data applied prior to plotting,</li>
+<li><strong>facets</strong>, which we’ve already seen above, that allow the data to be divided into chunks on the basis of other categorical or continuous variables and the same plot drawn for each chunk.</li>
+</ul>
+<p><em>First, a note about <code>qplot()</code>.</em> The <code>qplot()</code> function is a quick and dirty way of making ggplot2 plots. You might see it if you look for help with ggplot2, and it’s even covered extensively in the ggplot2 book. And if you’re used to making plots with built-in base graphics, the <code>qplot()</code> function will probably feel more familiar. But the sooner you abandon the <code>qplot()</code> syntax the sooner you’ll start to really understand ggplot2’s approach to building up plots layer by layer. So we’re not going to use it at all in this class.</p>
+<p>Finally, see <a href="help.html#ggplot2-resources">this course’s help page</a> for links to getting more help with ggplot2.</p>
+</div>
+<div id="plotting-bivariate-data-continuous-y-by-continuous-x" class="section level2">
+<h2><span class="header-section-number">6.3</span> Plotting bivariate data: continuous Y by continuous X</h2>
+<p>The <code>ggplot</code> function has two required arguments: the <em>data</em> used for creating the plot, and an <em>aesthetic</em> mapping to describe how variables in said data are mapped to things we can see on the plot.</p>
+<p>First let’s load the package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)</code></pre></div>
+<p>Now, let’s lay out the plot. If we want to plot a continuous Y variable by a continuous X variable we’re probably most interested in a scatter plot. Here, we’re telling ggplot that we want to use the <code>gm</code> dataset, and the aesthetic mapping will map <code>gdpPercap</code> onto the x-axis and <code>lifeExp</code> onto the y-axis. Remember that the variable names are case sensitive!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(gm, <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp))</code></pre></div>
+<p>When we do that we get a blank canvas with no data showing (you might get an error if you’re using an old version of ggplot2). That’s because all we’ve done is laid out a two-dimensional plot specifying what goes on the x and y axes, but we haven’t told it what kind of geometric object to plot. The obvious choice here is a point. Check out <a href="http://docs.ggplot2.org/">docs.ggplot2.org</a> to see what kind of geoms are available.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(gm, <span class="kw">aes</span>(<span class="dt">x =</span> gdpPercap, <span class="dt">y =</span> lifeExp)) +<span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<p>Here, we’ve built our plot in layers. First, we create a canvas for plotting layers to come using the <code>ggplot</code> function, specifying which <strong>data</strong> to use (here, the <strong>gm</strong> data frame), and an <strong>aesthetic mapping</strong> of <code>gdpPercap</code> to the x-axis and <code>lifeExp</code> to the y-axis. We next add a layer to the plot, specifying a <strong>geom</strong>, or a way of visually representing the aesthetic mapping.</p>
+<p>Now, the typical workflow for building up a ggplot2 plot is to first construct the figure and save that to a variable (for example, <code>p</code>), and as you’re experimenting, you can continue to re-define the <code>p</code> object as you develop “keeper commands”.</p>
+<p>First, let’s construct the graphic. Notice that we don’t have to specify <code>x=</code> and <code>y=</code> if we specify the arguments in the correct order (x is first, y is second).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(gm, <span class="kw">aes</span>(gdpPercap, lifeExp))</code></pre></div>
+<p>The <code>p</code> object now contains the canvas, but nothing else. Try displaying it by just running <code>p</code>. Let’s experiment with adding points and a different scale to the x-axis.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Experiment with adding poings</span>
+p +<span class="st"> </span><span class="kw">geom_point</span>()
+
+<span class="co"># Experiment with a different scale</span>
+p +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">scale_x_log10</span>()</code></pre></div>
+<p>I like the look of using a log scale for the x-axis. Let’s make that stick.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">scale_x_log10</span>()</code></pre></div>
+<p>Now, if we re-ran <code>p</code> still nothing would show up because the <code>p</code> object just contains a blank canvas. Now, re-plot again with a layer of points:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<p>Now notice what I’ve saved to <code>p</code> at this point: only the basic plot layout and the log10 mapping on the x-axis. I didn’t save any layers yet because I want to fiddle around with the points for a bit first.</p>
+<p>Above we implied the aesthetic mappings for the x- and y- axis should be <code>gdpPercap</code> and <code>lifeExp</code>, but we can also add aesthetic mappings to the geoms themselves. For instance, what if we wanted to color the points by the value of another variable in the dataset, say, continent?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span>continent))</code></pre></div>
+<p>Notice the difference here. If I wanted the colors to be some static value, I wouldn’t wrap that in a call to <code>aes()</code>. I would just specify it outright. Same thing with other features of the points. For example, lets make all the points huge (<code>size=8</code>) blue (<code>color=&quot;blue&quot;</code>) semitransparent (<code>alpha=(1/4)</code>) triangles (<code>pch=17</code>):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">color=</span><span class="st">&quot;blue&quot;</span>, <span class="dt">pch=</span><span class="dv">17</span>, <span class="dt">size=</span><span class="dv">8</span>, <span class="dt">alpha=</span><span class="dv">1</span>/<span class="dv">4</span>)</code></pre></div>
+<p>Now, this time, let’s map the aesthetics of the point character to certain features of the data. For instance, let’s give the points different colors and character shapes according to the continent, and map the size of the point onto the life Expectancy:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">col=</span>continent, <span class="dt">shape=</span>continent, <span class="dt">size=</span>lifeExp))</code></pre></div>
+<p>Now, this isn’t a great plot because there are several aesthetic mappings that are redundant. Life expectancy is mapped to both the y-axis and the size of the points – the size mapping is superfluous. Similarly, continent is mapped to both the color and the point character (the shape is superfluous). Let’s get rid of that, but let’s make the points a little bigger outsize of an aesthetic mapping.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">col=</span>continent), <span class="dt">size=</span><span class="dv">3</span>)</code></pre></div>
+<p><img src="bims8382-textbook_files/figure-html/scatter_colContinent_size4-1.png" width="672" /></p>
+<hr />
+<p><strong>EXERCISE 1</strong></p>
+<p>Re-create this same plot from scratch without saving anything to a variable. That is, start from the <code>ggplot</code> call.</p>
+<ul>
+<li>Start with the <code>ggplot()</code> function.</li>
+<li>Use the gm data.</li>
+<li>Map <code>gdpPercap</code> to the x-axis and <code>lifeExp</code> to the y-axis.</li>
+<li>Add points to the plot</li>
+<li>Make the points size 3</li>
+<li>Map continent onto the aesthetics of the point</li>
+<li>Use a log<sub>10</sub> scale for the x-axis.</li>
+</ul>
+<hr />
+<div id="adding-layers" class="section level3">
+<h3><span class="header-section-number">6.3.1</span> Adding layers</h3>
+<p>Let’s add a fitted curve to the points. Recreate the plot in the <code>p</code> object if you need to.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(gm, <span class="kw">aes</span>(gdpPercap, lifeExp)) +<span class="st"> </span><span class="kw">scale_x_log10</span>()
+p +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>()</code></pre></div>
+<p><img src="bims8382-textbook_files/figure-html/scatter_addsmoothlayer-1.png" width="672" /></p>
+<p>By default <code>geom_smooth()</code> will try to lowess for data with n&lt;1000 or generalized additive models for data with n&gt;1000. We can change that behavior by tweaking the parameters to use a thick red line, use a linear model instead of a GAM, and to turn off the standard error stripes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">se=</span><span class="ot">FALSE</span>, <span class="dt">method=</span><span class="st">&quot;lm&quot;</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre></div>
+<p>But let’s add back in our aesthetic mapping to the continents. Notice what happens here. We’re mapping continent as an aesthetic mapping <em>to the color of the points only</em> – so <code>geom_smooth()</code> still works only on the entire data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> continent)) +<span class="st"> </span><span class="kw">geom_smooth</span>()</code></pre></div>
+<p>But notice what happens here: we make the call to <code>aes()</code> outside of the <code>geom_point()</code> call, and the continent variable gets mapped as an aesthetic to any further geoms. So here, we get separate smoothing lines for each continent. Let’s do it again but remove the standard error stripes and make the lines a bit thicker.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">aes</span>(<span class="dt">color =</span> continent) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>()
+p +<span class="st"> </span><span class="kw">aes</span>(<span class="dt">color =</span> continent) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">se=</span>F, <span class="dt">lwd=</span><span class="dv">2</span>)</code></pre></div>
+<p><img src="bims8382-textbook_files/figure-html/scatter_final-1.png" width="672" /></p>
+</div>
+<div id="faceting" class="section level3">
+<h3><span class="header-section-number">6.3.2</span> Faceting</h3>
+<p>Facets display subsets of the data in different panels. There are a couple ways to do this, but <code>facet_wrap()</code> tries to sensibly wrap a series of facets into a 2-dimensional grid of small multiples. Just give it a formula specifying which variables to facet by. We can continue adding more layers, such as smoothing. If you have a look at the help for <code>?facet_wrap()</code> you’ll see that we can control how the wrapping is laid out.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~continent)
+p +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~continent, <span class="dt">ncol=</span><span class="dv">1</span>)</code></pre></div>
+<p><img src="bims8382-textbook_files/figure-html/scatter_facet1-1.png" width="480" /></p>
+</div>
+<div id="saving-plots" class="section level3">
+<h3><span class="header-section-number">6.3.3</span> Saving plots</h3>
+<p>There are a few ways to save ggplots. The quickest way, that works in an interactive session, is to use the <code>ggsave()</code> function. You give it a file name and by default it saves the last plot that was printed to the screen.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>()
+<span class="kw">ggsave</span>(<span class="dt">file=</span><span class="st">&quot;myplot.png&quot;</span>)</code></pre></div>
+<p>But if you’re running this through a script, the best way to do it is to pass <code>ggsave()</code> the object containing the plot that is meant to be saved. We can also adjust things like the width, height, and resolution. <code>ggsave()</code> also recognizes the name of the file extension and saves the appropriate kind of file. Let’s save a PDF.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pfinal &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>() +<span class="st"> </span><span class="kw">facet_wrap</span>(~continent, <span class="dt">ncol=</span><span class="dv">1</span>)
+<span class="kw">ggsave</span>(pfinal, <span class="dt">file=</span><span class="st">&quot;myplot.pdf&quot;</span>, <span class="dt">width=</span><span class="dv">5</span>, <span class="dt">height=</span><span class="dv">15</span>)</code></pre></div>
+<hr />
+<p><strong>EXERCISE 2</strong></p>
+<ol style="list-style-type: decimal">
+<li>Make a scatter plot of <code>lifeExp</code> on the y-axis against <code>year</code> on the x.</li>
+<li>Make a series of small multiples faceting on continent.</li>
+<li>Add a fitted curve, smooth or lm, with and without facets.</li>
+<li><strong>Bonus</strong>: using <code>geom_line()</code> and and aesthetic mapping <code>country</code> to <code>group=</code>, make a “spaghetti plot”, showing <em>semitransparent</em> lines connected for each country, faceted by continent. Add a smoothed loess curve with a thick (<code>lwd=3</code>) line with no standard error stripe. Reduce the opacity (<code>alpha=</code>) of the individual black lines. <em>Don’t</em> show Oceania countries (that is, <code>filter()</code> the data where <code>continent!=&quot;Oceania&quot;</code> before you plot it).</li>
+</ol>
+<p><img src="bims8382-textbook_files/figure-html/spaghetti-1.png" width="768" /></p>
+<hr />
+</div>
+</div>
+<div id="plotting-bivariate-data-continuous-y-by-categorical-x" class="section level2">
+<h2><span class="header-section-number">6.4</span> Plotting bivariate data: continuous Y by categorical X</h2>
+<p>With the last example we examined the relationship between a continuous Y variable against a continuous X variable. A scatter plot was the obvious kind of data visualization. But what if we wanted to visualize a continuous Y variable against a categorical X variable? We sort of saw what that looked like in the last exercise. <code>year</code> is a continuous variable, but in this dataset, it’s broken up into 5-year segments, so you could almost think of each year as a categorical variable. But a better example would be life expectancy against continent or country.</p>
+<p>First, let’s set up the basic plot:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(gm, <span class="kw">aes</span>(continent, lifeExp)) </code></pre></div>
+<p>Then add points:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>()</code></pre></div>
+<p>That’s not terribly useful. There’s a big overplotting problem. We can try to solve with transparency:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">alpha=</span><span class="dv">1</span>/<span class="dv">4</span>)</code></pre></div>
+<p>But that really only gets us so far. What if we spread things out by adding a little bit of horizontal noise (aka “jitter”) to the data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_jitter</span>()</code></pre></div>
+<p>Note that the little bit of horizontal noise that’s added to the jitter is random. If you run that command over and over again, each time it will look slightly different. The idea is to visualize the density at each vertical position, and spreading out the points horizontally allows you to do that. If there were still lots of over-plotting you might think about adding some transparency by setting the <code>alpha=</code> value for the jitter.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_jitter</span>(<span class="dt">alpha=</span><span class="dv">1</span>/<span class="dv">2</span>)</code></pre></div>
+<p>Probably a more common visualization is to show a box plot:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p>But why not show the summary and the raw data?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_jitter</span>() +<span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p>Notice how in that example we first added the jitter layer then added the boxplot layer. But the boxplot is now superimposed over the jitter layer. Let’s make the jitter layer go on top. Also, go back to just the boxplots. Notice that the outliers are represented as points. But there’s no distinction between the outlier point from the boxplot geom and all the other points from the jitter geom. Let’s change that. Notice the British spelling.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="dt">outlier.colour =</span> <span class="st">&quot;red&quot;</span>) +<span class="st"> </span><span class="kw">geom_jitter</span>(<span class="dt">alpha=</span><span class="dv">1</span>/<span class="dv">2</span>)</code></pre></div>
+<p>There’s another geom that’s useful here, called a voilin plot.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_violin</span>()
+
+p +<span class="st"> </span><span class="kw">geom_violin</span>() +<span class="st"> </span><span class="kw">geom_jitter</span>(<span class="dt">alpha=</span><span class="dv">1</span>/<span class="dv">2</span>)</code></pre></div>
+<p>Let’s go back to our boxplot for a moment.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p>This plot would be a lot more effective if the continents were shown in some sort of order other than alphabetical. To do that, we’ll have to go back to our basic build of the plot again and use the <code>reorder</code> function in our original aesthetic mapping. Here, reorder is taking the first variable, which is some categorical variable, and ordering it by the level of the mean of the second variable, which is a continuous variable. It looks like this</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(gm, <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">reorder</span>(continent, lifeExp), <span class="dt">y=</span>lifeExp))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p><img src="bims8382-textbook_files/figure-html/boxplot-1.png" width="672" /></p>
+<hr />
+<p><strong>EXERCISE 3</strong></p>
+<ol style="list-style-type: decimal">
+<li>Make a jittered strip plot of GDP per capita against continent.</li>
+<li>Make a box plot of GDP per capita against continent.</li>
+<li>Using a log<sub>10</sub> y-axis scale, overlay semitransparent jittered points on top of box plots, where outlying points are colored.</li>
+<li><strong>BONUS</strong>: Try to reorder the continents on the x-axis by GDP per capita. Why isn’t this working as expected? See <code>?reorder</code> for clues.</li>
+</ol>
+<hr />
+</div>
+<div id="plotting-univariate-continuous-data" class="section level2">
+<h2><span class="header-section-number">6.5</span> Plotting univariate continuous data</h2>
+<p>What if we just wanted to visualize distribution of a single continuous variable? A histogram is the usual go-to visualization. Here we only have one aesthetic mapping instead of two.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(gm, <span class="kw">aes</span>(lifeExp))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_histogram</span>()</code></pre></div>
+<p>When we do this ggplot lets us know that we’re automatically selecting the width of the bins, and we might want to think about this a little further.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">bins=</span><span class="dv">30</span>)
+p +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">bins=</span><span class="dv">10</span>)
+p +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">bins=</span><span class="dv">200</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="dt">bins=</span><span class="dv">60</span>)</code></pre></div>
+<p><img src="bims8382-textbook_files/figure-html/histogram-1.png" width="672" /></p>
+<p>Alternative we could plot a smoothed density curve instead of a histogram:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_density</span>()</code></pre></div>
+<p>Back to histograms. What if we wanted to color this by continent?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">color=</span>continent))</code></pre></div>
+<p>That’s not what we had in mind. That’s just the outline of the bars. We want to change the <em>fill</em> color of the bars.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>continent))</code></pre></div>
+<p>Well, that’s not exactly what we want either. If you look at the help for <code>?geom_histogram</code> you’ll see that by default it stacks overlapping points. This isn’t really an effective visualization. Let’s change the position argument.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>continent), <span class="dt">position=</span><span class="st">&quot;identity&quot;</span>)</code></pre></div>
+<p>But the problem there is that the histograms are blocking each other. What if we tried transparency?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>continent), <span class="dt">position=</span><span class="st">&quot;identity&quot;</span>, <span class="dt">alpha=</span><span class="dv">1</span>/<span class="dv">3</span>)</code></pre></div>
+<p>That’s somewhat helpful, and might work for two distributions, but it gets cumbersome with 5. Let’s go back and try this with density plots, first changing the color of the line:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(<span class="dt">color=</span>continent))</code></pre></div>
+<p>Then by changing the color of the fill and setting the transparency to 25%:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>continent), <span class="dt">alpha=</span><span class="dv">1</span>/<span class="dv">4</span>)</code></pre></div>
+<p><img src="bims8382-textbook_files/figure-html/densityplot-1.png" width="672" /></p>
+<hr />
+<p><strong>EXERCISE 4</strong></p>
+<ol style="list-style-type: decimal">
+<li>Plot a histogram of GDP Per Capita.</li>
+<li>Do the same but use a log<sub>10</sub> x-axis.</li>
+<li>Still on the log<sub>10</sub> x-axis scale, try a density plot mapping continent to the fill of each density distribution, and reduce the opacity.</li>
+<li>Still on the log<sub>10</sub> x-axis scale, make a histogram faceted by continent <em>and</em> filled by continent. Facet with a single column (see <code>?facet_wrap</code> for help).</li>
+<li>Save this figure to a 6x10 PDF file.</li>
+</ol>
+<hr />
+</div>
+<div id="publication-ready-plots-themes" class="section level2">
+<h2><span class="header-section-number">6.6</span> Publication-ready plots &amp; themes</h2>
+<p>Let’s make a plot we made earlier (life expectancy versus the log of GDP per capita with points colored by continent with lowess smooth curves overlaid without the standard error ribbon):</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(gm, <span class="kw">aes</span>(gdpPercap, lifeExp)) 
+p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">scale_x_log10</span>()
+p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">aes</span>(<span class="dt">col=</span>continent) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">se=</span><span class="ot">FALSE</span>)</code></pre></div>
+<p>Give the plot a title and axis labels:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;Life expectancy vs GDP by Continent&quot;</span>)
+p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;GDP Per Capita (USD)&quot;</span>) +<span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Life Expectancy (years)&quot;</span>)</code></pre></div>
+<p>By default, the “gray” theme is the usual background (I’ve changed this course website to use the black and white background for all images).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">theme_gray</span>()</code></pre></div>
+<p><img src="bims8382-textbook_files/figure-html/theme_gray-1.png" width="672" /></p>
+<p>We could also get a black and white background:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">theme_bw</span>()</code></pre></div>
+<p>Or go a step further and remove the gridlines:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p +<span class="st"> </span><span class="kw">theme_classic</span>()</code></pre></div>
+<p><img src="bims8382-textbook_files/figure-html/theme_classic-1.png" width="672" /></p>
+<p>Finally, there’s another package that gives us lots of different themes. Install it if you don’t have it already. Install all its dependencies along with it.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;ggthemes&quot;</span>, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggthemes)
+p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(gm, <span class="kw">aes</span>(gdpPercap, lifeExp)) 
+p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">scale_x_log10</span>()
+p &lt;-<span class="st"> </span>p +<span class="st"> </span><span class="kw">aes</span>(<span class="dt">col=</span>continent) +<span class="st"> </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">se=</span><span class="ot">FALSE</span>)
+p +<span class="st"> </span><span class="kw">theme_excel</span>()
+p +<span class="st"> </span><span class="kw">theme_excel</span>() +<span class="st"> </span><span class="kw">scale_colour_excel</span>()
+p +<span class="st"> </span><span class="kw">theme_gdocs</span>() +<span class="st"> </span><span class="kw">scale_colour_gdocs</span>()
+p +<span class="st"> </span><span class="kw">theme_stata</span>() +<span class="st"> </span><span class="kw">scale_colour_stata</span>()
+p +<span class="st"> </span><span class="kw">theme_wsj</span>() +<span class="st"> </span><span class="kw">scale_colour_wsj</span>()
+p +<span class="st"> </span><span class="kw">theme_economist</span>() 
+p +<span class="st"> </span><span class="kw">theme_fivethirtyeight</span>()
+p +<span class="st"> </span><span class="kw">theme_tufte</span>()</code></pre></div>
+<p>Don’t forget - see <a href="help.html#ggplot2-resources">this course’s help page</a> for links to getting more help with ggplot2!</p>
+</div>
+<div id="homework-1" class="section level2">
+<h2><span class="header-section-number">6.7</span> Homework</h2>
+<p>Looking for more practice? <a href="r-dataviz-homework.html">Try this homework assignment</a>.</p>
+<hr />
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tidy-data-and-tidyr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="reproducible-research.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-viz.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

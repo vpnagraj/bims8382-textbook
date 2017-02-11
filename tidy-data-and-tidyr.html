@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Biomedical Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Biomedical Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data." />
+  <meta name="github-repo" content="bioconnector/workshops" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Biomedical Data Science" />
+  
+  <meta name="twitter:description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data." />
+  
+
+<meta name="author" content="Stephen Turner &amp; VP Nagraj">
+
+
+<meta name="date" content="2017-02-11">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="data-manipulation-with-dplyr.html">
+<link rel="next" href="data-visualization-with-ggplot2.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Biomedical Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="chapter" data-level="2" data-path="r-basics.html"><a href="r-basics.html"><i class="fa fa-check"></i><b>2</b> R Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="r-basics.html"><a href="r-basics.html#rstudio"><i class="fa fa-check"></i><b>2.1</b> RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="r-basics.html"><a href="r-basics.html#basic-operations"><i class="fa fa-check"></i><b>2.2</b> Basic operations</a></li>
+<li class="chapter" data-level="2.3" data-path="r-basics.html"><a href="r-basics.html#functions"><i class="fa fa-check"></i><b>2.3</b> Functions</a></li>
+<li class="chapter" data-level="2.4" data-path="r-basics.html"><a href="r-basics.html#data-frames"><i class="fa fa-check"></i><b>2.4</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-frames-1.html"><a href="data-frames-1.html"><i class="fa fa-check"></i><b>3</b> Data Frames</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-frames-1.html"><a href="data-frames-1.html#our-data"><i class="fa fa-check"></i><b>3.1</b> Our data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-frames-1.html"><a href="data-frames-1.html#reading-in-data"><i class="fa fa-check"></i><b>3.2</b> Reading in data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data-frames-1.html"><a href="data-frames-1.html#dplyr-and-readr"><i class="fa fa-check"></i><b>3.2.1</b> dplyr and readr</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-frames-1.html"><a href="data-frames-1.html#read_csv"><i class="fa fa-check"></i><b>3.2.2</b> <code>read_csv()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-frames-1.html"><a href="data-frames-1.html#inspecting-data.frame-objects"><i class="fa fa-check"></i><b>3.3</b> Inspecting data.frame objects</a></li>
+<li class="chapter" data-level="3.4" data-path="data-frames-1.html"><a href="data-frames-1.html#accessing-variables-subsetting-data-frames"><i class="fa fa-check"></i><b>3.4</b> Accessing variables &amp; subsetting data frames</a></li>
+<li class="chapter" data-level="3.5" data-path="data-frames-1.html"><a href="data-frames-1.html#bonus-preview-to-advanced-manipulation"><i class="fa fa-check"></i><b>3.5</b> BONUS: Preview to advanced manipulation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html"><i class="fa fa-check"></i><b>4</b> Data Manipulation with <code>dplyr</code></a><ul>
+<li class="chapter" data-level="4.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#review"><i class="fa fa-check"></i><b>4.1</b> Review</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#our-data-1"><i class="fa fa-check"></i><b>4.1.1</b> Our data</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#reading-in-data-1"><i class="fa fa-check"></i><b>4.1.2</b> Reading in data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#the-dplyr-package"><i class="fa fa-check"></i><b>4.2</b> The dplyr package</a></li>
+<li class="chapter" data-level="4.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#dplyr-verbs"><i class="fa fa-check"></i><b>4.3</b> dplyr verbs</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#filter"><i class="fa fa-check"></i><b>4.3.1</b> filter()</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#select"><i class="fa fa-check"></i><b>4.3.2</b> select()</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#mutate"><i class="fa fa-check"></i><b>4.3.3</b> mutate()</a></li>
+<li class="chapter" data-level="4.3.4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#arrange"><i class="fa fa-check"></i><b>4.3.4</b> arrange()</a></li>
+<li class="chapter" data-level="4.3.5" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#summarize"><i class="fa fa-check"></i><b>4.3.5</b> summarize()</a></li>
+<li class="chapter" data-level="4.3.6" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#group_by"><i class="fa fa-check"></i><b>4.3.6</b> group_by()</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#the-pipe"><i class="fa fa-check"></i><b>4.4</b> The pipe: <strong>%&gt;%</strong></a><ul>
+<li class="chapter" data-level="4.4.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#how-works"><i class="fa fa-check"></i><b>4.4.1</b> How %&gt;% works</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#nesting-versus"><i class="fa fa-check"></i><b>4.4.2</b> Nesting versus %&gt;%</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#piping-exercises"><i class="fa fa-check"></i><b>4.4.3</b> Piping exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#homework"><i class="fa fa-check"></i><b>4.5</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidy Data and <code>tidyr</code></a><ul>
+<li class="chapter" data-level="5.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#review-1"><i class="fa fa-check"></i><b>5.1</b> Review</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#prior-classes"><i class="fa fa-check"></i><b>5.1.1</b> Prior classes</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#data-needed"><i class="fa fa-check"></i><b>5.1.2</b> Data needed</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#tidy-data"><i class="fa fa-check"></i><b>5.2</b> Tidy data</a></li>
+<li class="chapter" data-level="5.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#the-tidyr-package"><i class="fa fa-check"></i><b>5.3</b> The <strong>tidyr</strong> package</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#gather"><i class="fa fa-check"></i><b>5.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="5.3.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#separate"><i class="fa fa-check"></i><b>5.3.2</b> <code>separate()</code></a></li>
+<li class="chapter" data-level="5.3.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#it-all-together"><i class="fa fa-check"></i><b>5.3.3</b> <code>%&gt;%</code> it all together</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#tidy-the-yeast-data"><i class="fa fa-check"></i><b>5.4</b> Tidy the yeast data</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#separate-the-name"><i class="fa fa-check"></i><b>5.4.1</b> <code>separate()</code> the <code>NAME</code></a></li>
+<li class="chapter" data-level="5.4.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#gather-the-data"><i class="fa fa-check"></i><b>5.4.2</b> <code>gather()</code> the data</a></li>
+<li class="chapter" data-level="5.4.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#inner_join-to-go"><i class="fa fa-check"></i><b>5.4.3</b> <code>inner_join()</code> to GO</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Data Visualization with <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="6.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#review-2"><i class="fa fa-check"></i><b>6.1</b> Review</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#gapminder-data"><i class="fa fa-check"></i><b>6.1.1</b> Gapminder data</a></li>
+<li class="chapter" data-level="6.1.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#dplyr-review"><i class="fa fa-check"></i><b>6.1.2</b> dplyr review</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#about-ggplot2"><i class="fa fa-check"></i><b>6.2</b> About ggplot2</a></li>
+<li class="chapter" data-level="6.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-continuous-x"><i class="fa fa-check"></i><b>6.3</b> Plotting bivariate data: continuous Y by continuous X</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#adding-layers"><i class="fa fa-check"></i><b>6.3.1</b> Adding layers</a></li>
+<li class="chapter" data-level="6.3.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#faceting"><i class="fa fa-check"></i><b>6.3.2</b> Faceting</a></li>
+<li class="chapter" data-level="6.3.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#saving-plots"><i class="fa fa-check"></i><b>6.3.3</b> Saving plots</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-categorical-x"><i class="fa fa-check"></i><b>6.4</b> Plotting bivariate data: continuous Y by categorical X</a></li>
+<li class="chapter" data-level="6.5" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-univariate-continuous-data"><i class="fa fa-check"></i><b>6.5</b> Plotting univariate continuous data</a></li>
+<li class="chapter" data-level="6.6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#publication-ready-plots-themes"><i class="fa fa-check"></i><b>6.6</b> Publication-ready plots &amp; themes</a></li>
+<li class="chapter" data-level="6.7" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#homework-1"><i class="fa fa-check"></i><b>6.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>7</b> Reproducible Research</a><ul>
+<li class="chapter" data-level="7.1" data-path="reproducible-research.html"><a href="reproducible-research.html#before-class"><i class="fa fa-check"></i><b>7.1</b> Before class</a></li>
+<li class="chapter" data-level="7.2" data-path="reproducible-research.html"><a href="reproducible-research.html#who-cares-about-reproducible-research"><i class="fa fa-check"></i><b>7.2</b> Who cares about reproducible research?</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="reproducible-research.html"><a href="reproducible-research.html#reproducibility-is-hard"><i class="fa fa-check"></i><b>7.2.1</b> Reproducibility is hard!</a></li>
+<li class="chapter" data-level="7.2.2" data-path="reproducible-research.html"><a href="reproducible-research.html#whats-in-it-for-you"><i class="fa fa-check"></i><b>7.2.2</b> What’s in it for <em>you?</em></a></li>
+<li class="chapter" data-level="7.2.3" data-path="reproducible-research.html"><a href="reproducible-research.html#some-recommendations-for-reproducible-research"><i class="fa fa-check"></i><b>7.2.3</b> Some recommendations for reproducible research</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="reproducible-research.html"><a href="reproducible-research.html#rmarkdown"><i class="fa fa-check"></i><b>7.3</b> RMarkdown</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="reproducible-research.html"><a href="reproducible-research.html#markdown"><i class="fa fa-check"></i><b>7.3.1</b> Markdown</a></li>
+<li class="chapter" data-level="7.3.2" data-path="reproducible-research.html"><a href="reproducible-research.html#rmarkdown-workflow"><i class="fa fa-check"></i><b>7.3.2</b> RMarkdown workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="reproducible-research.html"><a href="reproducible-research.html#authoring-rmarkdown-documents"><i class="fa fa-check"></i><b>7.4</b> Authoring RMarkdown documents</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="reproducible-research.html"><a href="reproducible-research.html#from-scratch"><i class="fa fa-check"></i><b>7.4.1</b> From scratch</a></li>
+<li class="chapter" data-level="7.4.2" data-path="reproducible-research.html"><a href="reproducible-research.html#from-a-template-with-yaml-metadata"><i class="fa fa-check"></i><b>7.4.2</b> From a template with YAML metadata</a></li>
+<li class="chapter" data-level="7.4.3" data-path="reproducible-research.html"><a href="reproducible-research.html#chunk-options"><i class="fa fa-check"></i><b>7.4.3</b> Chunk options</a></li>
+<li class="chapter" data-level="7.4.4" data-path="reproducible-research.html"><a href="reproducible-research.html#tables"><i class="fa fa-check"></i><b>7.4.4</b> Tables</a></li>
+<li class="chapter" data-level="7.4.5" data-path="reproducible-research.html"><a href="reproducible-research.html#changing-output-formats"><i class="fa fa-check"></i><b>7.4.5</b> Changing output formats</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="reproducible-research.html"><a href="reproducible-research.html#distributing-analyses-rpubs"><i class="fa fa-check"></i><b>7.5</b> Distributing Analyses: Rpubs</a></li>
+<li class="chapter" data-level="7.6" data-path="reproducible-research.html"><a href="reproducible-research.html#further-resources"><i class="fa fa-check"></i><b>7.6</b> Further resources</a></li>
+<li class="chapter" data-level="7.7" data-path="reproducible-research.html"><a href="reproducible-research.html#homework-2"><i class="fa fa-check"></i><b>7.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="essential-statistics.html"><a href="essential-statistics.html"><i class="fa fa-check"></i><b>8</b> Essential Statistics</a><ul>
+<li class="chapter" data-level="8.1" data-path="essential-statistics.html"><a href="essential-statistics.html#our-data-nhanes"><i class="fa fa-check"></i><b>8.1</b> Our data: NHANES</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="essential-statistics.html"><a href="essential-statistics.html#about-nhanes"><i class="fa fa-check"></i><b>8.1.1</b> About NHANES</a></li>
+<li class="chapter" data-level="8.1.2" data-path="essential-statistics.html"><a href="essential-statistics.html#import-inspect"><i class="fa fa-check"></i><b>8.1.2</b> Import &amp; inspect</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="essential-statistics.html"><a href="essential-statistics.html#descriptive-statistics"><i class="fa fa-check"></i><b>8.2</b> Descriptive statistics</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="essential-statistics.html"><a href="essential-statistics.html#missing-data"><i class="fa fa-check"></i><b>8.2.1</b> Missing data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="essential-statistics.html"><a href="essential-statistics.html#eda"><i class="fa fa-check"></i><b>8.2.2</b> EDA</a></li>
+<li class="chapter" data-level="8.2.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-1"><i class="fa fa-check"></i><b>8.2.3</b> Exercise set 1</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="essential-statistics.html"><a href="essential-statistics.html#continuous-variables"><i class="fa fa-check"></i><b>8.3</b> Continuous variables</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="essential-statistics.html"><a href="essential-statistics.html#t-tests"><i class="fa fa-check"></i><b>8.3.1</b> T-tests</a></li>
+<li class="chapter" data-level="8.3.2" data-path="essential-statistics.html"><a href="essential-statistics.html#wilcoxon-test"><i class="fa fa-check"></i><b>8.3.2</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="8.3.3" data-path="essential-statistics.html"><a href="essential-statistics.html#linear-models"><i class="fa fa-check"></i><b>8.3.3</b> Linear models</a></li>
+<li class="chapter" data-level="8.3.4" data-path="essential-statistics.html"><a href="essential-statistics.html#anova"><i class="fa fa-check"></i><b>8.3.4</b> ANOVA</a></li>
+<li class="chapter" data-level="8.3.5" data-path="essential-statistics.html"><a href="essential-statistics.html#linear-regression"><i class="fa fa-check"></i><b>8.3.5</b> Linear regression</a></li>
+<li class="chapter" data-level="8.3.6" data-path="essential-statistics.html"><a href="essential-statistics.html#multiple-regression"><i class="fa fa-check"></i><b>8.3.6</b> Multiple regression</a></li>
+<li class="chapter" data-level="8.3.7" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-2"><i class="fa fa-check"></i><b>8.3.7</b> Exercise set 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="essential-statistics.html"><a href="essential-statistics.html#discrete-variables"><i class="fa fa-check"></i><b>8.4</b> Discrete variables</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="essential-statistics.html"><a href="essential-statistics.html#contingency-tables"><i class="fa fa-check"></i><b>8.4.1</b> Contingency tables</a></li>
+<li class="chapter" data-level="8.4.2" data-path="essential-statistics.html"><a href="essential-statistics.html#logistic-regression"><i class="fa fa-check"></i><b>8.4.2</b> Logistic regression</a></li>
+<li class="chapter" data-level="8.4.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-3"><i class="fa fa-check"></i><b>8.4.3</b> Exercise set 3</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="essential-statistics.html"><a href="essential-statistics.html#power-sample-size"><i class="fa fa-check"></i><b>8.5</b> Power &amp; sample size</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="essential-statistics.html"><a href="essential-statistics.html#t-test-powern"><i class="fa fa-check"></i><b>8.5.1</b> T-test power/N</a></li>
+<li class="chapter" data-level="8.5.2" data-path="essential-statistics.html"><a href="essential-statistics.html#proportions-powern"><i class="fa fa-check"></i><b>8.5.2</b> Proportions power/N</a></li>
+<li class="chapter" data-level="8.5.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-4"><i class="fa fa-check"></i><b>8.5.3</b> Exercise set 4</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="essential-statistics.html"><a href="essential-statistics.html#tidying-models"><i class="fa fa-check"></i><b>8.6</b> Tidying models</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="surival-analysis.html"><a href="surival-analysis.html"><i class="fa fa-check"></i><b>9</b> Surival Analysis</a><ul>
+<li class="chapter" data-level="9.1" data-path="surival-analysis.html"><a href="surival-analysis.html#background"><i class="fa fa-check"></i><b>9.1</b> Background</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="surival-analysis.html"><a href="surival-analysis.html#definitions"><i class="fa fa-check"></i><b>9.1.1</b> Definitions</a></li>
+<li class="chapter" data-level="9.1.2" data-path="surival-analysis.html"><a href="surival-analysis.html#cox-ph-model"><i class="fa fa-check"></i><b>9.1.2</b> Cox PH Model</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="surival-analysis.html"><a href="surival-analysis.html#survival-analysis-in-r"><i class="fa fa-check"></i><b>9.2</b> Survival analysis in R</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="surival-analysis.html"><a href="surival-analysis.html#getting-started"><i class="fa fa-check"></i><b>9.2.1</b> Getting started</a></li>
+<li class="chapter" data-level="9.2.2" data-path="surival-analysis.html"><a href="surival-analysis.html#survival-curves"><i class="fa fa-check"></i><b>9.2.2</b> Survival Curves</a></li>
+<li class="chapter" data-level="9.2.3" data-path="surival-analysis.html"><a href="surival-analysis.html#kaplan-meier-plots"><i class="fa fa-check"></i><b>9.2.3</b> Kaplan-Meier Plots</a></li>
+<li class="chapter" data-level="9.2.4" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-1-1"><i class="fa fa-check"></i><b>9.2.4</b> Exercise set 1</a></li>
+<li class="chapter" data-level="9.2.5" data-path="surival-analysis.html"><a href="surival-analysis.html#cox-regression"><i class="fa fa-check"></i><b>9.2.5</b> Cox Regression</a></li>
+<li class="chapter" data-level="9.2.6" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-2-1"><i class="fa fa-check"></i><b>9.2.6</b> Exercise set 2</a></li>
+<li class="chapter" data-level="9.2.7" data-path="surival-analysis.html"><a href="surival-analysis.html#categorizing-for-km-plots"><i class="fa fa-check"></i><b>9.2.7</b> Categorizing for KM plots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="surival-analysis.html"><a href="surival-analysis.html#tcga"><i class="fa fa-check"></i><b>9.3</b> TCGA</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="surival-analysis.html"><a href="surival-analysis.html#rtcga"><i class="fa fa-check"></i><b>9.3.1</b> RTCGA</a></li>
+<li class="chapter" data-level="9.3.2" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-3-1"><i class="fa fa-check"></i><b>9.3.2</b> Exercise set 3</a></li>
+<li class="chapter" data-level="9.3.3" data-path="surival-analysis.html"><a href="surival-analysis.html#other-tcga-resources"><i class="fa fa-check"></i><b>9.3.3</b> Other TCGA Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html"><i class="fa fa-check"></i><b>10</b> RNA-Seq Analysis</a><ul>
+<li class="chapter" data-level="10.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#review-3"><i class="fa fa-check"></i><b>10.1</b> Review</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#prerequsite-skills"><i class="fa fa-check"></i><b>10.1.1</b> Prerequsite skills</a></li>
+<li class="chapter" data-level="10.1.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-needed-1"><i class="fa fa-check"></i><b>10.1.2</b> Data needed</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#background-1"><i class="fa fa-check"></i><b>10.2</b> Background</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#the-biology"><i class="fa fa-check"></i><b>10.2.1</b> The biology</a></li>
+<li class="chapter" data-level="10.2.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-pre-processing"><i class="fa fa-check"></i><b>10.2.2</b> Data pre-processing</a></li>
+<li class="chapter" data-level="10.2.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-structure"><i class="fa fa-check"></i><b>10.2.3</b> Data structure</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#import-data"><i class="fa fa-check"></i><b>10.3</b> Import data</a></li>
+<li class="chapter" data-level="10.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#poor-mans-dge"><i class="fa fa-check"></i><b>10.4</b> Poor man’s DGE</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-1"><i class="fa fa-check"></i><b>10.4.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="10.4.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-2"><i class="fa fa-check"></i><b>10.4.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="10.4.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-3"><i class="fa fa-check"></i><b>10.4.3</b> Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq2-analysis"><i class="fa fa-check"></i><b>10.5</b> DESeq2 analysis</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq2-package"><i class="fa fa-check"></i><b>10.5.1</b> DESeq2 package</a></li>
+<li class="chapter" data-level="10.5.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#importing-data"><i class="fa fa-check"></i><b>10.5.2</b> Importing data</a></li>
+<li class="chapter" data-level="10.5.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq-pipeline"><i class="fa fa-check"></i><b>10.5.3</b> DESeq pipeline</a></li>
+<li class="chapter" data-level="10.5.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#getting-results"><i class="fa fa-check"></i><b>10.5.4</b> Getting results</a></li>
+<li class="chapter" data-level="10.5.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-4"><i class="fa fa-check"></i><b>10.5.5</b> Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-visualization"><i class="fa fa-check"></i><b>10.6</b> Data Visualization</a><ul>
+<li class="chapter" data-level="10.6.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#plotting-counts"><i class="fa fa-check"></i><b>10.6.1</b> Plotting counts</a></li>
+<li class="chapter" data-level="10.6.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#ma-volcano-plots"><i class="fa fa-check"></i><b>10.6.2</b> MA &amp; Volcano plots</a></li>
+<li class="chapter" data-level="10.6.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-5"><i class="fa fa-check"></i><b>10.6.3</b> Exercise 5</a></li>
+<li class="chapter" data-level="10.6.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#transformation"><i class="fa fa-check"></i><b>10.6.4</b> Transformation</a></li>
+<li class="chapter" data-level="10.6.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#pca"><i class="fa fa-check"></i><b>10.6.5</b> PCA</a></li>
+<li class="chapter" data-level="10.6.6" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#bonus-heatmaps"><i class="fa fa-check"></i><b>10.6.6</b> Bonus: Heatmaps</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#record-sessioninfo"><i class="fa fa-check"></i><b>10.7</b> Record <code>sessionInfo()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Biomedical Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tidy-data-and-tidyr" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Tidy Data and <code>tidyr</code></h1>
+<p><strong>Recommended reading prior to class</strong>: Sections 1-3 of <a href="http://www.jstatsoft.org/article/view/v059i10/v59i10.pdf">Wickham, H. “Tidy Data.” <em>Journal of Statistical Software</em> 59:10 (2014)</a>.</p>
+<div id="review-1" class="section level2">
+<h2><span class="header-section-number">5.1</span> Review</h2>
+<div id="prior-classes" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Prior classes</h3>
+<ul>
+<li><a href="r-basics.html">R basics</a></li>
+<li><a href="r-dataframes.html">Data frames</a></li>
+<li><a href="r-dplyr-yeast.html">Manipulating data with dplyr and <code>%&gt;%</code></a></li>
+</ul>
+</div>
+<div id="data-needed" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Data needed</h3>
+<p>Hit the <a href="data.html">“Data”</a> link above or use the direct links below to download the following datasets, saving them in a <code>data</code> folder relative to your current working RStudio project:</p>
+<ul>
+<li>Heart rate data: <a href="data/heartrate2dose.csv">heartrate2dose.csv</a></li>
+<li><em>Tidy</em> yeast data: <a href="data/brauer2007_tidy.csv">brauer2007_tidy.csv</a></li>
+<li><em>Original</em> (untidy) yeast data: <a href="data/brauer2007_messy.csv">brauer2007_messy.csv</a></li>
+<li>Yeast systematic names to GO terms: <a href="data/brauer2007_sysname2go.csv">brauer2007_sysname2go.csv</a></li>
+</ul>
+</div>
+</div>
+<div id="tidy-data" class="section level2">
+<h2><span class="header-section-number">5.2</span> Tidy data</h2>
+<p>So far we’ve dealt exclusively with tidy data – data that’s easy to work with, manipulate, and visualize. That’s because our dataset has two key properties:</p>
+<ol style="list-style-type: decimal">
+<li>Each <em>column</em> is a <em>variable</em>.</li>
+<li>Each <em>row</em> is an <em>observation</em>.</li>
+</ol>
+<p>You can read a lot more about tidy data <a href="http://www.jstatsoft.org/v59/i10/paper">in this paper</a>. Let’s load some untidy data and see if we can see the difference. This is some made-up data for five different patients (Jon, Ann, Bill, Kate, and Joe) given three different drugs (A, B, and C), at two doses (10 and 20), and measuring their heart rate. Download the <a href="data/heartrate2dose.csv">heartrate2dose.csv</a> file directly from <a href="data.html">the data downloads page</a>. Load <strong>readr</strong> and <strong>dplyr</strong>, and import and display the data.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)
+<span class="kw">library</span>(dplyr)
+hr &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/heartrate2dose.csv&quot;</span>)
+hr</code></pre></div>
+<p>Notice how with the yeast data each variable (symbol, nutrient, rate, expression, etc.) were each in their own column. In this heart rate data, we have four variables: name, drug, dose, and heart rate. <em>Name</em> is in a column, but <em>drug</em> is in the header row. Furthermore the drug and <em>dose</em> are tied together in the same column, and the <em>heart rate</em> is scattered around the entire table. If we wanted to do things like <code>filter</code> the dataset where <code>drug==&quot;a&quot;</code> or <code>dose==20</code> or <code>heartrate&gt;=80</code> we couldn’t do it because these variables aren’t in columns.</p>
+</div>
+<div id="the-tidyr-package" class="section level2">
+<h2><span class="header-section-number">5.3</span> The <strong>tidyr</strong> package</h2>
+<p>The <strong>tidyr</strong> package helps with this. There are several functions in the tidyr package but the ones we’re going to use are <code>separate()</code> and <code>gather()</code>. The <code>gather()</code> function takes multiple columns, and gathers them into key-value pairs: it makes “wide” data longer. The <code>separate()</code> function separates one column into multiple columns. So, what we need to do is <em>gather</em> all the drug/dose data into a column with their corresponding heart rate, and then <em>separate</em> that column into two separate columns for the drug and dose.</p>
+<p>Before we get started, load the <strong>tidyr</strong> package, and look at the help pages for <code>?gather</code> and <code>?separate</code>. Notice how each of these functions takes a data frame as input and returns a data frame as output. Thus, we can pipe from one function to the next.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyr)</code></pre></div>
+<div id="gather" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> <code>gather()</code></h3>
+<p>The help for <code>?gather</code> tells us that we first pass in a data frame (or omit the first argument, and pipe in the data with <code>%&gt;%</code>). The next two arguments are the names of the key and value columns to create, and all the relevant arguments that come after that are the columns we want to <em>gather</em> together. Here’s one way to do it.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hr %&gt;%<span class="st"> </span><span class="kw">gather</span>(<span class="dt">key=</span>drugdose, <span class="dt">value=</span>hr, a_10, a_20, b_10, b_20, c_10, c_20)</code></pre></div>
+<p>But that gets cumbersome to type all those names. What if we had 100 drugs and 3 doses of each? There are two other ways of specifying which columns to gather. The help for <code>?gather</code> tells you how to do this:</p>
+<blockquote>
+<p><code>...</code> Specification of columns to gather. Use bare variable names. Select all variables between x and z with x:z, exclude y with -y. For more options, see the <code>select</code> documentation.</p>
+</blockquote>
+<p>So, we could accomplish the same thing by doing this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hr %&gt;%<span class="st"> </span><span class="kw">gather</span>(<span class="dt">key=</span>drugdose, <span class="dt">value=</span>hr, a_10:c_20)</code></pre></div>
+<p>But what if we didn’t know the drug names or doses, but we <em>did</em> know that the only other column in there that we <em>don’t</em> want to gather is <code>name</code>?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hr %&gt;%<span class="st"> </span><span class="kw">gather</span>(<span class="dt">key=</span>drugdose, <span class="dt">value=</span>hr, -name)</code></pre></div>
+</div>
+<div id="separate" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> <code>separate()</code></h3>
+<p>Finally, look at the help for <code>?separate</code>. We can pipe in data and omit the first argument. The second argument is the column to separate; the <code>into</code> argument is a <em>character vector</em> of the new column names, and the <code>sep</code> argument is a character used to separate columns, or a number indicating the position to split at.</p>
+<blockquote>
+<p><strong><em>Side note, and 60-second lesson on vectors</em></strong>: We can create arbitrary-length <em>vectors</em>, which are simply variables that contain an arbitrary number of values. To create a numeric vector, try this: <code>c(5, 42, 22908)</code>. That creates a three element vector. Try <code>c(&quot;cat&quot;, &quot;dog&quot;)</code>.</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hr %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">gather</span>(<span class="dt">key=</span>drugdose, <span class="dt">value=</span>hr, -name) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">separate</span>(drugdose, <span class="dt">into=</span><span class="kw">c</span>(<span class="st">&quot;drug&quot;</span>, <span class="st">&quot;dose&quot;</span>), <span class="dt">sep=</span><span class="st">&quot;_&quot;</span>)</code></pre></div>
+</div>
+<div id="it-all-together" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> <code>%&gt;%</code> it all together</h3>
+<p>Let’s put it all together with <code>gather %&gt;% separate %&gt;% filter %&gt;% group_by %&gt;% summarize</code>.</p>
+<p>If we create a new data frame that’s a tidy version of hr, we can do those kinds of manipulations we talked about before:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a new data.frame</span>
+hrtidy &lt;-<span class="st"> </span>hr %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">gather</span>(<span class="dt">key=</span>drugdose, <span class="dt">value=</span>hr, -name) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">separate</span>(drugdose, <span class="dt">into=</span><span class="kw">c</span>(<span class="st">&quot;drug&quot;</span>, <span class="st">&quot;dose&quot;</span>), <span class="dt">sep=</span><span class="st">&quot;_&quot;</span>)
+
+<span class="co"># Optionally, view it</span>
+<span class="co"># View(hrtidy)</span>
+
+<span class="co"># filter</span>
+hrtidy %&gt;%<span class="st"> </span><span class="kw">filter</span>(drug==<span class="st">&quot;a&quot;</span>)
+hrtidy %&gt;%<span class="st"> </span><span class="kw">filter</span>(dose==<span class="dv">20</span>)
+hrtidy %&gt;%<span class="st"> </span><span class="kw">filter</span>(hr&gt;=<span class="dv">80</span>)
+
+<span class="co"># analyze</span>
+hrtidy %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(name!=<span class="st">&quot;joe&quot;</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(drug, dose) %&gt;%
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">meanhr=</span><span class="kw">mean</span>(hr))</code></pre></div>
+</div>
+</div>
+<div id="tidy-the-yeast-data" class="section level2">
+<h2><span class="header-section-number">5.4</span> Tidy the yeast data</h2>
+<p>Now, let’s take a look at the yeast data again. The data we’ve been working with up to this point was already cleaned up to a good degree. All of our variables (symbol, nutrient, rate, expression, GO terms, etc.) were each in their own column. Make sure you have the necessary libraries loaded, and read in the tidy data once more into an object called <code>ydat</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load libraries</span>
+<span class="kw">library</span>(readr)
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(tidyr)
+
+<span class="co"># Import data</span>
+ydat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/brauer2007_tidy.csv&quot;</span>)
+
+<span class="co"># Optionally, View</span>
+<span class="co"># View(ydat)</span>
+
+<span class="co"># Or just display to the screen</span>
+ydat</code></pre></div>
+<p>But let’s take a look to see what this data originally looked like.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">yorig &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/brauer2007_messy.csv&quot;</span>)
+<span class="co"># View(yorig)</span>
+yorig</code></pre></div>
+<p>There are several issues here.</p>
+<ol style="list-style-type: decimal">
+<li><strong>Multiple variables are stored in one column.</strong> The <code>NAME</code> column contains lots of information, split up by <code>::</code>’s.</li>
+<li><strong>Nutrient and rate variables are stuck in column headers.</strong> That is, the column names contain the values of two variables: nutrient (G, N, P, S, L, U) and growth rate (0.05-0.3). Remember, with tidy data, <strong>each <em>column</em> is a <em>variable</em> and each <em>row</em> is an <em>observation</em>.</strong> Here, we have not one observation per row, but 36 (6 nutrients <span class="math inline">\(\times\)</span> 6 rates)! There’s no way we could filter this data by a certain nutrient, or try to calculate statistics between rate and expression.</li>
+<li><strong>Expression values are scattered throughout the table.</strong> Related to the problem above, and just like our heart rate example, <code>expression</code> isn’t a single-column variable as in the cleaned tidy data, but it’s scattered around these 36 columns.</li>
+<li><strong>Other important information is in a separate table.</strong> We’re missing all the gene ontology information we had in the tidy data (no information about biological process (<code>bp</code>) or molecular function (<code>mf</code>)).</li>
+</ol>
+<p>Let’s tackle these issues one at a time, all on a <code>%&gt;%</code> pipeline.</p>
+<div id="separate-the-name" class="section level3">
+<h3><span class="header-section-number">5.4.1</span> <code>separate()</code> the <code>NAME</code></h3>
+<p>Let’s <code>separate()</code> the <code>NAME</code> column <code>into</code> multiple different variables. The first row looks like this:</p>
+<blockquote>
+<p><code>SFB2::YNL049C::1082129</code></p>
+</blockquote>
+<p>That is, it looks like we’ve got the gene symbol, the systematic name, and some other number (that isn’t discussed in the paper). Let’s <code>separate()</code>!</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">yorig %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">separate</span>(NAME, <span class="dt">into=</span><span class="kw">c</span>(<span class="st">&quot;symbol&quot;</span>, <span class="st">&quot;systematic_name&quot;</span>, <span class="st">&quot;somenumber&quot;</span>), <span class="dt">sep=</span><span class="st">&quot;::&quot;</span>)</code></pre></div>
+<p>Now, let’s <code>select()</code> out the stuff we don’t want.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">yorig %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">separate</span>(NAME, <span class="dt">into=</span><span class="kw">c</span>(<span class="st">&quot;symbol&quot;</span>, <span class="st">&quot;systematic_name&quot;</span>, <span class="st">&quot;somenumber&quot;</span>), <span class="dt">sep=</span><span class="st">&quot;::&quot;</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(-GID, -YORF, -somenumber, -GWEIGHT)</code></pre></div>
+</div>
+<div id="gather-the-data" class="section level3">
+<h3><span class="header-section-number">5.4.2</span> <code>gather()</code> the data</h3>
+<p>Let’s gather the data from wide to long format so we get nutrient/rate (key) and expression (value) in their own columns.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">yorig %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">separate</span>(NAME, <span class="dt">into=</span><span class="kw">c</span>(<span class="st">&quot;symbol&quot;</span>, <span class="st">&quot;systematic_name&quot;</span>, <span class="st">&quot;somenumber&quot;</span>), <span class="dt">sep=</span><span class="st">&quot;::&quot;</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(-GID, -YORF, -somenumber, -GWEIGHT) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">gather</span>(<span class="dt">key=</span>nutrientrate, <span class="dt">value=</span>expression, G0<span class="fl">.05</span>:U0<span class="fl">.3</span>)</code></pre></div>
+<p>And while we’re at it, let’s <code>separate()</code> that newly created key column. Take a look at the help for <code>?separate</code> again. The <code>sep</code> argument could be a delimiter or a number position to split at. Let’s split after the first character. While we’re at it, let’s hold onto this intermediate data frame before we add gene ontology information. Call it <code>ynogo</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ynogo &lt;-<span class="st"> </span>yorig %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">separate</span>(NAME, <span class="dt">into=</span><span class="kw">c</span>(<span class="st">&quot;symbol&quot;</span>, <span class="st">&quot;systematic_name&quot;</span>, <span class="st">&quot;somenumber&quot;</span>), <span class="dt">sep=</span><span class="st">&quot;::&quot;</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(-GID, -YORF, -somenumber, -GWEIGHT) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">gather</span>(<span class="dt">key=</span>nutrientrate, <span class="dt">value=</span>expression, G0<span class="fl">.05</span>:U0<span class="fl">.3</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">separate</span>(nutrientrate, <span class="dt">into=</span><span class="kw">c</span>(<span class="st">&quot;nutrient&quot;</span>, <span class="st">&quot;rate&quot;</span>), <span class="dt">sep=</span><span class="dv">1</span>)</code></pre></div>
+</div>
+<div id="inner_join-to-go" class="section level3">
+<h3><span class="header-section-number">5.4.3</span> <code>inner_join()</code> to GO</h3>
+<p>It’s rare that a data analysis involves only a single table of data. You normally have many tables that contribute to an analysis, and you need flexible tools to combine them. The <strong>dplyr</strong> package has several tools that let you work with multiple tables at once. Do a <a href="https://www.google.com/search?q=SQL+join&amp;tbm=isch">Google image search for “SQL Joins”</a>, and look at <a href="http://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">RStudio’s Data Wrangling Cheat Sheet</a> to learn more.</p>
+<p>First, let’s import the dataset that links the systematic name to gene ontology information. It’s the <a href="data/brauer2007_sysname2go.csv">brauer2007_sysname2go.csv</a> file available at <a href="data.html">the data downloads page</a>. Let’s call the imported data frame <code>sn2go</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Import the data</span>
+sn2go &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/brauer2007_sysname2go.csv&quot;</span>)
+
+<span class="co"># Take a look</span>
+<span class="co"># View(sn2go)</span>
+<span class="kw">head</span>(sn2go)</code></pre></div>
+<p>Now, look up some help for <code>?inner_join</code>. Inner join will return a table with all rows from the first table where there are matching rows in the second table, and returns all columns from both tables. Let’s give this a try.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">yjoined &lt;-<span class="st"> </span><span class="kw">inner_join</span>(ynogo, sn2go, <span class="dt">by=</span><span class="st">&quot;systematic_name&quot;</span>)
+<span class="co"># View(yjoined)</span>
+yjoined
+<span class="co"># The glimpse function makes it possible to see a little bit of everything in your data.</span>
+<span class="kw">glimpse</span>(yjoined)</code></pre></div>
+<p>Looks like that did it! There are many different kinds of two-table verbs/joins in dplyr. In this example, every systematic name in <code>ynogo</code> had a corresponding entry in <code>sn2go</code>, but if this weren’t the case, those un-annotated genes would have been removed entirely by the <code>inner_join</code>. A <code>left_join</code> would have returned all the rows in <code>ynogo</code>, but would have filled in <code>bp</code> and <code>mf</code> with missing values (<code>NA</code>) when there was no corresponding entry. See also: <code>right_join</code>, <code>semi_join</code>, and <code>anti_join</code>.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-manipulation-with-dplyr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-visualization-with-ggplot2.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-tidy-data.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

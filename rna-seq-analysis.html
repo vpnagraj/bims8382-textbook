@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introduction to Biomedical Data Science</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data.">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introduction to Biomedical Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data." />
+  <meta name="github-repo" content="bioconnector/workshops" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introduction to Biomedical Data Science" />
+  
+  <meta name="twitter:description" content="This book introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data." />
+  
+
+<meta name="author" content="Stephen Turner &amp; VP Nagraj">
+
+
+<meta name="date" content="2017-02-11">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="surival-analysis.html">
+<link rel="next" href="references.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introduction to Biomedical Data Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Preface</a></li>
+<li class="chapter" data-level="2" data-path="r-basics.html"><a href="r-basics.html"><i class="fa fa-check"></i><b>2</b> R Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="r-basics.html"><a href="r-basics.html#rstudio"><i class="fa fa-check"></i><b>2.1</b> RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="r-basics.html"><a href="r-basics.html#basic-operations"><i class="fa fa-check"></i><b>2.2</b> Basic operations</a></li>
+<li class="chapter" data-level="2.3" data-path="r-basics.html"><a href="r-basics.html#functions"><i class="fa fa-check"></i><b>2.3</b> Functions</a></li>
+<li class="chapter" data-level="2.4" data-path="r-basics.html"><a href="r-basics.html#data-frames"><i class="fa fa-check"></i><b>2.4</b> Data Frames</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-frames-1.html"><a href="data-frames-1.html"><i class="fa fa-check"></i><b>3</b> Data Frames</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-frames-1.html"><a href="data-frames-1.html#our-data"><i class="fa fa-check"></i><b>3.1</b> Our data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-frames-1.html"><a href="data-frames-1.html#reading-in-data"><i class="fa fa-check"></i><b>3.2</b> Reading in data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data-frames-1.html"><a href="data-frames-1.html#dplyr-and-readr"><i class="fa fa-check"></i><b>3.2.1</b> dplyr and readr</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-frames-1.html"><a href="data-frames-1.html#read_csv"><i class="fa fa-check"></i><b>3.2.2</b> <code>read_csv()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-frames-1.html"><a href="data-frames-1.html#inspecting-data.frame-objects"><i class="fa fa-check"></i><b>3.3</b> Inspecting data.frame objects</a></li>
+<li class="chapter" data-level="3.4" data-path="data-frames-1.html"><a href="data-frames-1.html#accessing-variables-subsetting-data-frames"><i class="fa fa-check"></i><b>3.4</b> Accessing variables &amp; subsetting data frames</a></li>
+<li class="chapter" data-level="3.5" data-path="data-frames-1.html"><a href="data-frames-1.html#bonus-preview-to-advanced-manipulation"><i class="fa fa-check"></i><b>3.5</b> BONUS: Preview to advanced manipulation</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html"><i class="fa fa-check"></i><b>4</b> Data Manipulation with <code>dplyr</code></a><ul>
+<li class="chapter" data-level="4.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#review"><i class="fa fa-check"></i><b>4.1</b> Review</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#our-data-1"><i class="fa fa-check"></i><b>4.1.1</b> Our data</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#reading-in-data-1"><i class="fa fa-check"></i><b>4.1.2</b> Reading in data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#the-dplyr-package"><i class="fa fa-check"></i><b>4.2</b> The dplyr package</a></li>
+<li class="chapter" data-level="4.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#dplyr-verbs"><i class="fa fa-check"></i><b>4.3</b> dplyr verbs</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#filter"><i class="fa fa-check"></i><b>4.3.1</b> filter()</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#select"><i class="fa fa-check"></i><b>4.3.2</b> select()</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#mutate"><i class="fa fa-check"></i><b>4.3.3</b> mutate()</a></li>
+<li class="chapter" data-level="4.3.4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#arrange"><i class="fa fa-check"></i><b>4.3.4</b> arrange()</a></li>
+<li class="chapter" data-level="4.3.5" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#summarize"><i class="fa fa-check"></i><b>4.3.5</b> summarize()</a></li>
+<li class="chapter" data-level="4.3.6" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#group_by"><i class="fa fa-check"></i><b>4.3.6</b> group_by()</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#the-pipe"><i class="fa fa-check"></i><b>4.4</b> The pipe: <strong>%&gt;%</strong></a><ul>
+<li class="chapter" data-level="4.4.1" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#how-works"><i class="fa fa-check"></i><b>4.4.1</b> How %&gt;% works</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#nesting-versus"><i class="fa fa-check"></i><b>4.4.2</b> Nesting versus %&gt;%</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#piping-exercises"><i class="fa fa-check"></i><b>4.4.3</b> Piping exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="data-manipulation-with-dplyr.html"><a href="data-manipulation-with-dplyr.html#homework"><i class="fa fa-check"></i><b>4.5</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html"><i class="fa fa-check"></i><b>5</b> Tidy Data and <code>tidyr</code></a><ul>
+<li class="chapter" data-level="5.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#review-1"><i class="fa fa-check"></i><b>5.1</b> Review</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#prior-classes"><i class="fa fa-check"></i><b>5.1.1</b> Prior classes</a></li>
+<li class="chapter" data-level="5.1.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#data-needed"><i class="fa fa-check"></i><b>5.1.2</b> Data needed</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#tidy-data"><i class="fa fa-check"></i><b>5.2</b> Tidy data</a></li>
+<li class="chapter" data-level="5.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#the-tidyr-package"><i class="fa fa-check"></i><b>5.3</b> The <strong>tidyr</strong> package</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#gather"><i class="fa fa-check"></i><b>5.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="5.3.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#separate"><i class="fa fa-check"></i><b>5.3.2</b> <code>separate()</code></a></li>
+<li class="chapter" data-level="5.3.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#it-all-together"><i class="fa fa-check"></i><b>5.3.3</b> <code>%&gt;%</code> it all together</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#tidy-the-yeast-data"><i class="fa fa-check"></i><b>5.4</b> Tidy the yeast data</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#separate-the-name"><i class="fa fa-check"></i><b>5.4.1</b> <code>separate()</code> the <code>NAME</code></a></li>
+<li class="chapter" data-level="5.4.2" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#gather-the-data"><i class="fa fa-check"></i><b>5.4.2</b> <code>gather()</code> the data</a></li>
+<li class="chapter" data-level="5.4.3" data-path="tidy-data-and-tidyr.html"><a href="tidy-data-and-tidyr.html#inner_join-to-go"><i class="fa fa-check"></i><b>5.4.3</b> <code>inner_join()</code> to GO</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>6</b> Data Visualization with <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="6.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#review-2"><i class="fa fa-check"></i><b>6.1</b> Review</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#gapminder-data"><i class="fa fa-check"></i><b>6.1.1</b> Gapminder data</a></li>
+<li class="chapter" data-level="6.1.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#dplyr-review"><i class="fa fa-check"></i><b>6.1.2</b> dplyr review</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#about-ggplot2"><i class="fa fa-check"></i><b>6.2</b> About ggplot2</a></li>
+<li class="chapter" data-level="6.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-continuous-x"><i class="fa fa-check"></i><b>6.3</b> Plotting bivariate data: continuous Y by continuous X</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#adding-layers"><i class="fa fa-check"></i><b>6.3.1</b> Adding layers</a></li>
+<li class="chapter" data-level="6.3.2" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#faceting"><i class="fa fa-check"></i><b>6.3.2</b> Faceting</a></li>
+<li class="chapter" data-level="6.3.3" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#saving-plots"><i class="fa fa-check"></i><b>6.3.3</b> Saving plots</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-bivariate-data-continuous-y-by-categorical-x"><i class="fa fa-check"></i><b>6.4</b> Plotting bivariate data: continuous Y by categorical X</a></li>
+<li class="chapter" data-level="6.5" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#plotting-univariate-continuous-data"><i class="fa fa-check"></i><b>6.5</b> Plotting univariate continuous data</a></li>
+<li class="chapter" data-level="6.6" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#publication-ready-plots-themes"><i class="fa fa-check"></i><b>6.6</b> Publication-ready plots &amp; themes</a></li>
+<li class="chapter" data-level="6.7" data-path="data-visualization-with-ggplot2.html"><a href="data-visualization-with-ggplot2.html#homework-1"><i class="fa fa-check"></i><b>6.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="reproducible-research.html"><a href="reproducible-research.html"><i class="fa fa-check"></i><b>7</b> Reproducible Research</a><ul>
+<li class="chapter" data-level="7.1" data-path="reproducible-research.html"><a href="reproducible-research.html#before-class"><i class="fa fa-check"></i><b>7.1</b> Before class</a></li>
+<li class="chapter" data-level="7.2" data-path="reproducible-research.html"><a href="reproducible-research.html#who-cares-about-reproducible-research"><i class="fa fa-check"></i><b>7.2</b> Who cares about reproducible research?</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="reproducible-research.html"><a href="reproducible-research.html#reproducibility-is-hard"><i class="fa fa-check"></i><b>7.2.1</b> Reproducibility is hard!</a></li>
+<li class="chapter" data-level="7.2.2" data-path="reproducible-research.html"><a href="reproducible-research.html#whats-in-it-for-you"><i class="fa fa-check"></i><b>7.2.2</b> What’s in it for <em>you?</em></a></li>
+<li class="chapter" data-level="7.2.3" data-path="reproducible-research.html"><a href="reproducible-research.html#some-recommendations-for-reproducible-research"><i class="fa fa-check"></i><b>7.2.3</b> Some recommendations for reproducible research</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="reproducible-research.html"><a href="reproducible-research.html#rmarkdown"><i class="fa fa-check"></i><b>7.3</b> RMarkdown</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="reproducible-research.html"><a href="reproducible-research.html#markdown"><i class="fa fa-check"></i><b>7.3.1</b> Markdown</a></li>
+<li class="chapter" data-level="7.3.2" data-path="reproducible-research.html"><a href="reproducible-research.html#rmarkdown-workflow"><i class="fa fa-check"></i><b>7.3.2</b> RMarkdown workflow</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="reproducible-research.html"><a href="reproducible-research.html#authoring-rmarkdown-documents"><i class="fa fa-check"></i><b>7.4</b> Authoring RMarkdown documents</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="reproducible-research.html"><a href="reproducible-research.html#from-scratch"><i class="fa fa-check"></i><b>7.4.1</b> From scratch</a></li>
+<li class="chapter" data-level="7.4.2" data-path="reproducible-research.html"><a href="reproducible-research.html#from-a-template-with-yaml-metadata"><i class="fa fa-check"></i><b>7.4.2</b> From a template with YAML metadata</a></li>
+<li class="chapter" data-level="7.4.3" data-path="reproducible-research.html"><a href="reproducible-research.html#chunk-options"><i class="fa fa-check"></i><b>7.4.3</b> Chunk options</a></li>
+<li class="chapter" data-level="7.4.4" data-path="reproducible-research.html"><a href="reproducible-research.html#tables"><i class="fa fa-check"></i><b>7.4.4</b> Tables</a></li>
+<li class="chapter" data-level="7.4.5" data-path="reproducible-research.html"><a href="reproducible-research.html#changing-output-formats"><i class="fa fa-check"></i><b>7.4.5</b> Changing output formats</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="reproducible-research.html"><a href="reproducible-research.html#distributing-analyses-rpubs"><i class="fa fa-check"></i><b>7.5</b> Distributing Analyses: Rpubs</a></li>
+<li class="chapter" data-level="7.6" data-path="reproducible-research.html"><a href="reproducible-research.html#further-resources"><i class="fa fa-check"></i><b>7.6</b> Further resources</a></li>
+<li class="chapter" data-level="7.7" data-path="reproducible-research.html"><a href="reproducible-research.html#homework-2"><i class="fa fa-check"></i><b>7.7</b> Homework</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="essential-statistics.html"><a href="essential-statistics.html"><i class="fa fa-check"></i><b>8</b> Essential Statistics</a><ul>
+<li class="chapter" data-level="8.1" data-path="essential-statistics.html"><a href="essential-statistics.html#our-data-nhanes"><i class="fa fa-check"></i><b>8.1</b> Our data: NHANES</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="essential-statistics.html"><a href="essential-statistics.html#about-nhanes"><i class="fa fa-check"></i><b>8.1.1</b> About NHANES</a></li>
+<li class="chapter" data-level="8.1.2" data-path="essential-statistics.html"><a href="essential-statistics.html#import-inspect"><i class="fa fa-check"></i><b>8.1.2</b> Import &amp; inspect</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="essential-statistics.html"><a href="essential-statistics.html#descriptive-statistics"><i class="fa fa-check"></i><b>8.2</b> Descriptive statistics</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="essential-statistics.html"><a href="essential-statistics.html#missing-data"><i class="fa fa-check"></i><b>8.2.1</b> Missing data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="essential-statistics.html"><a href="essential-statistics.html#eda"><i class="fa fa-check"></i><b>8.2.2</b> EDA</a></li>
+<li class="chapter" data-level="8.2.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-1"><i class="fa fa-check"></i><b>8.2.3</b> Exercise set 1</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="essential-statistics.html"><a href="essential-statistics.html#continuous-variables"><i class="fa fa-check"></i><b>8.3</b> Continuous variables</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="essential-statistics.html"><a href="essential-statistics.html#t-tests"><i class="fa fa-check"></i><b>8.3.1</b> T-tests</a></li>
+<li class="chapter" data-level="8.3.2" data-path="essential-statistics.html"><a href="essential-statistics.html#wilcoxon-test"><i class="fa fa-check"></i><b>8.3.2</b> Wilcoxon test</a></li>
+<li class="chapter" data-level="8.3.3" data-path="essential-statistics.html"><a href="essential-statistics.html#linear-models"><i class="fa fa-check"></i><b>8.3.3</b> Linear models</a></li>
+<li class="chapter" data-level="8.3.4" data-path="essential-statistics.html"><a href="essential-statistics.html#anova"><i class="fa fa-check"></i><b>8.3.4</b> ANOVA</a></li>
+<li class="chapter" data-level="8.3.5" data-path="essential-statistics.html"><a href="essential-statistics.html#linear-regression"><i class="fa fa-check"></i><b>8.3.5</b> Linear regression</a></li>
+<li class="chapter" data-level="8.3.6" data-path="essential-statistics.html"><a href="essential-statistics.html#multiple-regression"><i class="fa fa-check"></i><b>8.3.6</b> Multiple regression</a></li>
+<li class="chapter" data-level="8.3.7" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-2"><i class="fa fa-check"></i><b>8.3.7</b> Exercise set 2</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="essential-statistics.html"><a href="essential-statistics.html#discrete-variables"><i class="fa fa-check"></i><b>8.4</b> Discrete variables</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="essential-statistics.html"><a href="essential-statistics.html#contingency-tables"><i class="fa fa-check"></i><b>8.4.1</b> Contingency tables</a></li>
+<li class="chapter" data-level="8.4.2" data-path="essential-statistics.html"><a href="essential-statistics.html#logistic-regression"><i class="fa fa-check"></i><b>8.4.2</b> Logistic regression</a></li>
+<li class="chapter" data-level="8.4.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-3"><i class="fa fa-check"></i><b>8.4.3</b> Exercise set 3</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="essential-statistics.html"><a href="essential-statistics.html#power-sample-size"><i class="fa fa-check"></i><b>8.5</b> Power &amp; sample size</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="essential-statistics.html"><a href="essential-statistics.html#t-test-powern"><i class="fa fa-check"></i><b>8.5.1</b> T-test power/N</a></li>
+<li class="chapter" data-level="8.5.2" data-path="essential-statistics.html"><a href="essential-statistics.html#proportions-powern"><i class="fa fa-check"></i><b>8.5.2</b> Proportions power/N</a></li>
+<li class="chapter" data-level="8.5.3" data-path="essential-statistics.html"><a href="essential-statistics.html#exercise-set-4"><i class="fa fa-check"></i><b>8.5.3</b> Exercise set 4</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="essential-statistics.html"><a href="essential-statistics.html#tidying-models"><i class="fa fa-check"></i><b>8.6</b> Tidying models</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="surival-analysis.html"><a href="surival-analysis.html"><i class="fa fa-check"></i><b>9</b> Surival Analysis</a><ul>
+<li class="chapter" data-level="9.1" data-path="surival-analysis.html"><a href="surival-analysis.html#background"><i class="fa fa-check"></i><b>9.1</b> Background</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="surival-analysis.html"><a href="surival-analysis.html#definitions"><i class="fa fa-check"></i><b>9.1.1</b> Definitions</a></li>
+<li class="chapter" data-level="9.1.2" data-path="surival-analysis.html"><a href="surival-analysis.html#cox-ph-model"><i class="fa fa-check"></i><b>9.1.2</b> Cox PH Model</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="surival-analysis.html"><a href="surival-analysis.html#survival-analysis-in-r"><i class="fa fa-check"></i><b>9.2</b> Survival analysis in R</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="surival-analysis.html"><a href="surival-analysis.html#getting-started"><i class="fa fa-check"></i><b>9.2.1</b> Getting started</a></li>
+<li class="chapter" data-level="9.2.2" data-path="surival-analysis.html"><a href="surival-analysis.html#survival-curves"><i class="fa fa-check"></i><b>9.2.2</b> Survival Curves</a></li>
+<li class="chapter" data-level="9.2.3" data-path="surival-analysis.html"><a href="surival-analysis.html#kaplan-meier-plots"><i class="fa fa-check"></i><b>9.2.3</b> Kaplan-Meier Plots</a></li>
+<li class="chapter" data-level="9.2.4" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-1-1"><i class="fa fa-check"></i><b>9.2.4</b> Exercise set 1</a></li>
+<li class="chapter" data-level="9.2.5" data-path="surival-analysis.html"><a href="surival-analysis.html#cox-regression"><i class="fa fa-check"></i><b>9.2.5</b> Cox Regression</a></li>
+<li class="chapter" data-level="9.2.6" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-2-1"><i class="fa fa-check"></i><b>9.2.6</b> Exercise set 2</a></li>
+<li class="chapter" data-level="9.2.7" data-path="surival-analysis.html"><a href="surival-analysis.html#categorizing-for-km-plots"><i class="fa fa-check"></i><b>9.2.7</b> Categorizing for KM plots</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="surival-analysis.html"><a href="surival-analysis.html#tcga"><i class="fa fa-check"></i><b>9.3</b> TCGA</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="surival-analysis.html"><a href="surival-analysis.html#rtcga"><i class="fa fa-check"></i><b>9.3.1</b> RTCGA</a></li>
+<li class="chapter" data-level="9.3.2" data-path="surival-analysis.html"><a href="surival-analysis.html#exercise-set-3-1"><i class="fa fa-check"></i><b>9.3.2</b> Exercise set 3</a></li>
+<li class="chapter" data-level="9.3.3" data-path="surival-analysis.html"><a href="surival-analysis.html#other-tcga-resources"><i class="fa fa-check"></i><b>9.3.3</b> Other TCGA Resources</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html"><i class="fa fa-check"></i><b>10</b> RNA-Seq Analysis</a><ul>
+<li class="chapter" data-level="10.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#review-3"><i class="fa fa-check"></i><b>10.1</b> Review</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#prerequsite-skills"><i class="fa fa-check"></i><b>10.1.1</b> Prerequsite skills</a></li>
+<li class="chapter" data-level="10.1.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-needed-1"><i class="fa fa-check"></i><b>10.1.2</b> Data needed</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#background-1"><i class="fa fa-check"></i><b>10.2</b> Background</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#the-biology"><i class="fa fa-check"></i><b>10.2.1</b> The biology</a></li>
+<li class="chapter" data-level="10.2.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-pre-processing"><i class="fa fa-check"></i><b>10.2.2</b> Data pre-processing</a></li>
+<li class="chapter" data-level="10.2.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-structure"><i class="fa fa-check"></i><b>10.2.3</b> Data structure</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#import-data"><i class="fa fa-check"></i><b>10.3</b> Import data</a></li>
+<li class="chapter" data-level="10.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#poor-mans-dge"><i class="fa fa-check"></i><b>10.4</b> Poor man’s DGE</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-1"><i class="fa fa-check"></i><b>10.4.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="10.4.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-2"><i class="fa fa-check"></i><b>10.4.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="10.4.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-3"><i class="fa fa-check"></i><b>10.4.3</b> Exercise 3</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq2-analysis"><i class="fa fa-check"></i><b>10.5</b> DESeq2 analysis</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq2-package"><i class="fa fa-check"></i><b>10.5.1</b> DESeq2 package</a></li>
+<li class="chapter" data-level="10.5.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#importing-data"><i class="fa fa-check"></i><b>10.5.2</b> Importing data</a></li>
+<li class="chapter" data-level="10.5.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#deseq-pipeline"><i class="fa fa-check"></i><b>10.5.3</b> DESeq pipeline</a></li>
+<li class="chapter" data-level="10.5.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#getting-results"><i class="fa fa-check"></i><b>10.5.4</b> Getting results</a></li>
+<li class="chapter" data-level="10.5.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-4"><i class="fa fa-check"></i><b>10.5.5</b> Exercise 4</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#data-visualization"><i class="fa fa-check"></i><b>10.6</b> Data Visualization</a><ul>
+<li class="chapter" data-level="10.6.1" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#plotting-counts"><i class="fa fa-check"></i><b>10.6.1</b> Plotting counts</a></li>
+<li class="chapter" data-level="10.6.2" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#ma-volcano-plots"><i class="fa fa-check"></i><b>10.6.2</b> MA &amp; Volcano plots</a></li>
+<li class="chapter" data-level="10.6.3" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#exercise-5"><i class="fa fa-check"></i><b>10.6.3</b> Exercise 5</a></li>
+<li class="chapter" data-level="10.6.4" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#transformation"><i class="fa fa-check"></i><b>10.6.4</b> Transformation</a></li>
+<li class="chapter" data-level="10.6.5" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#pca"><i class="fa fa-check"></i><b>10.6.5</b> PCA</a></li>
+<li class="chapter" data-level="10.6.6" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#bonus-heatmaps"><i class="fa fa-check"></i><b>10.6.6</b> Bonus: Heatmaps</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="rna-seq-analysis.html"><a href="rna-seq-analysis.html#record-sessioninfo"><i class="fa fa-check"></i><b>10.7</b> Record <code>sessionInfo()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Biomedical Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rna-seq-analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> RNA-Seq Analysis</h1>
+<p>This is an introduction to RNAseq analysis involving reading in count data from an RNAseq experiment, exploring the data using base R functions and then analysis with the DESeq2 package. This lesson assumes a <a href="r-basics.html">basic familiarity with R</a>, <a href="r-dataframes.html">data frames</a>, and <a href="r-dplyr-yeast.html">manipulating data with dplyr and <code>%&gt;%</code></a>. See also the <a href="setup.html#bioconductor"><em>Bioconductor</em> heading on the setup page</a> – you’ll need a few additional packages that are available through Bioconductor, not CRAN (the installation process is slightly different).</p>
+<p><strong>Recommended reading prior to class:</strong></p>
+<ol style="list-style-type: decimal">
+<li><a href="http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8">Conesa et al. A survey of best practices for RNA-seq data analysis. <em>Genome Biology</em> 17:13 (2016)</a>.</li>
+<li>Abstract and introduction sections of <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0099625">Himes et al. “RNA-Seq transcriptome profiling identifies CRISPLD2 as a glucocorticoid responsive gene that modulates cytokine function in airway smooth muscle cells.” <em>PLoS ONE</em> 9.6 (2014): e99625</a>.</li>
+<li><a href="http://f1000research.com/articles/4-1521/v1">Soneson et al. “Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences.” <em>F1000Research</em> 4 (2015)</a>.</li>
+</ol>
+<p><strong>Slides</strong>: <a href="slides/r-rnaseq-airway.html">click here</a>.</p>
+<div id="review-3" class="section level2">
+<h2><span class="header-section-number">10.1</span> Review</h2>
+<div id="prerequsite-skills" class="section level3">
+<h3><span class="header-section-number">10.1.1</span> Prerequsite skills</h3>
+<ul>
+<li><a href="r-basics.html">R basics</a></li>
+<li><a href="r-dataframes.html">Data frames</a></li>
+<li><a href="r-dplyr.html">Manipulating data with dplyr and <code>%&gt;%</code></a></li>
+<li><a href="r-tidy.html">Tidy data &amp; advanced manipulation</a></li>
+<li><a href="r-viz-gapminder.html">Data Visualization with ggplot2</a></li>
+</ul>
+</div>
+<div id="data-needed-1" class="section level3">
+<h3><span class="header-section-number">10.1.2</span> Data needed</h3>
+<ul>
+<li>Count matrix (i.e., <code>countData</code>): <a href="data/airway_rawcounts.csv">airway_rawcounts.csv</a></li>
+<li>Sample metadata (i.e., <code>colData</code>): <a href="data/airway_metadata.csv">airway_metadata.csv</a></li>
+<li>Gene Annotation data: <a href="data/annotables_grch37.csv">annotables_grch37.csv</a></li>
+</ul>
+</div>
+</div>
+<div id="background-1" class="section level2">
+<h2><span class="header-section-number">10.2</span> Background</h2>
+<div id="the-biology" class="section level3">
+<h3><span class="header-section-number">10.2.1</span> The biology</h3>
+<p>The data for this lesson comes from:</p>
+<blockquote>
+<p>Himes <em>et al</em>. “RNA-Seq Transcriptome Profiling Identifies CRISPLD2 as a Glucocorticoid Responsive Gene that Modulates Cytokine Function in Airway Smooth Muscle Cells.” <em>PLoS ONE</em>. <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0099625">2014 Jun 13;9(6):e99625</a>. PMID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/24926665">24926665</a>.</p>
+</blockquote>
+<p>Glucocorticoids are potent inhibitors of inflammatory processes, and are widely used to treat asthma because of their anti-inflammatory effects on airway smooth muscle (ASM) cells. But what’s the molecular mechanism? This study used RNA-seq to profile gene expression changes in four different ASM cell lines treated with dexamethasone, a synthetic glucocorticoid molecule. They found a number of differentially expressed genes comparing dexamethasone-treated ASM cells to control cells, but focus much of the discussion on a gene called CRISPLD2. This gene encodes a secreted protein known to be involved in lung development, and SNPs in this gene in previous GWAS studies are associated with inhaled corticosteroid resistance and bronchodilator response in asthma patients. They confirmed the upregulated CRISPLD2 mRNA expression with qPCR and increased protein expression using Western blotting.</p>
+<p>They did their analysis using <a href="http://rdcu.be/gk0S">Tophat and Cufflinks</a>. We’re taking a different approach and using an R package called <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html">DESeq2</a>. <a href="help.html#rna-seq-resources">Click here</a> to read more on DESeq2 and other approaches.</p>
+</div>
+<div id="data-pre-processing" class="section level3">
+<h3><span class="header-section-number">10.2.2</span> Data pre-processing</h3>
+<p>Analyzing an RNAseq experiment begins with sequencing reads. There are many ways to begin analyzing this data, and you should check out the three papers below to get a sense of other analysis strategies. In the workflow we’ll use here, sequencing reads were aligned to a reference genome, then the number of reads that mapped to each gene region were counted. This is the starting point - a “count matrix,” where each cell indicates the number of reads mapping to a particular gene (in rows) for each sample (in columns). This workflow was chosen because of its widespread use, and because of recent data showing that it’s relatively robust to potential gene length biases [3]. However, there are many well-established alternative analysis paths, and the goal here is to provide a reference point to acquire fundamental skills that will be applicable to other bioinformatics tools and workflows.</p>
+<ol style="list-style-type: decimal">
+<li>Griffith, Malachi, et al. “Informatics for RNA sequencing: a web resource for analysis on the cloud.” <a href="http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004393"><em>PLoS Comput Biol</em> 11.8: e1004393</a> (2015).</li>
+<li>Conesa, A. et al. “A survey of best practices for RNA-seq data analysis.” <a href="http://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0881-8"><em>Genome Biology</em> 17:13</a> (2016).</li>
+<li>Soneson, C., Love, M. I. &amp; Robinson, M. D. “Differential analyses for RNA-seq: transcript-level estimates improve gene-level inferences.” <a href="http://f1000research.com/articles/4-1521/v1"><em>F1000Res.</em> 4:1521</a> (2016).</li>
+</ol>
+<p>This data was downloaded from GEO (<a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE52778">GSE:GSE52778</a>). You can read more about how the data was processed <a href="https://www.bioconductor.org/packages/3.3/data/experiment/vignettes/airway/inst/doc/airway.html">here</a>. In summary, the process looks something like this. We have reads; we use an aligner and a reference genome to figure out where in the genome the reads come from (chromosome and position), and we cross-reference that against a reference annotation, which tells the chromosome/position location of exons for known genes.</p>
+<div class="figure">
+<img src="img/aligncount.png" />
+
+</div>
+</div>
+<div id="data-structure" class="section level3">
+<h3><span class="header-section-number">10.2.3</span> Data structure</h3>
+<p>We’ll come back to this again later, but the data at our starting point looks like this (<em>note: this is a generic schematic - our genes are not actually <code>geneA</code> and <code>geneB</code>, and our samples aren’t called <code>ctrl_1</code>, <code>ctrl_2</code>, etc.</em>):</p>
+<div class="figure">
+<img src="img/countdatacoldata.png" />
+
+</div>
+<p>That is, we have <strong>two tables</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>The “count matrix” (called the <code>countData</code> in DESeq-speak) – where <em>genes</em> are in <em>rows</em> and <em>samples</em> are in <em>columns</em>, and the number in each cell is the number of reads that mapped to exons in that gene for that sample: <strong><a href="data/airway_rawcounts.csv">airway_rawcounts.csv</a></strong>.</li>
+<li>The sample metadata (called the <code>colData</code> in DESeq-speak) – where <em>samples</em> are in <em>rows</em> and <em>metadata</em> about those samples are in <em>columns</em>: <strong><a href="data/airway_metadata.csv">airway_metadata.csv</a></strong>. It’s called the <code>colData</code> because this table supplies metadata/information about the columns of the <code>countData</code> matrix. Notice that the first column of <code>colData</code> must match the column names of <code>countData</code> (except the first, which is the gene ID column).<a href="#fn16" class="footnoteRef" id="fnref16"><sup>16</sup></a></li>
+</ol>
+</div>
+</div>
+<div id="import-data" class="section level2">
+<h2><span class="header-section-number">10.3</span> Import data</h2>
+<p>First, let’s load the <strong>tidyverse</strong> library. (This loads <strong>readr</strong>, <strong>dplyr</strong>, <strong>ggplot2</strong>, and several other needed packages). Then let’s import our data <a href="r-dataframes.html">with <strong>readr</strong>’s <code>read_csv()</code> function</a> (<em>note</em>: not <code>read.csv()</code>). Let’s read in the actual count data and the experimental metadata.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+
+rawcounts &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/airway_rawcounts.csv&quot;</span>)
+metadata &lt;-<span class="st">  </span><span class="kw">read_csv</span>(<span class="st">&quot;data/airway_metadata.csv&quot;</span>)</code></pre></div>
+<p>Now, take a look at each.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rawcounts
+metadata</code></pre></div>
+<p>Notice something here. The sample IDs in the metadata sheet (SRR1039508, SRR1039509, etc.) exactly match the column names of the countdata, except for the first column, which contains the Ensembl gene ID. This is important, and we’ll get more strict about it later on.</p>
+</div>
+<div id="poor-mans-dge" class="section level2">
+<h2><span class="header-section-number">10.4</span> Poor man’s DGE</h2>
+<p>Let’s look for differential gene expression. <strong><em>Note: this analysis is for demonstration only. NEVER do differential expression analysis this way!</em></strong></p>
+<p>Let’s start with an exercise.</p>
+<hr />
+<div id="exercise-1" class="section level3">
+<h3><span class="header-section-number">10.4.1</span> Exercise 1</h3>
+<p>If we look at our metadata, we see that the control samples are SRR1039508, SRR1039512, SRR1039516, and SRR1039520. This bit of code will take the rawcounts data, <code>mutate()</code> it to add a column called <code>controlmean</code>, then <code>select()</code> only the gene name and this newly created column, and assigning the result to a new object called <code>meancounts</code>. (<em>Hint</em>: <code>rawcounts %&gt;% mutate(...) %&gt;% select(...)</code>)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">meancounts &lt;-<span class="st"> </span>rawcounts %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">controlmean =</span> (SRR1039508+SRR1039512+SRR1039516+SRR1039520)/<span class="dv">4</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(ensgene, controlmean)
+meancounts</code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>Build off of this code, <code>mutate()</code> it once more (prior to the <code>select()</code>) function, to add another column called <code>treatedmean</code> that takes the mean of the expression values of the treated samples. Then <code>select()</code> only the <code>ensgene</code>, <code>controlmean</code> and <code>treatedmean</code> columns, assigning it to a new object called meancounts. It should look like this.</p></li>
+<li><p>Directly comparing the raw counts is going to be problematic if we just happened to sequence one group at a higher depth than another. Later on we’ll do this analysis properly, normalizing by sequencing depth per sample using a better approach. But for now, <code>summarize()</code> the data to show the <code>sum</code> of the mean counts across all genes for each group. Your answer should look like this:</p></li>
+</ol>
+<hr />
+<p>How about another?</p>
+<hr />
+</div>
+<div id="exercise-2" class="section level3">
+<h3><span class="header-section-number">10.4.2</span> Exercise 2</h3>
+<ol style="list-style-type: decimal">
+<li><p>Create a scatter plot showing the mean of the treated samples against the mean of the control samples.</p></li>
+<li><p>Wait a sec. There are 60,000-some rows in this data, but I’m only seeing a few dozen dots at most outside of the big clump around the origin. Try plotting both axes on a log scale (<em>hint</em>: <code>... + scale_..._log10()</code>)</p></li>
+</ol>
+<hr />
+<p>We can find candidate differentially expressed genes by looking for genes with a large change between control and dex-treated samples. We usually look at the <span class="math inline">\(log_2\)</span> of the fold change, because this has better mathematical properties. On the absolute scale, upregulation goes from 1 to infinity, while downregulation is bounded by 0 and 1. On the log scale, upregulation goes from 0 to infinity, and downregulation goes from 0 to negative infinity. So, let’s mutate our <code>meancounts</code> object to add a <code>log2foldchange</code> column. Optionally pipe this to <code>View()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">meancounts %&gt;%<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">log2fc=</span><span class="kw">log2</span>(treatedmean/controlmean))</code></pre></div>
+<p>There are a couple of “weird” results. Namely, the <code>NaN</code> (“not a number”) and <code>-Inf</code> (negative infinity) results. The <code>NaN</code> is returned when you divide by zero and try to take the log. The <code>-Inf</code> is returned when you try to take the log of zero. It turns out that there are a lot of genes with zero expression. Let’s filter our <code>meancounts</code> data, mutate it to add the <span class="math inline">\(log_2(Fold Change)\)</span>, and when we’re happy with what we see, let’s <em>reassign</em> the result of that operation <em>back to the meancounts object</em>. (<em>Note: this is destructive. If you’re coding interactively like we’re doing now, before you do this it’s good practice to see what the result of the operation is prior to making the reassignment</em>.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Try running the code first, prior to reassigning.</span>
+meancounts &lt;-<span class="st"> </span>meancounts %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(controlmean&gt;<span class="dv">0</span> &amp;<span class="st"> </span>treatedmean&gt;<span class="dv">0</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">log2fc=</span><span class="kw">log2</span>(treatedmean/controlmean))
+meancounts</code></pre></div>
+<p>A common threshold used for calling something differentially expressed is a <span class="math inline">\(log_2(FoldChange)\)</span> of greater than 2 or less than -2. Let’s filter the dataset both ways to see how many genes are up or down-regulated.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">meancounts %&gt;%<span class="st"> </span><span class="kw">filter</span>(log2fc&gt;<span class="dv">2</span>)
+meancounts %&gt;%<span class="st"> </span><span class="kw">filter</span>(log2fc&lt;(-<span class="dv">2</span>))</code></pre></div>
+<p>In total, we’ve got 892 differentially expressed genes, in either direction.</p>
+<hr />
+</div>
+<div id="exercise-3" class="section level3">
+<h3><span class="header-section-number">10.4.3</span> Exercise 3</h3>
+<p>Look up help on <code>?inner_join</code> or Google around for help for using <strong>dplyr</strong>’s <code>inner_join()</code> to join two tables by a common column/key. You downloaded <a href="data/annotables_grch37.csv">annotables_grch37.csv</a> from <a href="data.html">the data downloads page</a> on bioconnector.org. Load this data with <code>read_csv()</code> into an object called <code>anno</code>. Pipe it to <code>View()</code> or click on the object in the Environment pane to view the entire dataset. This table links the unambiguous Ensembl gene ID to things like the gene symbol, full gene name, location, Entrez gene ID, etc.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">anno &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;data/annotables_grch37.csv&quot;</span>)
+anno</code></pre></div>
+<ol style="list-style-type: decimal">
+<li><p>Take our newly created <code>meancounts</code> object, and <code>arrange()</code> it <code>desc</code>ending by the absolute value (<code>abs()</code>) of the <code>log2fc</code> column. The results should look like this:</p></li>
+<li><p>Continue on that pipeline, and <code>inner_join()</code> it to the <code>anno</code> data by the <code>ensgene</code> column. Either assign it to a temporary object or pipe the whole thing to <code>View</code> to take a look. What do you notice? Would you trust these results? Why or why not?</p></li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="deseq2-analysis" class="section level2">
+<h2><span class="header-section-number">10.5</span> DESeq2 analysis</h2>
+<div id="deseq2-package" class="section level3">
+<h3><span class="header-section-number">10.5.1</span> DESeq2 package</h3>
+<p>Let’s do this the right way. DESeq2 is an R package for analyzing count-based NGS data like RNA-seq. It is available from <a href="http://www.bioconductor.org/">Bioconductor</a>. Bioconductor is a project to provide tools for analysing high-throughput genomic data including RNA-seq, ChIP-seq and arrays. You can explore Bioconductor packages <a href="http://www.bioconductor.org/packages/release/BiocViews.html#___Software">here</a>.</p>
+<p>Bioconductor packages usually have great documentation in the form of <em>vignettes</em>. For a great example, take a look at the <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.pdf">DESeq2 vignette for analyzing count data</a>. This 40+ page manual is packed full of examples on using DESeq2, importing data, fitting models, creating visualizations, references, etc.</p>
+<p>Just like R packages from CRAN, you only need to install Bioconductor packages once (<a href="setup.html#bioconductor">instructions here</a>), then load them every time you start a new R session.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(DESeq2)
+<span class="kw">citation</span>(<span class="st">&quot;DESeq2&quot;</span>)</code></pre></div>
+<p>Take a second and read through all the stuff that flies by the screen when you load the DESeq2 package. When you first installed DESeq2 it may have taken a while, because DESeq2 <em>depends</em> on a number of other R packages (S4Vectors, BiocGenerics, parallel, IRanges, etc.) Each of these, in turn, may depend on other packages. These are all loaded into your working environment when you load DESeq2. Also notice the lines that start with <code>The following objects are masked from 'package:...</code>. One example of this is the <code>rename()</code> function from the dplyr package. When the S4Vectors package was loaded, it loaded it’s own function called <code>rename()</code>. Now, if you wanted to use dplyr’s rename function, you’ll have to call it explicitly using this kind of syntax: <code>dplyr::rename()</code>. <a href="http://stackoverflow.com/questions/4879377/r-masked-functions">See this Q&amp;A thread for more</a>.</p>
+</div>
+<div id="importing-data" class="section level3">
+<h3><span class="header-section-number">10.5.2</span> Importing data</h3>
+<p>DESeq works on a particular type of object called a DESeqDataSet. The DESeqDataSet is a single object that contains input values, intermediate calculations like how things are normalized, and all results of a differential expression analysis. You can construct a DESeqDataSet from a count matrix, a metadata file, and a formula indicating the design of the experiment. See the help for <code>?DESeqDataSetFromMatrix</code>. If you read through the <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.pdf">DESeq2 vignette</a> you’ll read about the structure of the data that you need to construct a DESeqDataSet object.</p>
+<p><code>DESeqDataSetFromMatrix</code> requires the count matrix (<code>countData</code> argument) to be a matrix or numeric data frame. either the row names or the first column of the <code>countData</code> must be the identifier you’ll use for each gene. The column names of <code>countData</code> are the sample IDs, and they must match the row names of <code>colData</code> (or the first column when <code>tidy=TRUE</code>). <code>colData</code> is an additional dataframe describing sample metadata. Both <code>colData</code> and <code>countData</code> must be regular <code>data.frame</code> objects – they can’t have the special <code>tbl_df</code> class wrapper created when importing with <code>readr::read_*</code>.</p>
+<div class="figure">
+<img src="img/countdatacoldata.png" />
+
+</div>
+<p>Let’s look at our rawcounts and metadata again.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rawcounts
+metadata
+<span class="kw">class</span>(rawcounts)
+<span class="kw">class</span>(metadata)</code></pre></div>
+<p>Remember, we read in our count data and our metadata using <code>read_csv()</code> which read them in as those “special” dplyr data frames / tbls. We’ll need to convert them back to regular data frames for them to work well with DESeq2.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rawcounts &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(rawcounts)
+metadata &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(metadata)
+<span class="kw">head</span>(rawcounts)
+<span class="kw">head</span>(metadata)
+<span class="kw">class</span>(rawcounts)
+<span class="kw">class</span>(metadata)</code></pre></div>
+<p>Let’s check that the column names of our count data (except the first, which is <code>ensgene</code>) are the same as the IDs from our colData.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(rawcounts)[-<span class="dv">1</span>]
+metadata$id
+<span class="kw">names</span>(rawcounts)[-<span class="dv">1</span>]==metadata$id
+<span class="kw">all</span>(<span class="kw">names</span>(rawcounts)[-<span class="dv">1</span>]==metadata$id)</code></pre></div>
+<p>Now we can move on to constructing the actual DESeqDataSet object. The last thing we’ll need to specify is a <em>design</em> – a <em>formula</em> which expresses how the counts for each gene depend on the variables in colData. Take a look at <code>metadata</code> again. The thing we’re interested in is the <code>dex</code> column, which tells us which samples are treated with dexamethasone versus which samples are untreated controls. We’ll specify the design with a tilde, like this: <code>design=~dex</code>. (The tilde is the shifted key to the left of the number 1 key on my keyboard. It looks like a little squiggly line). So let’s contruct the object and call it <code>dds</code>, short for our DESeqDataSet. If you get a warning about “some variables in design formula are characters, converting to factors” don’t worry about it. Take a look at the <code>dds</code> object once you create it.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dds &lt;-<span class="st"> </span><span class="kw">DESeqDataSetFromMatrix</span>(<span class="dt">countData=</span>rawcounts, 
+                              <span class="dt">colData=</span>metadata, 
+                              <span class="dt">design=</span>~dex, 
+                              <span class="dt">tidy=</span><span class="ot">TRUE</span>)
+dds</code></pre></div>
+</div>
+<div id="deseq-pipeline" class="section level3">
+<h3><span class="header-section-number">10.5.3</span> DESeq pipeline</h3>
+<p>Next, let’s run the DESeq pipeline on the dataset, and reassign the resulting object back to the same variable. Before we start, <code>dds</code> is a bare-bones DESeqDataSet. The <code>DESeq()</code> function takes a DESeqDataSet and returns a DESeqDataSet, but with lots of other information filled in (normalization, dispersion estimates, differential expression results, etc). Notice how if we try to access these objects before running the analysis, nothing exists.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sizeFactors</span>(dds)
+<span class="kw">dispersions</span>(dds)
+<span class="kw">results</span>(dds)</code></pre></div>
+<pre><code>## Error in results(dds): couldn&#39;t find results. you should first run DESeq()</code></pre>
+<p>Here, we’re running the DESeq pipeline on the <code>dds</code> object, and reassigning the whole thing back to <code>dds</code>, which will now be a DESeqDataSet populated with all those values. Get some help on <code>?DESeq</code> (notice, no “2” on the end). This function calls a number of other functions within the package to essentially run the entire pipeline (normalizing by library size by estimating the “size factors,” estimating dispersion for the negative binomial model, and fitting models and getting statistics for each gene for the design specified when you imported the data).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dds &lt;-<span class="st"> </span><span class="kw">DESeq</span>(dds)</code></pre></div>
+</div>
+<div id="getting-results" class="section level3">
+<h3><span class="header-section-number">10.5.4</span> Getting results</h3>
+<p>Since we’ve got a fairly simple design (single factor, two groups, treated versus control), we can get results out of the object simply by calling the <code>results()</code> function on the DESeqDataSet that has been run through the pipeline. The help page for <code>?results</code> and the vignette both have extensive documentation about how to pull out the results for more complicated models (multi-factor experiments, specific contrasts, interaction terms, time courses, etc.).</p>
+<p>Note two things:</p>
+<ol style="list-style-type: decimal">
+<li>We’re passing the <code>tidy=TRUE</code> argument, which tells DESeq2 to output the results table with rownames as a first column called ‘row.’ If we didn’t do this, the gene names would be stuck in the row.names, and we’d have a hard time filtering or otherwise using that column.</li>
+<li>This returns a regular old data frame. Try displaying it to the screen by just typing <code>res</code>. You’ll see that it doesn’t print as nicly as the data we read in with <code>read_csv</code>. We can add this “special” attribute to the raw data returned which just tells R to print it nicely.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res &lt;-<span class="st"> </span><span class="kw">results</span>(dds, <span class="dt">tidy=</span><span class="ot">TRUE</span>)
+res &lt;-<span class="st"> </span><span class="kw">tbl_df</span>(res)
+res</code></pre></div>
+<p>Either click on the <code>res</code> object in the environment pane or pass it to <code>View()</code> to bring it up in a data viewer. Why do you think so many of the adjusted p-values are missing (<code>NA</code>)? Try looking at the <code>baseMean</code> column, which tells you the average overall expression of this gene, and how that relates to whether or not the p-value was missing. Go to the <a href="http://www.bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.pdf">DESeq2 vignette</a> and read the section about “Independent filtering and multiple testing.”</p>
+<blockquote>
+<p>The goal of independent filtering is to filter out those tests from the procedure that have no, or little chance of showing significant evidence, without even looking at the statistical result. Genes with very low counts are not likely to see significant differences typically due to high dispersion. This results in increased detection power at the same experiment-wide type I error [<em>i.e., better FDRs</em>].</p>
+</blockquote>
+<hr />
+</div>
+<div id="exercise-4" class="section level3">
+<h3><span class="header-section-number">10.5.5</span> Exercise 4</h3>
+<ol style="list-style-type: decimal">
+<li><p>Using a <code>%&gt;%</code>, <code>arrange</code> the results by the adjusted p-value.</p></li>
+<li><p>Continue piping to <code>inner_join()</code>, joining the results to the <code>anno</code> object. See the help for <code>?inner_join</code>, specifically the <code>by=</code> argument. You’ll have to do something like <code>... %&gt;% inner_join(anno, by=c(&quot;row&quot;=&quot;ensgene&quot;))</code>. Once you’re happy with this result, reassign the result back to <code>res</code>. It’ll look like this.</p></li>
+<li><p>How many are significant with an adjusted p-value &lt;0.05? (Pipe to <code>filter()</code>).</p></li>
+</ol>
+<hr />
+<p>Finally, let’s write out the significant results. See the help for <code>?write_csv</code>, which is part of the <strong>readr</strong> package (note: this is <em>not</em> the same as <code>write.csv</code> with a dot.). We can continue that pipe and write out the significant results to a file like so:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(padj&lt;<span class="fl">0.05</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">write_csv</span>(<span class="st">&quot;sigresults.csv&quot;</span>)</code></pre></div>
+<p>You can open this file in Excel or any text editor (try it now).</p>
+</div>
+</div>
+<div id="data-visualization" class="section level2">
+<h2><span class="header-section-number">10.6</span> Data Visualization</h2>
+<div id="plotting-counts" class="section level3">
+<h3><span class="header-section-number">10.6.1</span> Plotting counts</h3>
+<p>DESeq2 offers a function called <code>plotCounts()</code> that takes a DESeqDataSet that has been run through the pipeline, the name of a gene, and the name of the variable in the <code>colData</code> that you’re interested in, and plots those values. See the help for <code>?plotCounts</code>. Let’s first see what the gene ID is for the CRISPLD2 gene using <code>res %&gt;% filter(symbol==&quot;CRISPLD2&quot;)</code>. Now, let’s plot the counts, where our <code>intgroup</code>, or “interesting group” variable is the “dex” column.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotCounts</span>(dds, <span class="dt">gene=</span><span class="st">&quot;ENSG00000103196&quot;</span>, <span class="dt">intgroup=</span><span class="st">&quot;dex&quot;</span>)</code></pre></div>
+<p>That’s just okay. Keep looking at the help for <code>?plotCounts</code>. Notice that we could have actually returned the data instead of plotting. We could then pipe this to ggplot and make our own figure. Let’s make a boxplot.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Return the data</span>
+<span class="kw">plotCounts</span>(dds, <span class="dt">gene=</span><span class="st">&quot;ENSG00000103196&quot;</span>, <span class="dt">intgroup=</span><span class="st">&quot;dex&quot;</span>, <span class="dt">returnData=</span><span class="ot">TRUE</span>)
+
+<span class="co"># Plot it</span>
+<span class="kw">plotCounts</span>(dds, <span class="dt">gene=</span><span class="st">&quot;ENSG00000103196&quot;</span>, <span class="dt">intgroup=</span><span class="st">&quot;dex&quot;</span>, <span class="dt">returnData=</span><span class="ot">TRUE</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(dex, count)) +<span class="st"> </span><span class="kw">geom_boxplot</span>(<span class="kw">aes</span>(<span class="dt">fill=</span>dex)) +<span class="st"> </span><span class="kw">scale_y_log10</span>() +<span class="st"> </span><span class="kw">ggtitle</span>(<span class="st">&quot;CRISPLD2&quot;</span>)</code></pre></div>
+</div>
+<div id="ma-volcano-plots" class="section level3">
+<h3><span class="header-section-number">10.6.2</span> MA &amp; Volcano plots</h3>
+<p>Let’s make some commonly produced visualizations from this data. First, let’s mutate our results object to add a column called <code>sig</code> that evaluates to <code>TRUE</code> if padj&lt;0.05, and FALSE if not, and NA if padj is also NA.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create the new column</span>
+res &lt;-<span class="st"> </span>res %&gt;%<span class="st"> </span><span class="kw">mutate</span>(<span class="dt">sig=</span>padj&lt;<span class="fl">0.05</span>)
+
+<span class="co"># How many of each?</span>
+res %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(sig) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">n=</span><span class="kw">n</span>())</code></pre></div>
+<hr />
+</div>
+<div id="exercise-5" class="section level3">
+<h3><span class="header-section-number">10.6.3</span> Exercise 5</h3>
+<p>Look up the Wikipedia articles on <a href="https://en.wikipedia.org/wiki/MA_plot">MA plots</a> and <a href="https://en.wikipedia.org/wiki/Volcano_plot_(statistics)">volcano plots</a>. An MA plot shows the average expression on the X-axis and the log fold change on the y-axis. A volcano plot shows the log fold change on the X-axis, and the <span class="math inline">\(-log_{10}\)</span> of the p-value on the Y-axis (the more significant the p-value, the larger the <span class="math inline">\(-log_{10}\)</span> of that value will be).</p>
+<ol style="list-style-type: decimal">
+<li><p>Make an MA plot. Use a <span class="math inline">\(log_{10}\)</span>-scaled x-axis, color-code by whether the gene is significant, and give your plot a title. It should look like this. What’s the deal with the gray points?</p></li>
+<li><p>Make a volcano plot. Similarly, color-code by whether it’s significant or not.</p></li>
+</ol>
+<hr />
+</div>
+<div id="transformation" class="section level3">
+<h3><span class="header-section-number">10.6.4</span> Transformation</h3>
+<p>To test for differential expression we operate on raw counts. But for other downstream analyses like heatmaps, PCA, or clustering, we need to work with transformed versions of the data, because it’s not clear how to best compute a distance metric on untransformed counts. The go-to choice might be a log transformation. But because many samples have a zero count (and <span class="math inline">\(log(0)=-\infty\)</span>, you might try using pseudocounts, i. e. <span class="math inline">\(y = log(n + 1)\)</span> or more generally, <span class="math inline">\(y = log(n + n_0)\)</span>, where <span class="math inline">\(n\)</span> represents the count values and <span class="math inline">\(n_0\)</span> is some positive constant.</p>
+<p>But there are other approaches that offer better theoretical justification and a rational way of choosing the parameter equivalent to <span class="math inline">\(n_0\)</span>, and they produce transformed data on the log scale that’s normalized to library size. One is called a <em>variance stabilizing transformation</em> (VST), and it also removes the dependence of the variance on the mean, particularly the high variance of the log counts when the mean is low.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">vsdata &lt;-<span class="st"> </span><span class="kw">vst</span>(dds, <span class="dt">blind=</span><span class="ot">FALSE</span>)</code></pre></div>
+</div>
+<div id="pca" class="section level3">
+<h3><span class="header-section-number">10.6.5</span> PCA</h3>
+<p>Let’s do some exploratory plotting of the data using principal components analysis on the variance stabilized data from above. Let’s use the DESeq2-provided <code>plotPCA</code> function. See the help for <code>?plotPCA</code> and notice that it also has a <code>returnData</code> option, just like <code>plotCounts</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plotPCA</span>(vsdata, <span class="dt">intgroup=</span><span class="st">&quot;dex&quot;</span>)</code></pre></div>
+<p>Principal Components Analysis (PCA) is a dimension reduction and visualization technique that is here used to project the multivariate data vector of each sample into a two-dimensional plot, such that the spatial arrangement of the points in the plot reflects the overall data (dis)similarity between the samples. In essence, principal component analysis distills all the global variation between samples down to a few variables called <em>principal components</em>. The majority of variation between the samples can be summarized by the first principal component, which is shown on the x-axis. The second principal component summarizes the residual variation that isn’t explained by PC1. PC2 is shown on the y-axis. The percentage of the global variation explained by each principal component is given in the axis labels. In a two-condition scenario (e.g., mutant vs WT, or treated vs control), you might expect PC1 to separate the two experimental conditions, so for example, having all the controls on the left and all experimental samples on the right (or vice versa - the units and directionality isn’t important). The secondary axis may separate other aspects of the design - cell line, time point, etc. Very often the experimental design is reflected in the PCA plot, and in this case, it is. But this kind of diagnostic can be useful for finding outliers, investigating batch effects, finding sample swaps, and other technical problems with the data. <a href="https://youtu.be/_UVHneBUBW0">This YouTube video</a> from the Genetics Department at UNC gives a very accessible explanation of what PCA is all about in the context of a gene expression experiment, without the need for an advanced math background. Take a look.</p>
+</div>
+<div id="bonus-heatmaps" class="section level3">
+<h3><span class="header-section-number">10.6.6</span> Bonus: Heatmaps</h3>
+<p><a href="http://www.opiniomics.org/you-probably-dont-understand-heatmaps/">Heatmaps are complicated, and are often poorly understood</a>. It’s a type of visualization used very often in high-throughput biology where data are clustered on rows and columns, and the actual data is displayed as tiles on a grid, where the values are mapped to some color spectrum. Our R useRs group MeetUp had a session on making heatmaps, which I summarized in <a href="http://www.gettinggeneticsdone.com/2015/04/r-user-group-recap-heatmaps-and-using.html">this blog post</a>. Take a look at <a href="https://github.com/UVa-R-Users-Group/meetup/blob/master/2015-02-19-heat-maps/heatmaps.R">the code from that meetup</a>, and the <a href="http://nmf.r-forge.r-project.org/aheatmap.html">documentation for the <code>aheatmap</code> function in the NMF package</a> to see if you can re-create this image. Here, I’m clustering all samples using the top 25 most differentially regulated genes, labeling the rows with the gene symbol, and putting two annotation color bars across the top of the main heatmap panel showing treatment and cell line annotations from our metadata. Take a look at the <a href="https://github.com/bioconnector/bims8382/blame/10667525b2798d4f79af616d936ecac0b58c9622/r-rnaseq-airway.Rmd#L406">Rmarkdown source for this lesson</a> for the code.</p>
+</div>
+</div>
+<div id="record-sessioninfo" class="section level2">
+<h2><span class="header-section-number">10.7</span> Record <code>sessionInfo()</code></h2>
+<p>The <code>sessionInfo()</code> prints version information about R and any attached packages. It’s a good practice to always run this command at the end of your R session and record it for the sake of reproducibility in the future.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sessionInfo</span>()</code></pre></div>
+<hr />
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="16">
+<li id="fn16"><p>This only works when using the argument <code>tidy=TRUE</code> when creating the <code>DESeqDataSetFromMatrix()</code>.<a href="rna-seq-analysis.html#fnref16">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="surival-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/09-rnaseq.Rmd",
+"text": "Edit"
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
